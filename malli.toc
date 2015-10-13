@@ -1,0 +1,10 @@
+\select@language {finnish}
+\contentsline {section}{\numberline {1}Abstrakti}{1}
+\contentsline {section}{\numberline {2}Johdanto}{1}
+\contentsline {section}{\numberline {3}Palveluorientoituneiden arkkitehtuurien yhteispiirteit\"a}{1}
+\contentsline {subsection}{\numberline {3.1}Monoliittisen ja palveluorientoituneen mallin vertailu}{2}
+\contentsline {subsection}{\numberline {3.2}Palveluorientoituneen mallin haasteet}{2}
+\contentsline {section}{\numberline {4}Palveluiden haku ja l\"apin\"akyvyys}{2}
+\contentsline {section}{\numberline {5}Yhteenveto}{2}
+\contentsline {section}{Liitteet}{}
+ \contentsline {section}{\hspace {0.5cm}1 Malli ABC}{}
