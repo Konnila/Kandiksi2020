@@ -38,7 +38,27 @@ T‰ss‰ aineessa keskityt‰‰n palveluorientoituneiden arkkitehtuureiden yhteisiin p
 
 \section{Johdanto}
 
-SOC:in on ajatusmalli, joka painottaa eri palveluiden k‰yttˆ‰ palvelun koostamiseksi. Yleens‰ lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsess‰‰n alustariippumattomia ja v‰lj‰sti yhteydess‰ toisiinsa (\textit{loosely coupled)}. Business-taustaisena ideana on tuottaa hyvin kesken‰‰n toimivia, mahdollisimman atomisia palveluita, joita voi uudelleenk‰ytt‰‰, tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyell‰ kehitys-julkaisuikkunalla (\textit{time-to-market}).
+SOC:in on ajatusmalli, joka painottaa eri palveluiden k‰yttˆ‰ palvelun koostamiseksi. Yleens‰ lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsess‰‰n alustariippumattomia ja v‰lj‰sti yhteydess‰ toisiinsa (\textit{loosely coupled)}. Business-taustaisena ideana SOA-arkkitehtuureissa (\textit{Service-oriented architectures}) on tuottaa hyvin kesken‰‰n toimivia, mahdollisimman atomisia palveluita, jotka ovat uudelleenk‰ytett‰vi‰, helposti korvattavissa ja yll‰pidett‰viss‰ tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyell‰ kehitys-julkaisuikkunalla (\textit{time-to-market}).
+
+Yksitt‰isen palvelun teht‰v‰ voi olla yksitt‰inen pyyntˆ, tai monimutkaisempi businessprosessi, ja t‰llaisten palveluiden tarjoajat (olipa ne sitten organisaatioita tai mit‰ vain) mahdollistavat ohjelmallisen p‰‰syn palveluihinsa ja dataansa internetin yli k‰ytt‰en standardoituja v‰litystapoja, k‰ytt‰en yleens‰ XML-perustaisia tai REST-mallin mukaista HTTP-protokollaan perustuvia rajapintoja k‰ytt‰en. N‰iden palveluiden tarjoajien (\textit{service providers}) vastuulla on antaa palvelukuvaus ja yll‰pit‰‰ palvelua, ja antaa palveluun liittyv‰‰ teknist‰ sek‰ muuta tukea. Palvelua kutsuvat tahot voivat olla muita ohjelmia, tai yksitt‰isi‰ tahoja, esimerkiksi kotipalvelin joka pyyt‰‰ resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli. T‰st‰ seuraa, ett‰ n‰ill‰ n‰ill‰ palveluilla on tiettyj‰ vaatimuksia ja edellytyksi‰.
+
+\begin{itemize}
+
+\item \textit{Teknologiariippumattomuus}: Palvelun ei kuulu olla liian teknologiariippuvainen, vaan sit‰ pit‰‰ pysty‰ kutsumaan alalla vallitsevilla tyˆkaluilla ja alan standardien mukaisesti.
+
+\item \textit{heikko linkittyneisyys (loosely coupled)}: palvelun tulee olla irti mahdollisesta kontekstista, ja toimia itsen‰isesti (ainakin ulosp‰in) ilman tietoa muista palveluista tai komponenteista.
+
+%ehk‰ erota kahdeksi osaksi?
+
+\item \textit{Palvelun haettavuus (service discovery) ja tuki sijaintil‰pin‰kyvyydelle (location transparency)}: Palveluiden m‰‰ritykset ja varsinaiset sijaintitiedot tulee olla tallennettuna johonkin - esimerkiksi UDDI[footnote tms. plz] repositorioon, ja asiakkailla/tahoilla pit‰‰ olla p‰‰sy palveluun tiet‰m‰tt‰ miss‰ se varsinaisesti sijaitsee.
+
+\end{itemize}
+
+
+
+
+
+
 
 
 
@@ -47,7 +67,7 @@ SOC:in on ajatusmalli, joka painottaa eri palveluiden k‰yttˆ‰ palvelun koostamis
 
 
 Palveluorientoituneet arkkitehtuurit toteuttavat t‰t‰ SOC:in ideaa,
-mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon [viite papazoglouhun]. T‰st‰ syyst‰ onkin kehitelty xSoa pyramidi [oisko liite] joka ottaa n‰m‰ huomioon.
+mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon [viite papazoglouhun]. T‰st‰ syyst‰ onkin kehitelty xSoa pyramidi [oisko liite - papazopglou pyramid] joka ottaa n‰m‰ huomioon.
 
 \subsection{Monoliittisen ja palveluorientoituneen mallin vertailu}
 
