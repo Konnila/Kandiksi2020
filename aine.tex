@@ -38,9 +38,9 @@ Tässä aineessa keskitytään palveluorientoituneiden arkkitehtuureiden yhteisiin p
 
 \section{Johdanto}
 
-SOC:in on ajatusmalli, joka painottaa eri palveluiden käyttöä palvelun koostamiseksi. Yleensä lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsessään alustariippumattomia ja väljästi yhteydessä toisiinsa (\textit{loosely coupled)}. Business-taustaisena ideana SOA-arkkitehtuureissa (\textit{Service-oriented architectures}) on tuottaa hyvin keskenään toimivia, mahdollisimman atomisia palveluita, jotka ovat uudelleenkäytettäviä, helposti korvattavissa ja ylläpidettävissä tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyellä kehitys-julkaisuikkunalla (\textit{time-to-market}).
+SOC:in on ajatusmalli, joka painottaa eri palveluiden käyttöä palvelun koostamiseksi. Yleensä lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsessään alustariippumattomia ja väljästi yhteydessä toisiinsa (\textit{loosely coupled)}. Business-taustaisena ideana SOA:issa (\textit{Service-oriented architectures}) on tuottaa hyvin keskenään toimivia, mahdollisimman atomisia palveluita, jotka ovat uudelleenkäytettäviä, helposti korvattavissa ja ylläpidettävissä tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyellä kehitys-julkaisuikkunalla (\textit{time-to-market}).
 
-Yksittäisen palvelun tehtävä voi olla yksittäinen pyyntö, tai monimutkaisempi businessprosessi, ja tällaisten palveluiden tarjoajat (olipa ne sitten organisaatioita tai mitä vain) mahdollistavat ohjelmallisen pääsyn palveluihinsa ja dataansa internetin yli käyttäen standardoituja välitystapoja, käyttäen yleensä XML-perustaisia tai REST-mallin mukaista HTTP-protokollaan perustuvia rajapintoja käyttäen. Näiden palveluiden tarjoajien (\textit{service providers}) vastuulla on antaa palvelukuvaus ja ylläpitää palvelua, ja antaa palveluun liittyvää teknistä sekä muuta tukea. Palvelua kutsuvat tahot voivat olla muita ohjelmia, tai yksittäisiä tahoja, esimerkiksi kotipalvelin joka pyytää resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli. Tästä seuraa, että näillä näillä palveluilla on tiettyjä vaatimuksia ja edellytyksiä.
+Yksittäisen palvelun tehtävä voi olla yksittäinen pyyntö, tai monimutkaisempi businessprosessi, ja tällaisten palveluiden tarjoajat (olipa ne sitten organisaatioita tai yksityishenkilöitä) mahdollistavat ohjelmallisen pääsyn palveluihinsa ja dataansa internetin yli käyttäen standardoituja välitystapoja, käyttäen yleensä XML-perustaisia tai REST-mallin mukaisia HTTP-protokollaan perustuvia rajapintoja käyttäen. Näiden palveluiden tarjoajien (\textit{service providers}) vastuulla on antaa palvelukuvaus ja ylläpitää palvelua, ja antaa palveluun liittyvää teknistä sekä muuta tukea. Palvelua kutsuvat tahot voivat olla muita ohjelmia, tai yksittäisiä tahoja, esimerkiksi kotipalvelin joka pyytää resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli. Tästä seuraa, että näillä näillä palveluilla on tiettyjä vaatimuksia ja edellytyksiä.
 
 \begin{itemize}
 
@@ -50,29 +50,45 @@ Yksittäisen palvelun tehtävä voi olla yksittäinen pyyntö, tai monimutkaisempi bu
 
 %ehkä erota kahdeksi osaksi?
 
-\item \textit{Palvelun haettavuus (service discovery) ja tuki sijaintiläpinäkyvyydelle (location transparency)}: Palveluiden määritykset ja varsinaiset sijaintitiedot tulee olla tallennettuna johonkin - esimerkiksi UDDI[footnote tms. plz] repositorioon, ja asiakkailla/tahoilla pitää olla pääsy palveluun tietämättä missä se varsinaisesti sijaitsee.
+\item \textit{Palvelun haettavuus (service discovery) ja tuki sijaintiläpinäkyvyydelle (location transparency)}: Palveluiden määritykset ja varsinaiset sijaintitiedot tulee olla tallennettuna johonkin - esimerkiksi UDDI\cite{1} repositorioon, ja asiakkailla/tahoilla pitää olla pääsy palveluun tietämättä missä se varsinaisesti sijaitsee.
+
 
 \end{itemize}
 
+Tässä aineessa keskitytään palveluiden haettavuuteen ja siihen miten se voidaan toteuttaa palveluorientoituneessa arkkitehtuurimallissa.
+
+
+\section{Palveluorientoitunut arkkitehtuuri}
+
+Perinteisesti SOC:in palvelumalli johon nojataan, on ollut SOA. SOA pyrkii käyttämään erillisiä palveluja koostaakseen monimutkaisiakin ohjelmistoja. Näiden erillisten palvelujen on tarkoitus olla uudelleenkäytettäviä ja joustavia, ja siten nopeuttaa sekä halventaa ohjelmistokehitystä.
+
+Erillinen yksittinen palvelu eroaa ajatusmaailmaltaan monoliittisen arkkitehtuuripuolen mallista tietyissä osa-alueissa. Se on itsenäinen, väljästi linkitetty muualle, uudelleenkäytettävä, itsensä kuvaava ja helposti siirrettävä toiselle alustalle. Monoliittisessa arkkitehtuurissa ollaan yleensä tiukasti sidottu sovittuihin teknologioihin, ja samalla ollaan sidottu sen teknologian vaatimuksiin ja rajotteisiin. Ohjelmat ovat tiiviisti linkattuina muihin kirjastoihin, ja yksittäisten luokkien ja palveluiden korvaaminen päätyy lopulta useiden moduulien muokkaamiseen tätä uutta korvaavaa moduulia tukevaksi.
+
+Myös business-mielessä monoliittinen arkkitehtuuri kasvaa usein turhauttavaksi: yhä kasvavan ohjelman monimutkaisuus ja sisäinen linkittyneisyys muodostuu hidasteeksi uusille projektiin liittyville työntekijöille ja vaatii enemmän ja enemmän aikaa ohjelman kokonaisuuden ymmärtämiseksi. Ohjelman luokkien ja palveluiden linkittyneisyys muodostaa myös kokonaisuuden, jota on vaikeampi muokata, jolloin uudelta työntekijältä saattaa jäädä kooditasolla huomiotta tehdä muutokset kaikkiin paikkoihin joihin muutokseen liittyvä moduuli on kytköksissä. Tämä ongelma on usein itseään ruokkiva, ja ongelmat kasaantuvat entisestään, jos koodin laadusta ei pidetä tasaisesti huolta.
+Tätä palveluorientoituneisuus sen sijaan yrittää helpottaa rajaamalla palvelut selkeiksi itsenäisiksi kokonaisuuksiksi.
+
+Monoliittisessa arkkitehtuurissa koko ohjelma voidaan nähdä isona siilona, kun taas SOA on yksinkertaisimmillaan infrastruktuuri, joka tukee erillisten palveluiden kommunikointia keskenään standardien protokollien avulla. Myös näiden palveluiden tulee olla löydettävissä alalla vallitsevien standardirajapintojen avulla. Kun nämä osat toimivat, ohjelmat pääsevät tarvittaessa helposti käsiksi näihin palveluihin ilman tarvetta monimutkaisille räätälöidyille kommunikointiprotokollille.
+
+SOA on looginen tapa suunnitella ohjelmistoja joko yksittäisten käyttäjien tarpeeseen, tai rajapinnaksi muille ohjelmistoille. Perinteinen SOA erittelee (kts. Kuva 1.1) osapuolet palvelun jakajaan, palvelua kutsuvaan osapuoleen (asiakas) sekä palvelurekisteriin jonka avulla pyydetty palvelu löydetään.
+
+\textbf{Palveluntarjoajan} vastuulla on antaa palvelukuvaus ja ylläpitää palvelua, ja antaa palveluun liittyvää teknistä sekä muuta tukea. Palveluntarjoajan vastuulla on myös pitää huoli, että palvelu on löydettävissä palvelurekisterin avulla.
+
+\textbf{Palvelua kutsuvat tahot} voivat olla muita ohjelmia, tai yksittäisiä tahoja, esimerkiksi kotipalvelin joka pyytää resurssia REST-rajapinnan (viite) toteuttavalta palvelulta internetin yli.
+
+SOA:lle tyypillisessä skenaariossa palveluntarjoaja rakentaa toteutuksen palvelusta ja antaa sille palvelukuvauksen. Tämän jälkeen julkaisee sen palveluhakutaholle tai rekisterille, jota kautta palvelu on löydettävissä. Palvelua hakeva osapuoli pääsee käsiksi palveluun tällaisen tahon/rekisterin kautta (kuten esimerkiksi UDDI) ja linkittyy palvelukuvauksen avulla palveluntarjoajaan, jonka jälkeen kutsuva osapuoli pääsee kutsumaan palvelutoteutusta. 
 
 
 
 
+%lopuksi sitten se extended soa
+
+Palveluorientoituneet arkkitehtuurit toteuttavat SOC:in ideaa,
+mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon [viite papazoglouhun]. Tästä syystä onkin kehitelty xSOA (extended SOA) pyramidi [oma liite tähän].
 
 
 
 
-
-\section{Palveluorientoituneiden arkkitehtuurien yhteispiirteitä}
-
-
-Palveluorientoituneet arkkitehtuurit toteuttavat tätä SOC:in ideaa,
-mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon [viite papazoglouhun]. Tästä syystä onkin kehitelty xSoa pyramidi [oisko liite - papazopglou pyramid] joka ottaa nämä huomioon.
-
-\subsection{Monoliittisen ja palveluorientoituneen mallin vertailu}
-
-\subsection{Palveluorientoituneen mallin haasteet}
-
+\section{Palveluorientoituneiden arkkitehtuurien haittapuolet}
 
 \section{Palveluiden haku ja läpinäkyvyys}
 
@@ -85,9 +101,9 @@ mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai 
 %
 
 
-\nocite{*}
+\nocite{UDDI}
 \bibliographystyle{tktl}
-\bibliography{lahteet}
+\bibliography{lahteet.bib}
 
 \lastpage
 
