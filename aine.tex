@@ -50,7 +50,7 @@ Yksitt‰isen palvelun teht‰v‰ voi olla yksitt‰inen pyyntˆ, tai monimutkaisempi bu
 
 %ehk‰ erota kahdeksi osaksi?
 
-\item \textit{Palvelun haettavuus (service discovery) ja tuki sijaintil‰pin‰kyvyydelle (location transparency)}: Palveluiden m‰‰ritykset ja varsinaiset sijaintitiedot tulee olla tallennettuna johonkin - esimerkiksi UDDI\cite{1} repositorioon, ja asiakkailla/tahoilla pit‰‰ olla p‰‰sy palveluun tiet‰m‰tt‰ miss‰ se varsinaisesti sijaitsee.
+\item \textit{Palvelun haettavuus (service discovery) ja tuki sijaintil‰pin‰kyvyydelle (location transparency)}: Palveluiden m‰‰ritykset ja varsinaiset sijaintitiedot tulee olla tallennettuna johonkin - esimerkiksi UDDI repositorioon, ja asiakkailla/tahoilla pit‰‰ olla p‰‰sy palveluun tiet‰m‰tt‰ miss‰ se varsinaisesti sijaitsee.
 
 
 \end{itemize}
@@ -92,6 +92,10 @@ mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai 
 
 \section{Palveluiden haku ja l‰pin‰kyvyys}
 
+Palveluntarjoajilla on hallussaan toteutus palvelusta, jota he yll‰pit‰v‰t ja he myˆs m‰‰ritt‰v‰t palvelukuvauksen tarjoamalleen palvelulle. Palvelukuvausten tarkoituksena on ilmoittaa palvelun tarkoituksesta, k‰ytt‰ytymisest‰, laadusta ja sen tulee muodostaa alusta lˆydett‰vyydelle, linkittymiselle ja palvelukompositiolle. Palvelut voivat tarvittaessa olla yhteydess‰ toisiinsa monimutkaisemmissa prosesseissa, kuten vaikkapa luottokortin tarkistuksessa tai tuotteen tilauksessa. Koska n‰m‰ palvelut ovat luonteeltaan alustariippumattomia, luo se puitteet kompositiopalveluiden tuottamiselle liitt‰m‰ll‰ yhteen yksinkertaisia tai monimutkaisempia palveluita. 
+
+Web service -malli koostuu kolmesta komponentista: asiakas, palveluntarjoaja sek‰ rekisteri. Palveluiden haun kannalta n‰m‰ kaikki ovat oleellisia. Asiakas on taho joka 
+
 \section{Yhteenveto}
 
 
@@ -103,7 +107,7 @@ mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai 
 
 \nocite{UDDI}
 \bibliographystyle{tktl}
-\bibliography{lahteet.bib}
+%\bibliography{lahteet.bib}
 
 \lastpage
 
