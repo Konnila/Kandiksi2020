@@ -7,7 +7,7 @@
 %\singlespacing
 \onehalfspacing
 
-\title{Aine: Service discovery and location transparency in Service-oriented computing}
+\title{Palveluiden haku palveluorientoituneessa tietojenkäsittelyssä}
 \author{Toni Könnilä}
 \date{\today}
 
@@ -85,16 +85,24 @@ SOA:lle tyypillisessä skenaariossa palveluntarjoaja rakentaa toteutuksen palvelu
 Palveluorientoituneet arkkitehtuurit toteuttavat SOC:in ideaa,
 mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon [viite papazoglouhun]. Tästä syystä onkin kehitelty xSOA (extended SOA) pyramidi [oma liite tähän].
 
-
-
-
 \section{Palveluorientoituneiden arkkitehtuurien haittapuolet}
 
-\section{Palveluiden haku ja läpinäkyvyys}
+\section{Palveluiden haku}
 
-Palveluntarjoajilla on hallussaan toteutus palvelusta, jota he ylläpitävät ja he myös määrittävät palvelukuvauksen tarjoamalleen palvelulle. Palvelukuvausten tarkoituksena on ilmoittaa palvelun tarkoituksesta, käyttäytymisestä, laadusta ja sen tulee muodostaa alusta löydettävyydelle, linkittymiselle ja palvelukompositiolle. Palvelut voivat tarvittaessa olla yhteydessä toisiinsa monimutkaisemmissa prosesseissa, kuten vaikkapa luottokortin tarkistuksessa tai tuotteen tilauksessa. Koska nämä palvelut ovat luonteeltaan alustariippumattomia, luo se puitteet kompositiopalveluiden tuottamiselle liittämällä yhteen yksinkertaisia tai monimutkaisempia palveluita. 
+\subsection{Yleisesti}
+Palveluntarjoajilla on hallussaan toteutus palvelusta, jota he ylläpitävät ja he myös määrittävät palvelukuvauksen tarjoamalleen palvelulle. Palvelukuvausten tarkoituksena on ilmoittaa palvelun tarkoituksesta, käyttäytymisestä, laadusta ja sen tulee muodostaa alusta löydettävyydelle, linkittymiselle ja palvelukompositiolle. Palvelut voivat tarvittaessa olla yhteydessä toisiinsa monimutkaisemmissa prosesseissa, kuten vaikkapa luottokortin tarkistuksessa tai tuotteen tilauksessa. Koska nämä palvelut ovat luonteeltaan alustariippumattomia, luo se puitteet kompositiopalveluiden tuottamiselle liittämällä yhteen toiminnaltaan yksinkertaisia tai monimutkaisempia palveluita. 
 
-Web service -malli koostuu kolmesta komponentista: asiakas, palveluntarjoaja sekä rekisteri. Palveluiden haun kannalta nämä kaikki ovat oleellisia. Asiakas on taho joka 
+Web service -malli koostuu kolmesta komponentista: asiakkaasta, palveluntarjoajasta sekä rekisteristä. Palveluiden haun kannalta nämä kaikki ovat oleellisia. Ilman rekisteriä kutsujaa ja tarjoajaa ei voida linkittää, koska yleensä asiakas ei tiedä missä palvelu sijaitsee. Palveluntarjoaja julkaisee palvelun rekisterissä luomalla WSDL (Web Service Description Language) määrityksen, joka on XML-pohjainen rajapintakuvaus [viite: Subset WSDL to access Subset Service for Analysis Animesh Chaturvedi], joka kertoo kutsuvalle taholle miten pyydettyä palvelua voidaan kutsua, millaisia parametreja se odottaa, missä muodossa vastaus tulee ja millaisissa tietorakenteissa vastauksen sisältö on [viite: http://www.w3.org/TR/wsdl20-primer/]. Perinteisesti nämä tahot ovat keskustelleet keskenään SOAP:n avulla.
+SOAP on protokolla, joka alkujaan oli akronyymi sanoista Simple Object Access Protocol. Myöhemmissä versioissa päätettiin ettei SOAP ole akronyymi ollenkaan.
+SOAP luotiin toimimaan HTTP-protokollan yli, koska sitä tuetaan kaikissa internet selaimissa ja tarjoaa muodon, jolla XML viestit kääritään [viite http://www.w3schools.com/xml/xml_soap.asp]. Näin kaikki palvelut, jotka tukevat SOAP:ia voivat keskustella keskenään, eikä ole väliä miten palvelut ovat teknisesti toteutettu. Rekisterissä on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnön rekisteriin, jonka jälkeen rekisteri vastaa kutsujalle lähettämällä palan WSDL-määrittelystä. Tämän jälkeen, mikäli palautettiin oikeanlaista tietoa, asiakkaalla on kaikki tarpeellinen tieto linkittyäkseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnön palveluntarjoajalle, joka antaa edelleen WSDL-määritellyssä muodossa vastauksen asiakkaalle. Kaikki nämä pyynnöt palveluntarjoajan, rekisterin ja asiakkaan välillä ovat perinteisessä mallissa SOAP-muotoisia. Havainnollistus kuvassa 2.1. [*lisää kuva perhana*]
+
+Tällainen malli on hyvin perinteinen, jossa oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myös muita tapoja keskustella palvelun ja asiakkaan välillä. Nykyään monet web-palvelut (citation needed) toteuteaan REST-tyyppisesti
+
+\subsection{Erilaisia rekistereitä}
+
+UDDI kamaa tähän ja muita esimerkkejä
+
+\subsection{Palveluiden haun ongelmat}
 
 \section{Yhteenveto}
 
