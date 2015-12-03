@@ -62,7 +62,7 @@ Tässä aineessa keskitytään palveluiden haettavuuteen ja siihen miten se voidaan 
 
 Perinteisesti SOC:in palvelumalli johon nojataan, on ollut SOA. SOA pyrkii käyttämään erillisiä palveluja koostaakseen monimutkaisiakin ohjelmistoja. Näiden erillisten palvelujen on tarkoitus olla uudelleenkäytettäviä ja joustavia, ja siten nopeuttaa sekä halventaa ohjelmistokehitystä.
 
-Erillinen yksittinen palvelu eroaa ajatusmaailmaltaan monoliittisen arkkitehtuuripuolen mallista tietyissä osa-alueissa. Se on itsenäinen, väljästi linkitetty muualle, uudelleenkäytettävä, itsensä kuvaava ja helposti siirrettävä toiselle alustalle. Monoliittisessa arkkitehtuurissa ollaan yleensä tiukasti sidottu sovittuihin teknologioihin, ja samalla ollaan sidottu sen teknologian vaatimuksiin ja rajotteisiin. Ohjelmat ovat tiiviisti linkattuina muihin kirjastoihin, ja yksittäisten luokkien ja palveluiden korvaaminen päätyy lopulta useiden moduulien muokkaamiseen tätä uutta korvaavaa moduulia tukevaksi.
+Erillinen yksittinen palvelu eroaa ajatusmaailmaltaan monoliittisen arkkitehtuuripuolen mallista tietyissä osa-alueissa. Se on itsenäinen, väljästi linkitetty, uudelleenkäytettävä, itsensä kuvaava ja helposti siirrettävä toiselle alustalle. Monoliittisessa arkkitehtuurissa palvelut on yleensä tiukasti sidottu sovittuihin teknologioihin, ja edelleen sidottuina käytettävän teknologian vaatimuksiin ja rajotteisiin. Ohjelmat ovat tiiviisti linkattuina muihin kirjastoihin, ja yksittäisten luokkien ja palveluiden korvaaminen päätyy lopulta useiden moduulien muokkaamiseen tätä uutta korvaavaa moduulia tukevaksi.
 
 Myös business-mielessä monoliittinen arkkitehtuuri kasvaa usein turhauttavaksi: yhä kasvavan ohjelman monimutkaisuus ja sisäinen linkittyneisyys muodostuu hidasteeksi uusille projektiin liittyville työntekijöille ja vaatii enemmän ja enemmän aikaa ohjelman kokonaisuuden ymmärtämiseksi. Ohjelman luokkien ja palveluiden linkittyneisyys muodostaa myös kokonaisuuden, jota on vaikeampi muokata, jolloin uudelta työntekijältä saattaa jäädä kooditasolla huomiotta tehdä muutokset kaikkiin paikkoihin joihin muutokseen liittyvä moduuli on kytköksissä. Tämä ongelma on usein itseään ruokkiva, ja ongelmat kasaantuvat entisestään, jos koodin laadusta ei pidetä tasaisesti huolta.
 Tätä palveluorientoituneisuus sen sijaan yrittää helpottaa rajaamalla palvelut selkeiksi itsenäisiksi kokonaisuuksiksi.
@@ -90,9 +90,14 @@ mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai 
 \subsection{Yleisesti}
 Palveluntarjoajilla on hallussaan toteutus palvelusta, jota he ylläpitävät ja he myös määrittävät palvelukuvauksen tarjoamalleen palvelulle. Palvelukuvausten tarkoituksena on ilmoittaa palvelun tarkoituksesta, käyttäytymisestä, laadusta ja sen tulee muodostaa alusta löydettävyydelle, linkittymiselle ja palvelukompositiolle. Palvelut voivat tarvittaessa olla yhteydessä toisiinsa monimutkaisemmissa prosesseissa, kuten vaikkapa luottokortin tarkistuksessa tai tuotteen tilauksessa. Koska nämä palvelut ovat luonteeltaan alustariippumattomia, luo se puitteet kompositiopalveluiden tuottamiselle liittämällä yhteen toiminnaltaan yksinkertaisia tai monimutkaisempia palveluita. 
 
-Web service -malli koostuu kolmesta komponentista: asiakkaasta, palveluntarjoajasta sekä rekisteristä. Palveluiden haun kannalta nämä kaikki ovat oleellisia. Ilman rekisteriä kutsujaa ja tarjoajaa ei voida linkittää, koska yleensä asiakas ei tiedä missä palvelu sijaitsee. Palveluntarjoaja julkaisee palvelun rekisterissä luomalla WSDL (Web Service Description Language) määrityksen, joka on XML-pohjainen rajapintakuvaus [viite: Subset WSDL to access Subset Service for Analysis Animesh Chaturvedi], joka kertoo kutsuvalle taholle miten pyydettyä palvelua voidaan kutsua, millaisia parametreja se odottaa, missä muodossa vastaus tulee ja millaisissa tietorakenteissa vastauksen sisältö on [viite: http://www.w3.org/TR/wsdl20-primer/]. Perinteisesti nämä tahot ovat keskustelleet keskenään SOAP:n avulla.
+Web service -malli koostuu kolmesta komponentista: asiakkaasta, palveluntarjoajasta sekä rekisteristä. Palveluiden haun kannalta nämä kaikki ovat oleellisia. Ilman rekisteriä kutsujaa ja tarjoajaa ei voida linkittää, koska yleensä asiakas ei tiedä missä palvelu sijaitsee. Palveluntarjoaja julkaisee palvelun rekisterissä luomalla WSDL (Web Service Description Language) määrityksen, joka on XML-pohjainen rajapintakuvaus [viite: Subset WSDL to access Subset Service for Analysis Animesh Chaturvedi], joka kertoo kutsuvalle taholle miten pyydettyä palvelua voidaan kutsua, millaisia parametreja se odottaa, missä muodossa vastaus tulee ja millaisissa tietorakenteissa vastauksen sisältö on [viite: http://www.w3.org/TR/wsdl20-primer]. Perinteisesti nämä tahot ovat keskustelleet keskenään SOAP:n avulla.
 SOAP on protokolla, joka alkujaan oli akronyymi sanoista Simple Object Access Protocol. Myöhemmissä versioissa päätettiin ettei SOAP ole akronyymi ollenkaan.
-SOAP luotiin toimimaan HTTP-protokollan yli, koska sitä tuetaan kaikissa internet selaimissa ja tarjoaa muodon, jolla XML viestit kääritään [viite http://www.w3schools.com/xml/xml_soap.asp]. Näin kaikki palvelut, jotka tukevat SOAP:ia voivat keskustella keskenään, eikä ole väliä miten palvelut ovat teknisesti toteutettu. Rekisterissä on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnön rekisteriin, jonka jälkeen rekisteri vastaa kutsujalle lähettämällä palan WSDL-määrittelystä. Tämän jälkeen, mikäli palautettiin oikeanlaista tietoa, asiakkaalla on kaikki tarpeellinen tieto linkittyäkseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnön palveluntarjoajalle, joka antaa edelleen WSDL-määritellyssä muodossa vastauksen asiakkaalle. Kaikki nämä pyynnöt palveluntarjoajan, rekisterin ja asiakkaan välillä ovat perinteisessä mallissa SOAP-muotoisia. Havainnollistus kuvassa 2.1. [*lisää kuva perhana*]
+
+SOAP luotiin toimimaan HTTP-protokollan yli, koska sitä tuetaan kaikissa internet selaimissa ja tarjoaa muodon, jolla XML viestit kääritään .
+%(viite http://www.w3schools.com/xml/xml_soap.asp)
+Näin kaikki palvelut, jotka
+ tukevat SOAP:ia voivat keskustella keskenään, eikä ole väliä miten palvelut ovat teknisesti toteutettu. Rekisterissä on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnön rekisteriin, jonka jälkeen rekisteri vastaa kutsujalle lähettämällä palan WSDL-määrittelystä. Tämän jälkeen, mikäli palautettiin oikeanlaista tietoa, asiakkaalla on kaikki
+  tarpeellinen tieto linkittyäkseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnön palveluntarjoajalle, joka antaa edelleen WSDL-määritellyssä muodossa vastauksen asiakkaalle. Kaikki nämä pyynnöt palveluntarjoajan, rekisterin ja asiakkaan välillä ovat perinteisessä mallissa SOAP-muotoisia. Havainnollistus kuvassa 2.1. %[*lisää kuva perhana*]
 
 Tällainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myös muita tapoja keskustella palvelun ja asiakkaan välillä. Nykyään monet web-palvelut toteutetaan REST-tyyppisesti (citation needed). Ongelmaksi palvelun haun kannalta muodostuu se, ettei REST:ä ole standardoitu, eikä siis ole olemassa standardoitua tapaa miten palveluiden haku REST-tyyppisille rajapinnoilla toteutetaan. Normaalisti REST-tyyppisen palvelun haku perustuu sen URI:n. Esimerkiksi osoitteessa http://yhtio.com/api/kayttajat/ voisi listata kyseisen palvelun käyttäjät. On täysin palveluntarjoajan vastuulla, että asiakkaat löytävät kyseiset resurssit. Hyvässä tapauksessa resurssien metadatasta löytyy tietoa siitä mitä voidaan tehdä seuraavaksi tai mitä muita resursseja voidaan hakea. REST ei siis varsinaisesti ota kantaa miten palvelun haku on toteutettu, eikä se ole lähtökohtaisesti osa REST:iä.
 
@@ -117,14 +122,38 @@ UDDI-rekisteri koostuu kolmesta osasta:
 
 \subsection{Palveluiden haun ongelmat}
 
-Haasteeksi perinteisessä WSDL:n, rekisteriin ja SOAP:aan keskittyvässä mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sillä WSDL kertoo kyllä miten palvelua käytetään, mutta ei tarjoa ratkaisuja siihen mitä tapahtuu kun palvelua käytetään. Palvelua käyttävä ihminen lukee sen luonnollisella kielellä palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa jättää ihminen välistä. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Erilaisia lähestymistapoja asian korjaamiseksi on esitetty.
+Haasteeksi perinteisessä WSDL:n, rekisteriin ja SOAP:aan keskittyvässä mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sillä WSDL kertoo kyllä miten palvelua käytetään, mutta ei tarjoa ratkaisuja siihen mitä tapahtuu kun palvelua käytetään. Palvelua käyttävä ihminen lukee sen luonnollisella kielellä palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa jättää ihminen välistä. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia.
+Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mitä kaikkea palvelu pystyy tekemään.
+Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsessään ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mitä ne pystyvät tekemään.
+
+UDDI:n avulla kyselyt palauttavat usein vääriä palveluita,
+%viite Composition-oriented Service Discovery
+%Antonio Brogi, Sara Corfini, Razvan Popescu
+%Department of Computer Science
+%University of Pisa, Italy
+varsinkin kun rekisterien määrä kasvaa
+
+
+Erilaisia lähestymistapoja asian korjaamiseksi on esitetty, ja ratkaisujen esittely löytyy kohdata "Semanttinen palveluiden haku".
+
+
+%viite johonkin OWL settiin vaikka
 
 %A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI 
 %löytyy hyvää kamaa tähän esimerkiksi.
 
 
+\subsection{Semanttinen palveluiden haku}
+
+Palveluiden haku semanttisen webin saralla on perustavanlaatuinen tutkimusongelma. Semanttiset palvelut ovat visio arkkitehtuurista, jossa käyttäjällä on mahdollisuus automaattisesti yhdistää tarvittavia palveluita toteuttaakseen jokin tietty tehtävä tai tehtäväkokonaisuus. Olkoon käyttäjä "Simo". Simo haluaa löytää halvan lennon määränpäähänsä josta haluaa jatkaa hotellille joka tyydyttää Simon tarpeet hinnaltaan ja sijainniltaan. Semanttisten web palveluiden visiona on yhdellä pyynnöllä yhdistellä palveluita, jotka antavat Simolle vastauksen haluttuun ongelmaan. Simo voisi hyvinkin olla myös muu e-Business palvelu, joka yhdistelee palveluita saadakseen ratkaisuja ongelmiinsa.
+
+WSDL, SOAP ja UDDI standardit kärsivät semanttisen esityksen puutteesta, joten toive alan standardeilla koostettujen palveluiden automaattisesta integroimisesta jää täyttymättä. Jotta palveluista saataisiin kehitettyä semanttisia, on haasteita joihin täytyy löytää ratkaisu. Ensinnäkin kun palveluiden määrä lisääntyy merkittävästi, ja oikeiden palveluiden löytäminen on tärkeää, palvelunhaun tehokkuus ja tarkkuus tulee olla merkittävästi parempi kuin nyt. Toisekseen, kun palvelu saadaan tehokkaasti löydettyä, pitäisi pystyä automaattisesti linkittämään se kyseistä palvelua kutsuvaan palveluun. Molemmat näistä haasteista ovat riippuvaisia palveluntarjoajan kyvystä kuvata tarjoamansa palveluiden toiminnot sekä palveluita kutsuvien osapuolten kyvystä määritellä yksikäsitteisesti ja koneluettavasti tarpeensa palvelulta.
+
+Eräs tapa lähestyä näitä haasteita, eli perinteisen mallin semanttisuuden lisäämistä on lisätä UDDI:in laajennus %viite A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI 
 
 
+%viite Semantic Web Services Discovery Regarded as a Constraint Satisfaction Problem
+%Salima Benbernou, Etienne Canaud, Simone Pimont
 
 \section{Yhteenveto}
 

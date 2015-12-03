@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.10.19)  19 OCT 2015 20:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.25)  3 DEC 2015 18:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **aine.tex
 (./aine.tex
-LaTeX2e <2014/05/01>
-Babel <3.9l> and hyphenation patterns for 29 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./tktltiki.cls
 Document Class: tktltiki 2007/09/12 v1.1 Dokumenttiluokka TiKi-kurssia varten
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -32,12 +32,12 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin9.def
-File: latin9.def 2014/04/30 v1.2b Input encoding file
+File: latin9.def 2008/03/30 v1.1d Input encoding file
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
@@ -47,13 +47,13 @@ File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/09/25 3.9l The Babel package
+Package: babel 2013/12/03 3.9h The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-finnish/finnish.ldf
 Language: finnish 2007/10/20 v1.3q Finnish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/09/25 3.9l Babel common definitions
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count87
 \U@D=\dimen103
 )
@@ -63,7 +63,7 @@ Package babel Info: Making " an active character on input line 89.
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
@@ -100,7 +100,7 @@ Package geometry Warning: Over-specification in `h'-direction.
 \@abstract=\box26
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -259,7 +259,18 @@ e
 ))
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./aine.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./aine.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 7.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 7.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+))
 \tf@toc=\write3
 \openout3 = `aine.toc'.
 
@@ -267,49 +278,47 @@ e
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 47.
- [1]
-
-LaTeX Warning: Citation `1' on page 2 undefined on input line 53.
-
-[2]
-Overfull \hbox (13.96735pt too wide) in paragraph at lines 94--94
+ [1] [2]
+Overfull \hbox (13.96735pt too wide) in paragraph at lines 86--86
 []\T1/cmr/bx/n/17.28 Palveluorientoituneiden ark-ki-teh-tuu-rien hait-ta-puo-
  []
 
+[3] [4] [5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 117.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 117.
 
-LaTeX Warning: Citation `UDDI' undefined on input line 107.
+Overfull \hbox (2.3496pt too wide) in paragraph at lines 117--118
+[]\T1/cmr/m/it/12 Keltaiset si-vut \T1/cmr/m/n/12 luo-kit-te-le-vat pal-ve-lut 
+stan-dar-doi-tu-jen tak-so-no-mioi-den mu-kaan.[]
+ []
 
-(./aine.bbl (./babelbst.tex (./finnbst.tex))
-
-LaTeX Warning: Empty `thebibliography' environment on input line 9.
-
-) [3] [4] [1] (./aine.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[6] [7] [1] (./aine.aux) ) 
 Here is how much of TeX's memory you used:
- 3041 strings out of 494409
- 41094 string characters out of 6164776
- 110617 words of memory out of 5000000
- 6245 multiletter control sequences out of 15000+600000
- 10328 words of font info for 24 fonts, out of 8000000 for 9000
- 372 hyphenation exceptions out of 8191
- 38i,5n,25p,867b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/toni/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/to
-ni/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/toni/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/toni/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecbx1440.600pk> </home/toni/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb>
-Output written on aine.pdf (7 pages, 74526 bytes).
+ 3005 strings out of 493304
+ 41058 string characters out of 6139871
+ 113186 words of memory out of 5000000
+ 6402 multiletter control sequences out of 15000+600000
+ 15440 words of font info for 40 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,8n,25p,1055b,240s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t
+1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fon
+ts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
+uper/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on aine.pdf (10 pages, 138701 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
