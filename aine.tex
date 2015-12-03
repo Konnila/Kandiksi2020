@@ -100,9 +100,31 @@ Erinäisiä lähestymistapoja yhdistää REST:iä traditionaaliseen malliin kuitenkin 
 
 \subsection{Erilaisia rekistereitä}
 
-UDDI kamaa tähän ja muita esimerkkejä
+Perinteisen mallin palvelut nojaavat yleensä erilaisiin rekistereihin.
+OASIS kehitti UDDI:n vuonna 2000 siltä ideapohjalta, että palvelua käyttävät tahot linkitettäisiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. Tällaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnön palvelurekisteriä vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. Tällaisessa maailmassa julkisesti ylläpidettävä UDDI-rekisteri olisi kriittisen tärkeä kaikille. UDDI ei kuitenkaan päätynyt niin yleiseen käyttöön kuin sen julkaisivat olisivat toivoneet ja sen kehittäminen loppui vuonna 2007 [https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html]. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja tärkeä osa perinteistä Web Service palvelunhakumallia.
+
+UDDI-rekisteri koostuu kolmesta osasta:
+
+\begin{itemize}
+
+\item \textit{Valkoiset sivut} sisältävät tietoa palveluntarjoajasta. Tähän sisältyy esimerkiksi julkaisijan/yrityksen nimi ja kuvaus, mahdollisesti monella kielellä, ja palvelu voi olla löydettävissä pelkästään tämän tiedon avulla. Valkoiset sivut saattavat sisältää myös palveluntarjoajan yhteystiedot kuten puhelinnumero ja osoite.
+
+\item \textit{Keltaiset sivut} luokittelevat palvelut standardoitujen taksonomioiden mukaan.\footnote{Standardoituja taksonomioita ovat esimerkiksi SIC (Standard Industrial Classification) ja NAICS (North American Industry Classification System)} Yhteen valkoiseen sivuun voi liittyä useampi keltainen sivu, eli kuvaukset useammalle palvelulle.
+
+\item \textit{Vihreät sivut} sisältävät teknistä tietoa miten palveluun pääsee käsiksi. Sisältävät siis palvelun osoitteen, parametrit ja viitteet vaadittuihin rajapintoihin tai protokolliin joilla palvelu toimii.
+
+\end{itemize}
 
 \subsection{Palveluiden haun ongelmat}
+
+Haasteeksi perinteisessä WSDL:n, rekisteriin ja SOAP:aan keskittyvässä mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sillä WSDL kertoo kyllä miten palvelua käytetään, mutta ei tarjoa ratkaisuja siihen mitä tapahtuu kun palvelua käytetään. Palvelua käyttävä ihminen lukee sen luonnollisella kielellä palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa jättää ihminen välistä. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Erilaisia lähestymistapoja asian korjaamiseksi on esitetty.
+
+%A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI 
+%löytyy hyvää kamaa tähän esimerkiksi.
+
+
+
+
 
 \section{Yhteenveto}
 
@@ -113,7 +135,6 @@ UDDI kamaa tähän ja muita esimerkkejä
 %
 
 
-\nocite{UDDI}
 \bibliographystyle{tktl}
 %\bibliography{lahteet.bib}
 
