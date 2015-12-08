@@ -99,14 +99,13 @@ Näin kaikki palvelut, jotka
  tukevat SOAP:ia voivat keskustella keskenään, eikä ole väliä miten palvelut ovat teknisesti toteutettu. Rekisterissä on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnön rekisteriin, jonka jälkeen rekisteri vastaa kutsujalle lähettämällä palan WSDL-määrittelystä. Tämän jälkeen, mikäli palautettiin oikeanlaista tietoa, asiakkaalla on kaikki
   tarpeellinen tieto linkittyäkseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnön palveluntarjoajalle, joka antaa edelleen WSDL-määritellyssä muodossa vastauksen asiakkaalle. Kaikki nämä pyynnöt palveluntarjoajan, rekisterin ja asiakkaan välillä ovat perinteisessä mallissa SOAP-muotoisia. Havainnollistus kuvassa 2.1. %[*lisää kuva perhana*]
 
-Tällainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myös muita tapoja keskustella palvelun ja asiakkaan välillä. Nykyään monet web-palvelut toteutetaan REST-tyyppisesti (citation needed). Ongelmaksi palvelun haun kannalta muodostuu se, ettei REST:ä ole standardoitu, eikä siis ole olemassa standardoitua tapaa miten palveluiden haku REST-tyyppisille rajapinnoilla toteutetaan. Normaalisti REST-tyyppisen palvelun haku perustuu sen URI:n. Esimerkiksi osoitteessa http://yhtio.com/api/kayttajat/ voisi listata kyseisen palvelun käyttäjät. On täysin palveluntarjoajan vastuulla, että asiakkaat löytävät kyseiset resurssit. Hyvässä tapauksessa resurssien metadatasta löytyy tietoa siitä mitä voidaan tehdä seuraavaksi tai mitä muita resursseja voidaan hakea. REST ei siis varsinaisesti ota kantaa miten palvelun haku on toteutettu, eikä se ole lähtökohtaisesti osa REST:iä.
+Tällainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myös muita tapoja keskustella palvelun ja asiakkaan välillä. Nykyään yhä useammat web-palvelut toteutetaan REST-tyyppisesti (citation needed). Ongelmaksi palvelun haun kannalta muodostuu se, ettei REST:ä ole standardoitu, eikä siis ole olemassa standardoitua tapaa miten palveluiden haku REST-tyyppisille rajapinnoilla toteutetaan. Normaalisti REST-tyyppisen palvelun haku perustuu sen URI:n. Esimerkiksi osoitteessa http://yhtio.com/api/kayttajat/ voisi listata kyseisen palvelun käyttäjät. On täysin palveluntarjoajan vastuulla, että asiakkaat löytävät kyseiset resurssit. Hyvässä tapauksessa resurssien metadatasta löytyy tietoa siitä mitä voidaan tehdä seuraavaksi tai mitä muita resursseja voidaan hakea. REST ei siis varsinaisesti ota kantaa miten palvelun haku on toteutettu.
 
-Erinäisiä lähestymistapoja yhdistää REST:iä traditionaaliseen malliin kuitenkin löytyy. Eräs ohjelmointi- ja palvelunkoostamistapa, jossa kaikki yksittäiset palvelut ovat täysin hajautettuja ja jotka keskustelevat keskenään RESTmäisesti, ilman keskinäisiä palvelumäärityksiä ja sopimuksia, on mikropalveluarkkitehtuuri. Mikropalveluarkkitehtuuri on nimitys, jonka puolestapuhuja esimerkiksi Martin Fowler on. Käytännössä mikropalvelut ovat SOA arkkitehtuurin mukaisia, mutta eräät kokivat SOA:n terminä liian laveaksi ja monimerkitykselliseksi. Mikropalveluihin ei oletuksena kuulu rekisteriä, joten nämä tarvitsevat oman tapansa linkittää palvelun kutsuja sekä palvelun tarjoaja. Tällaisia ratkaisuja voivat olla vaikkapa selainpuolen tai palvelinpuolen palvelun haku. Joka tapauksessa nämäkin ratkaisut päätyvät usein rekisterin käyttöön (esimerkiksi Netflix ja EUREKA viite). Ratkaisut loppuviimein ovat hyvin samanlaisia, erona on ettei REST palvelunhakua ole standardoitu ainakaan vielä samalla tavalla kuin Web Service maailmassa.
+Erinäisiä lähestymistapoja yhdistää REST:iä traditionaaliseen malliin kuitenkin löytyy. Eräs ohjelmointi- ja palvelunkoostamistapa, jossa kaikki yksittäiset palvelut ovat täysin hajautettuja ja jotka keskustelevat keskenään RESTmäisesti, ilman keskinäisiä palvelumäärityksiä ja sopimuksia, on mikropalveluarkkitehtuuri. Mikropalveluarkkitehtuuri on nimitys, jonka puolestapuhuja esimerkiksi Martin Fowler on. Käytännössä mikropalvelut ovat SOA arkkitehtuurin mukaisia, mutta eräät kokivat SOA:n terminä liian laveaksi ja monimerkitykselliseksi. Mikropalveluihin ei oletuksena kuulu rekisteriä, joten nämä tarvitsevat oman tapansa linkittää palvelun kutsuja sekä palvelun tarjoaja. Tällaisia ratkaisuja voivat olla vaikkapa selaimen tai palvelinpuolen palveluiden haku. Joka tapauksessa nämäkin ratkaisut päätyvät usein rekisterin käyttöön (esimerkiksi Netflix ja EUREKA viite). Ratkaisut loppuviimein ovat hyvin samanlaisia, erona on ettei REST-palvelunhakua ole standardoitu vielä samalla tavalla kuin Web Service maailmassa.
 
 \subsection{Erilaisia rekistereitä}
 
-Perinteisen mallin palvelut nojaavat yleensä erilaisiin rekistereihin.
-OASIS kehitti UDDI:n vuonna 2000 siltä ideapohjalta, että palvelua käyttävät tahot linkitettäisiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. Tällaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnön palvelurekisteriä vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. Tällaisessa maailmassa julkisesti ylläpidettävä UDDI-rekisteri olisi kriittisen tärkeä kaikille. UDDI ei kuitenkaan päätynyt niin yleiseen käyttöön kuin sen julkaisivat olisivat toivoneet ja sen kehittäminen loppui vuonna 2007 [https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html]. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja tärkeä osa perinteistä Web Service palvelunhakumallia.
+Perinteisen Web service mallin palvelut nojaavat yleensä erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 siltä ideapohjalta, että palvelua käyttävät tahot linkitettäisiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. Tällaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnön palvelurekisteriä vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. Tällaisessa maailmassa julkisesti ylläpidettävä UDDI-rekisteri olisi kriittisen tärkeä kaikille. UDDI ei kuitenkaan päätynyt niin yleiseen käyttöön kuin sen julkaisivat olisivat toivoneet ja sen kehittäminen loppui vuonna 2007 [https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html]. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja tärkeä osa perinteistä Web Service palvelunhakumallia.
 
 UDDI-rekisteri koostuu kolmesta osasta:
 
@@ -120,32 +119,93 @@ UDDI-rekisteri koostuu kolmesta osasta:
 
 \end{itemize}
 
-\subsection{Palveluiden haun ongelmat}
+\subsection{Palveluiden haun haasteet}
 
-Haasteeksi perinteisessä WSDL:n, rekisteriin ja SOAP:aan keskittyvässä mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sillä WSDL kertoo kyllä miten palvelua käytetään, mutta ei tarjoa ratkaisuja siihen mitä tapahtuu kun palvelua käytetään. Palvelua käyttävä ihminen lukee sen luonnollisella kielellä palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa jättää ihminen välistä. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia.
-Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mitä kaikkea palvelu pystyy tekemään.
-Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsessään ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mitä ne pystyvät tekemään.
+Web service -palveluhaun suurimpia ongelmia on, että se on kuin etsisi neulaa heinäsuovasta, varsinkin kun palveluiden määrä kasvaa. Oikean palvelun löytäminen käyttäjän antamien hakuehtojen mukaan on vieläkin perustavanlaatuinen tutkimusongelma SOC-maailmassa. 
+
+Useat tekijät haastavat palvelun haun ongelmaa entisestään:
+
+%heinäsuovasta = J. Garofalakis, Y. Panagis, E. Sakkopoulos, and
+%A. Tsakalidis. Web Service Discovery Mechanisms:
+%Looking for a Needle in a Haystack? In International
+%Workshop on Web Engineering, 2004.
+
+%SOC maailma Q. Li, A. Liu, H. Liu, B. Lin, L. Huang, and N. Gu.
+%Web services provision: solutions, challenges and
+%opportunities (invited paper). In ICUIMC ?09:
+%Proceedings of the 3rd International Conference on
+%Ubiquitous Information Management and
+
+\begin{itemize}
+
+\item Julkisten web palveluiden määrä kasvaa tasaisesti koko ajan, samalla kun pilvi- ja SaaS-palvelut ovat kasvattaneet suosiotaan. 
+
+\item Avainsana-perustainen palvelun haku on ongelmallinen kahdessakin mielessä. Palveluntarjoajat julkaisevat usein puutteellisia palvelukuvauksia jotka eivät sovellu avainsana-hakuun. Lisäksi nykypäivän monimutkaiset liiketoimintatarpeet ylipäätään vaikeuttavat asiakkaan hakusanavalintaa.
+
+\item Haku on syntaksiperustainen, joka johtaa semanttisuuden puutteeseen palvelun haussa.
+
+\item välinpitämättömyys ohjelman toiminnan kannalta vähemmän oleellisiin asioihin, kuten palvelun laatuun ja hintaan.
+
+\end{itemize}
+
+Perinteisen mallin syntaktisuuteen perustuva palvelun haku aiheuttaa ongelmia.
+Palvelua määritellessään julkaisijat sortuvat helposti XSD sekä WSDL-pohjaisiin antipatterneihin, jotka heikentävät palvelun haun tehokkuutta. Lähteessä [numero] mainitaan kahdeksan antipatternia ja ratkaisuja niihin:
+\begin{itemize}
+
+\item Puuttuvat tai virheelliset kommentit:
+
+\item Monitulkintaiset XML-elementtien nimet:
+
+\item Ylimääräiset port-type määritykset:
+
+\item Pienen koheesion omaavat operaatiot samassa port-typessä:
+
+\item Suljettu datamalli:
+
+\item Ylimääräiset datamallit:
+
+\item Turhan laaja tyyppikonteksti datatyypille:
+
+\item Piilevät virheviestit standardiviesteissä:
+
+\end{itemize}
+%viite antipatterneihin Improving Web Service descriptions for effective service discovery Juan Manuel Rodriguez, Marco Crasso, Alejandro Zunino, Marcelo Campo
+
+Tarve paranneltuihin palvelumäärityksiin on huomattu muualla tiedeyhteisössäkin.
+%tiedeyhteisö huomaus  D. Kuropka, P. Tr¨oger, S. Staab, and M. Weske.
+%Semantic Service Provisioning. Springer, Germany, 2008.
+Todella paljon tutkimusta on tehty SOC:in palvelun haun ongelmien vastaamiseksi.
+Ne voidaan jakaa neljään eri luokkaan.
+
+\begin{enumerate}
+
+\item Semanttiset lähestymistavat:
+
+\item Informaation haku -lähestymistavat:
+
+\item Data mining -lähestymistavat:
+
+\item Linkittämiseen liittyvät lähestymistavat:
+
+\end{enumerate}
+
+
+Haasteeksi perinteisessä WSDL:n, rekisteriin ja SOAP:aan keskittyvässä mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sillä WSDL kertoo kyllä miten palvelua käytetään, mutta ei tarjoa ratkaisuja siihen mitä tapahtuu kun palvelua käytetään. Palvelua käyttävä ihminen lukee sen luonnollisella kielellä palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa jättää ihminen välistä. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mitä kaikkea palvelu pystyy tekemään. Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsessään ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mitä ne pystyvät tekemään.
 
 UDDI:n avulla kyselyt palauttavat usein vääriä palveluita,
 %viite Composition-oriented Service Discovery
 %Antonio Brogi, Sara Corfini, Razvan Popescu
 %Department of Computer Science
 %University of Pisa, Italy
-varsinkin kun rekisterien määrä kasvaa
+varsinkin kun palveluiden määrä rekisterissä kasvaa.
 
 
-Erilaisia lähestymistapoja asian korjaamiseksi on esitetty, ja ratkaisujen esittely löytyy kohdata "Semanttinen palveluiden haku".
-
-
+Erilaisia lähestymistapoja asian korjaamiseksi on esitetty. Esittelyt löytyvät kohdasta "Semanttinen palveluiden haku".
 %viite johonkin OWL settiin vaikka
-
-%A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI 
-%löytyy hyvää kamaa tähän esimerkiksi.
-
 
 \subsection{Semanttinen palveluiden haku}
 
-Palveluiden haku semanttisen webin saralla on perustavanlaatuinen tutkimusongelma. Semanttiset palvelut ovat visio arkkitehtuurista, jossa käyttäjällä on mahdollisuus automaattisesti yhdistää tarvittavia palveluita toteuttaakseen jokin tietty tehtävä tai tehtäväkokonaisuus. Olkoon käyttäjä "Simo". Simo haluaa löytää halvan lennon määränpäähänsä josta haluaa jatkaa hotellille joka tyydyttää Simon tarpeet hinnaltaan ja sijainniltaan. Semanttisten web palveluiden visiona on yhdellä pyynnöllä yhdistellä palveluita, jotka antavat Simolle vastauksen haluttuun ongelmaan. Simo voisi hyvinkin olla myös muu e-Business palvelu, joka yhdistelee palveluita saadakseen ratkaisuja ongelmiinsa.
+Palveluiden haku myös semanttisen webin saralla on perustavanlaatuinen tutkimusongelma. Semanttiset palvelut ovat visio arkkitehtuurista, jossa käyttäjällä on mahdollisuus automaattisesti yhdistää tarvittavia palveluita toteuttaakseen jokin tietty tehtävä tai tehtäväkokonaisuus. Olkoon käyttäjä "Simo". Simo haluaa löytää halvan lennon määränpäähänsä josta haluaa jatkaa hotellille joka tyydyttää Simon tarpeet hinnaltaan ja sijainniltaan. Semanttisten web palveluiden visiona on yhdellä pyynnöllä yhdistellä palveluita, jotka antavat Simolle vastauksen haluttuun ongelmaan. Simo voisi hyvinkin olla myös muu e-Business palvelu, joka yhdistelee palveluita saadakseen ratkaisuja ongelmiinsa.
 
 WSDL, SOAP ja UDDI standardit kärsivät semanttisen esityksen puutteesta, joten toive alan standardeilla koostettujen palveluiden automaattisesta integroimisesta jää täyttymättä. Jotta palveluista saataisiin kehitettyä semanttisia, on haasteita joihin täytyy löytää ratkaisu. Ensinnäkin kun palveluiden määrä lisääntyy merkittävästi, ja oikeiden palveluiden löytäminen on tärkeää, palvelunhaun tehokkuus ja tarkkuus tulee olla merkittävästi parempi kuin nyt. Toisekseen, kun palvelu saadaan tehokkaasti löydettyä, pitäisi pystyä automaattisesti linkittämään se kyseistä palvelua kutsuvaan palveluun. Molemmat näistä haasteista ovat riippuvaisia palveluntarjoajan kyvystä kuvata tarjoamansa palveluiden toiminnot sekä palveluita kutsuvien osapuolten kyvystä määritellä yksikäsitteisesti ja koneluettavasti tarpeensa palvelulta.
 
