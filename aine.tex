@@ -103,7 +103,30 @@ T‰llainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja
 
 Erin‰isi‰ l‰hestymistapoja yhdist‰‰ REST:i‰ traditionaaliseen malliin kuitenkin lˆytyy. Er‰s ohjelmointi- ja palvelunkoostamistapa, jossa kaikki yksitt‰iset palvelut ovat t‰ysin hajautettuja ja jotka keskustelevat kesken‰‰n RESTm‰isesti, ilman keskin‰isi‰ palvelum‰‰rityksi‰ ja sopimuksia, on mikropalveluarkkitehtuuri. Mikropalveluarkkitehtuuri on nimitys, jonka puolestapuhuja esimerkiksi Martin Fowler on. K‰yt‰nnˆss‰ mikropalvelut ovat SOA arkkitehtuurin mukaisia, mutta er‰‰t kokivat SOA:n termin‰ liian laveaksi ja monimerkitykselliseksi. Mikropalveluihin ei oletuksena kuulu rekisteri‰, joten n‰m‰ tarvitsevat oman tapansa linkitt‰‰ palvelun kutsuja sek‰ palvelun tarjoaja. T‰llaisia ratkaisuja voivat olla vaikkapa selaimen tai palvelinpuolen palveluiden haku. Joka tapauksessa n‰m‰kin ratkaisut p‰‰tyv‰t usein rekisterin k‰yttˆˆn (esimerkiksi Netflix ja EUREKA viite). Ratkaisut loppuviimein ovat hyvin samanlaisia, erona on ettei REST-palvelunhakua ole standardoitu viel‰ samalla tavalla kuin Web Service maailmassa.
 
-\subsection{Erilaisia rekistereit‰}
+\subsection{WSDL}
+
+%tsekkaa vaikka Improving Web Service descriptions for effective service discovery
+
+WSDL on kieli jonka avulla kehitt‰j‰t kuvaavat kaksi t‰rkeint‰ osaa palvelusta: palvelun toiminnallisuuden ja miten sit‰ kutsutaan, eli miten siihen p‰‰see k‰siksi. WSDL 1.1 m‰‰rittelyn \footnote{WSDL 1.1 www.w3.org/TR/wsdl} mukaan toiminnallinen kuvaus paljastaa palvelurajapinnan, joka tarjotaan palvelun kutsujalle. Myˆhempi osa m‰‰ritt‰‰ teknologiaan liittyv‰t osa-alueet, kuten viestint‰protokollan sek‰ verkko-osoitteen. Palvelua hakevat osapuolet tarvitsevat toiminnallisen m‰‰rityksen lˆyt‰‰kseen kolmannen osapuolen palvelun joka sopii k‰ytt‰j‰n tarpeisiin ja k‰ytt‰j‰ hyˆdynt‰‰ teknologiallista m‰‰rityst‰ viesti‰kseen palvelun kanssa.
+
+WSDL dokumentti m‰‰rittelee palvelun toiminnallisuuden joukkona porttityyppej‰ (\textit{port-types}), jotka asettava eri operaatiot joiden kutsuminen perustuu viestien vaihtoon. Viestit t‰ss‰ yhteydess‰ tarkoittavat operaatioiden syˆttˆ- ja ulostuloparametreja niit‰ sen enemp‰‰ erottelematta. WSDL myˆs tarjoaa palvelun tarjoajalle mahdollisuuden m‰‰ritell‰ virheviestej‰ (\textit{faults}), joita palautetaan palvelun kutsujalle. WSDL elementtien, kuten porttityyppien, virheviestim‰‰ritelmien ja operaatioiden pit‰‰ olla yksik‰sitteisesti nimetty.
+Vapaaehtoista on, lis‰t‰‰nkˆ elementeille dokumentaatiota kommentteina. Dokumentaation lis‰‰minen WSDL-dokumenttiin on kuitenkin suositeltua. Viestit muodostuvat osista, jotka kuljettavat tietoa palvelun tarjoajan ja palvelujen k‰ytt‰jien v‰lill‰ sek‰ toisin p‰in. Tyypillisesti jokainen viesti on hierarkkiselta sis‰llˆlt‰‰n m‰‰riteltyjen datatyyppien mukainen. N‰m‰ datatyypit on m‰‰ritelty erikseen skeemassa. XSD-kieli (\textit{XML Schema Definition}) on kehitetty kuvaamaan viestin osien hierarkiaa. XSD tarjoaa konstruktorit m‰‰ritt‰m‰‰n yksinkertaiset tyypit (\textit{simple types}) esimerkiksi integer, string ja totuusarvo. XSD tarjoaa myˆs tyˆkalut rajoitusten m‰‰ritt‰miseen, kapseloimiseen sek‰ lis‰osa mekanismien kehitt‰miseen monimutkaisempia elementtej‰ varten. Kuvassa 1 on esitelty tarvittava XML-muotoinen esitys monimutkaisen tyypin (\textit{complex type}) - t‰ss‰ "CountryCodes" - toteutukseen.
+
+Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun haun kannalta oleellista, ett‰ WSDL-dokumentin elementit on nimetty ja kommentoitu kuvaavasti. Syntaktiset rekisterit esik‰sittelev‰t WSDL-dokumentit tyypillisesti siten, ett‰ rekisterit ker‰‰v‰t joukon termej‰. Termit valitaan  porttityyppi-elementtien, sis‰- ja ulostuloviestien sek‰ operaatioiden nimist‰ ja kommenteista. Kun termit on ker‰tty dokumentista, syntaktiset rekisterit erottelevat nimiyhdistelm‰t: "CountryCodes" erotetaan ja j‰‰ "Country" ja "Codes". Edelleen poistetaan ei-relevantit termit kuten "the", "for" ja vastaavat. Mahdollisesti poistetaan myˆs, ylim‰‰r‰iset p‰‰tteet jotta saadaan termin juuri. T‰t‰ on kutsuttu juuristamiseksi (\textit{stemming}). (viite query by example setti). Vastaavasti pyynnˆt esik‰sitell‰‰n edell‰mainitulla tavalla, jonka j‰lkeen termej‰ vertaillaan tarjolla olevien palvelujen termej‰ vastaan. Jos julkaisija ei osaa m‰‰ritell‰ WSDL-dokumenttiaan k‰ytt‰en j‰rkevi‰ paradigmoja, kuten selkeit‰ nime‰misk‰yt‰ntˆj‰, on vertailu tarjolla oleviin palveluihin hyvin vaikea teht‰v‰.
+
+%syntaktiset jutskal‰hteet jotka on alkuper‰sess‰ l‰hteess‰:
+%M. Crasso, A. Zunino, M. Campo, Easy Web Service discovery: A Query-by-Example %approach, Science of Computer Programming 71 (2) (2008)
+%144?164.
+
+%W. Jian, W. Zhaohui, Similarity-based Web Service matchmaking, in: IEEE %International Conference on Services Computing, vol. 1, IEEE Computer
+%Society, Orlando, Florida, USA, 2005, pp. 287?294
+
+%lis‰‰ kuva kansiosta
+%J.M. Rodriguez et al. / Science of Computer Programming 75 (2010) 1001?1021
+
+
+
+\subsection{UDDI}
 
 Perinteisen Web service mallin palvelut nojaavat yleens‰ erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 silt‰ ideapohjalta, ett‰ palvelua k‰ytt‰v‰t tahot linkitett‰isiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. T‰llaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnˆn palvelurekisteri‰ vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. T‰llaisessa maailmassa julkisesti yll‰pidett‰v‰ UDDI-rekisteri olisi kriittisen t‰rke‰ kaikille. UDDI ei kuitenkaan p‰‰tynyt niin yleiseen k‰yttˆˆn kuin sen julkaisivat olisivat toivoneet ja sen kehitt‰minen loppui vuonna 2007 [https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html]. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja t‰rke‰ osa perinteist‰ Web Service palvelunhakumallia.
 
@@ -152,7 +175,7 @@ Perinteisen mallin syntaktisuuteen perustuva palvelun haku aiheuttaa ongelmia.
 Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin antipatterneihin, jotka heikent‰v‰t palvelun haun tehokkuutta. L‰hteess‰ [numero] mainitaan kahdeksan antipatternia ja ratkaisuja niihin:
 \begin{itemize}
 
-\item Puuttuvat tai virheelliset kommentit:
+\item \textit{Puuttuvat tai virheelliset kommentit}: Puute esiintyy dokumentaatiossa. Ongelma esiintyy silloin, kun WSDL-dokumentti ei sis‰ll‰ kommentteja, tai ne ovat muodoltaan tai esitykselt‰‰n huonoja. Kommenttien tulisi olla itsens‰selitt‰vi‰ ja sijaita oikeassa kohtaa WSDL-dokumenttia.
 
 \item Monitulkintaiset XML-elementtien nimet:
 
@@ -170,6 +193,8 @@ Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin 
 
 \end{itemize}
 %viite antipatterneihin Improving Web Service descriptions for effective service discovery Juan Manuel Rodriguez, Marco Crasso, Alejandro Zunino, Marcelo Campo
+
+Koostettu kuva edellisist‰ t‰m‰n tutkielman liitteen‰.
 
 Tarve paranneltuihin palvelum‰‰rityksiin on huomattu muualla tiedeyhteisˆss‰kin.
 %tiedeyhteisˆ huomaus  D. Kuropka, P. Tr®oger, S. Staab, and M. Weske.
