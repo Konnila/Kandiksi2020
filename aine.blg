@@ -6,7 +6,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: lahteet.bib
 You've used 12 entries,
             3861 wiz_defined-function locations,
-            822 strings with 8451 characters,
+            818 strings with 8446 characters,
 and the built_in function-call counts, 6454 in all, are:
 = -- 642
 > -- 313
