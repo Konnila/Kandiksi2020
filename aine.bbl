@@ -1,9 +1,84 @@
-\begin{thebibliography}{}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{MBM{\etalchar{+}}07}
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{{\tt #1}}\fi
 \expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
 \input babelbst.tex
 \newcommand{\Capitalize}[1]{\uppercase{#1}}
 \newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[2]{uddiExtension}
+Akkiraju, R., Goodwin, R., Doshi, P. \bbland{} Roeder, S., A method for
+  semantically enhancing the service discovery capabilities of uddi.
+\newblock  {\em IIWeb}, 2003, \bblpages{} 87--92.
+
+\bibitem[8]{AbuJarour}
+AbuJarour, M. \bbland{} Naumann, F., Dynamic tags for dynamic data web
+  services.
+\newblock  {\em Proceedings of the 5th International Workshop on Enhanced Web
+  Service Technologies}, WEWST '10, New York, NY, USA, 2010, ACM, \bblpages{}
+  3--9, \urlprefix\url{http://doi.acm.org/10.1145/1883133.1883135}.
+
+\bibitem[3]{brogi2005composition}
+Brogi, A., Corfini, S. \bbland{} Popescu, R., Composition-oriented service
+  discovery.
+\newblock  {\em Software Composition}. Springer, 2005, \bblpages{} 15--30.
+
+\bibitem[5]{garofalakis2004web}
+Garofalakis, J., Panagis, Y., Sakkopoulos, E. \bbland{} Tsakalidis, A., Web
+  service discovery mechanisms: Looking for a needle in a haystack.
+\newblock  {\em International Workshop on Web Engineering}, \bblvolume{}~38,
+  2004.
+
+\bibitem[4]{kuropka2008semantic}
+Kuropka, D., Tr{\"o}ger, P., Staab, S. \bbland{} Weske, M., {\em Semantic
+  service provisioning}.
+\newblock Springer Science \& Business Media, 2008.
+
+\bibitem[6]{li2009web}
+Li, Q., Liu, A., Liu, H., Lin, B., Huang, L. \bbland{} Gu, N., Web services
+  provision: Solutions, challenges and opportunities.
+\newblock  {\em Proceedings of the 3rd International Conference on Ubiquitous
+  Information Management and Communication}. ACM, 2009, \bblpages{} 80--87.
+
+\bibitem[12]{bringingSemantics}
+Martin, D., Burstein, M., McDermott, D., McIlraith, S., Paolucci, M., Sycara,
+  K., McGuinness, D., Sirin, E. \bbland{} Srinivasan, N., Bringing semantics to
+  web services with owl-s.
+\newblock {\em World Wide Web}, 10,3(2007), \bblpages{} 243--277.
+\newblock \urlprefix\url{http://dx.doi.org/10.1007/s11280-007-0033-x}.
+
+\bibitem[9]{ma2007probabilistic}
+Ma, J., Cao, J. \bbland{} Zhang, Y., A probabilistic semantic approach for
+  discovering web services.
+\newblock  {\em Proceedings of the 16th international conference on World Wide
+  Web}. ACM, 2007, \bblpages{} 1221--1222.
+
+\bibitem[1]{SoC}
+Papazoglou, M., Service-oriented computing: concepts, characteristics and
+  directions.
+\newblock  {\em Web Information Systems Engineering, 2003. WISE 2003.
+  Proceedings of the Fourth International Conference on}, Dec 2003, \bblpages{}
+  3--12.
+
+\bibitem[7]{Rodriguez20101001}
+Rodriguez, J.~M., Crasso, M., Zunino, A. \bbland{} Campo, M., Improving web
+  service descriptions for effective service discovery.
+\newblock {\em Science of Computer Programming}, 75,11(2010), \bblpages{} 1001
+  -- 1021.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0167642310000134}.
+\newblock Special Section on the Programming Languages Track at the 23rd
+  \{ACM\} Symposium on Applied ComputingACM \{SAC\} 08.
+
+\bibitem[11]{rao2005survey}
+Rao, J. \bbland{} Su, X., A survey of automated web service composition
+  methods.
+\newblock \capitalize\bblin{} {\em Semantic Web Services and Web Process
+  Composition}, Springer, 2005, \bblpages{} 43--54.
+
+\bibitem[10]{tsang2014foundations}
+Tsang, E., {\em Foundations of Constraint Satisfaction: The Classic Text}.
+\newblock BoD--Books on Demand, 2014.
 
 \end{thebibliography}

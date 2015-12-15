@@ -7,6 +7,13 @@
 %\singlespacing
 \onehalfspacing
 
+\def\ignorecitefornumbering#1{%
+     \begingroup
+         \@fileswfalse
+         #1%                     % do \cite comand
+    \endgroup
+}
+
 \title{Palveluiden haku palveluorientoituneessa tietojenk‰sittelyss‰}
 \author{Toni Kˆnnil‰}
 \date{\today}
@@ -32,7 +39,7 @@ I.7.m [Document and text processing]}}
 
 \section{Abstrakti}
 
-Service-oriented computing (SOC) on ajatusmalli, jossa yhden monoliittisen ohjelman sijaan keskityt‰‰n kesken‰‰n kommunikoiviin palveluihin. SOC nojaakin hyvin vahvasti palveluorientoituneeseen arkkitehtuurimalliin (myˆhemmin SOA), joka ajaa t‰t‰ ideaa. SOA ei kuitenkaan tarjoa itsess‰‰n vastauksia siihen miten turvallisuus, palveluiden koordinointi ja ohjelman muu arkkitehtuuri on rakennettu.
+Service-oriented computing (SOC) on ajatusmalli, jossa yhden monoliittisen ohjelman sijaan keskityt‰‰n kesken‰‰n kommunikoiviin palveluihin. SOC nojaakin hyvin vahvasti palveluorientoituneeseen arkkitehtuurimalliin (myˆhemmin SOA), joka ajaa t‰t‰ ideaa\cite{SoC}. SOA ei kuitenkaan tarjoa itsess‰‰n vastauksia siihen miten turvallisuus, palveluiden koordinointi ja ohjelman muu arkkitehtuuri on rakennettu.
 
 T‰ss‰ aineessa keskityt‰‰n palveluorientoituneiden arkkitehtuureiden yhteisiin piirteisiin ja erityisesti palveluidenhakuun (\textit{service discovery}), ja siihen liittyen, palveluiden l‰pin‰kyvyyteen (\textit{location transparency}).
 
@@ -144,20 +151,9 @@ UDDI-rekisteri koostuu kolmesta osasta:
 
 \subsection{Palveluiden haun haasteet}
 
-Web service -palveluhaun suurimpia ongelmia on, ett‰ se on kuin etsisi neulaa hein‰suovasta, varsinkin kun palveluiden m‰‰r‰ kasvaa. Oikean palvelun lˆyt‰minen k‰ytt‰j‰n antamien hakuehtojen mukaan on viel‰kin perustavanlaatuinen tutkimusongelma SOC-maailmassa. 
+Web service -palveluhaun suurimpia ongelmia on, ett‰ se on kuin etsisi neulaa hein‰suovasta\cite{garofalakis2004web}, varsinkin kun palveluiden m‰‰r‰ kasvaa. Oikean palvelun lˆyt‰minen k‰ytt‰j‰n antamien hakuehtojen mukaan on viel‰kin perustavanlaatuinen tutkimusongelma SOC-maailmassa\cite{li2009web}. 
 
 Useat tekij‰t haastavat palvelun haun ongelmaa entisest‰‰n:
-
-%hein‰suovasta = J. Garofalakis, Y. Panagis, E. Sakkopoulos, and
-%A. Tsakalidis. Web Service Discovery Mechanisms:
-%Looking for a Needle in a Haystack? In International
-%Workshop on Web Engineering, 2004.
-
-%SOC maailma Q. Li, A. Liu, H. Liu, B. Lin, L. Huang, and N. Gu.
-%Web services provision: solutions, challenges and
-%opportunities (invited paper). In ICUIMC ?09:
-%Proceedings of the 3rd International Conference on
-%Ubiquitous Information Management and
 
 \begin{itemize}
 
@@ -167,12 +163,12 @@ Useat tekij‰t haastavat palvelun haun ongelmaa entisest‰‰n:
 
 \item Haku on syntaksiperustainen, joka johtaa semanttisuuden puutteeseen palvelun haussa.
 
-\item v‰linpit‰m‰ttˆmyys ohjelman toiminnan kannalta v‰hemm‰n oleellisiin asioihin, kuten palvelun laatuun ja hintaan.
+\item palvelun tarjoajan v‰linpit‰m‰ttˆmyys ohjelman toiminnan kannalta v‰hemm‰n oleellisiin asioihin, kuten palvelun laatuun ja hintaan.
 
 \end{itemize}
 
-Perinteisen mallin syntaktisuuteen perustuva palvelun haku aiheuttaa ongelmia.
-Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin antipatterneihin, jotka heikent‰v‰t palvelun haun tehokkuutta. L‰hteess‰ [numero] mainitaan kahdeksan antipatternia ja ratkaisuja niihin:
+Perinteisen mallin syntaktisuuteen perustuva palvelun haku aiheuttaa helposti ongelmia.
+Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin puutteisiin m‰‰rittelyss‰, jotka heikent‰v‰t palvelun haun tehokkuutta. L‰hteess‰\cite{Rodriguez20101001} mainitaan kahdeksan puutteellista m‰‰rittelytyyli‰ ja ratkaisuja niihin:
 \begin{itemize}
 
 \item \textit{Puuttuvat tai virheelliset kommentit}: Puute esiintyy dokumentaatiossa. Ongelma esiintyy silloin, kun WSDL-dokumentti ei sis‰ll‰ kommentteja, tai ne ovat muodoltaan tai esitykselt‰‰n huonoja. Kommenttien tulisi olla itsens‰selitt‰vi‰ ja sijaita oikeassa kohtaa WSDL-dokumenttia.
@@ -196,61 +192,53 @@ Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin 
 
 Koostettu kuva edellisist‰ t‰m‰n tutkielman liitteen‰.
 
-Tarve paranneltuihin palvelum‰‰rityksiin on huomattu muualla tiedeyhteisˆss‰kin.
-%tiedeyhteisˆ huomaus  D. Kuropka, P. Tr®oger, S. Staab, and M. Weske.
-%Semantic Service Provisioning. Springer, Germany, 2008.
-Todella paljon tutkimusta on tehty SOC:in palvelun haun ongelmien vastaamiseksi.
-Ne voidaan jakaa nelj‰‰n eri luokkaan.
+Tarve paranneltuihin palvelum‰‰rityksiin on huomattu muualla tiedeyhteisˆss‰kin\cite{kuropka2008semantic}. Todella paljon tutkimusta on tehty SOC:in palvelun haun ongelmien vastaamiseksi.
+Ne voidaan jakaa nelj‰‰n eri luokkaan\cite{AbuJarour}.
 
 \begin{enumerate}
+%Linking approaches
+%: These approaches follow an in-
+%tegration approach to perform web service discovery.
+%Typically, a set of web services that collectively satisfy
+%a service consumer's need is presented to the consumer.
+%Service composition is then used to consume these web
+%services [18].
+\item \textbf{Semanttiset l‰hestymistavat}: Semanttisen palveluhaun mallissa kyse on yksinkertaisuudessaan palvelujen vertailusta. Semanttiset l‰hestymistavat pyrkiv‰tkin lis‰‰m‰‰n vertailun tehoa, yleens‰ rikastuttamalla palvelukuvauksia jollakin ontologialla, esimerkiksi OWL-S. Ontologialla rikastetut kuvaukset tuovat lis‰‰ ilmaisua ja parantavat vertailua k‰ytt‰j‰n tarpeen ja tarjolla olevien palvelujen v‰lill‰.
 
-\item Semanttiset l‰hestymistavat:
+\item \textbf{Informaation haku -l‰hestymistavat}: N‰m‰ l‰hestymistavat tutkivat semanttista suhdetta palvelua kutsuvan osapuolen pyyntˆjen v‰lill‰ sek‰ palvelun tarjoajan m‰‰ritt‰mien termien v‰lill‰\cite{ma2007probabilistic}.
 
-\item Informaation haku -l‰hestymistavat:
+\item \textbf{Data mining -l‰hestymistavat}: N‰m‰ l‰hestymistavat esitt‰v‰t palvelun haun ongelman nk. "Constraint Satisfaction"-ongelmana\cite{tsang2014foundations} (\textit{CSP}). Tehty pyyntˆ verrataan joukkoon saatavilla olevia palveluita ja reitinhakualgoritmeilla sek‰ klusterointimetodeilla pyrit‰‰n ratkaisemaan CSP. Palveluiden suhdetta palveluiden v‰lill‰ k‰ytet‰‰n siis parantamaan k‰ytt‰j‰lle tarjottujen palveluiden tarkkuutta.
 
-\item Data mining -l‰hestymistavat:
-
-\item Linkitt‰miseen liittyv‰t l‰hestymistavat:
+\item \textbf{Linkitt‰miseen liittyv‰t l‰hestymistavat}: Linkitt‰miseen liittyville l‰hestymistavoille tyypillist‰ on, ett‰ niiss‰ pyrit‰‰n yhdist‰m‰‰n asiakkaan tarpeet tyydytt‰v‰ palvelu yhdeksi kokonaisuudeksi useista eri palveluista\cite{rao2005survey}.
 
 \end{enumerate}
 
+Haasteeksi perinteisess‰ WSDL:n, rekisteriin ja SOAP:aan keskittyv‰ss‰ mallissa on tullut semanttisuuden puute\cite{bringingSemantics}, sill‰ WSDL kertoo kyll‰ miten palvelua k‰ytet‰‰n, mutta ei tarjoa ratkaisuja siihen mit‰ tapahtuu kun palvelua k‰ytet‰‰n. Palvelua k‰ytt‰v‰ ihminen lukee sen luonnollisella kielell‰ palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa j‰tt‰‰ ihminen v‰list‰. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mit‰ kaikkea palvelu pystyy tekem‰‰n. Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsess‰‰n ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mit‰ ne pystyv‰t tekem‰‰n.
 
-Haasteeksi perinteisess‰ WSDL:n, rekisteriin ja SOAP:aan keskittyv‰ss‰ mallissa on tullut semanttisuuden puute [viite Bringing Semantics to Web Services with OWL-S + A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI], sill‰ WSDL kertoo kyll‰ miten palvelua k‰ytet‰‰n, mutta ei tarjoa ratkaisuja siihen mit‰ tapahtuu kun palvelua k‰ytet‰‰n. Palvelua k‰ytt‰v‰ ihminen lukee sen luonnollisella kielell‰ palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa j‰tt‰‰ ihminen v‰list‰. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mit‰ kaikkea palvelu pystyy tekem‰‰n. Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsess‰‰n ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mit‰ ne pystyv‰t tekem‰‰n.
-
-UDDI:n avulla kyselyt palauttavat usein v‰‰ri‰ palveluita,
-%viite Composition-oriented Service Discovery
-%Antonio Brogi, Sara Corfini, Razvan Popescu
-%Department of Computer Science
-%University of Pisa, Italy
-varsinkin kun palveluiden m‰‰r‰ rekisteriss‰ kasvaa.
+UDDI:n avulla kyselyt palauttavat usein v‰‰ri‰ palveluita\cite{brogi2005composition}, varsinkin kun palveluiden m‰‰r‰ rekisteriss‰ kasvaa.
 
 
 Erilaisia l‰hestymistapoja asian korjaamiseksi on esitetty. Esittelyt lˆytyv‰t kohdasta "Semanttinen palveluiden haku".
-%viite johonkin OWL settiin vaikka
 
 \subsection{Semanttinen palveluiden haku}
 
 Palveluiden haku myˆs semanttisen webin saralla on perustavanlaatuinen tutkimusongelma. Semanttiset palvelut ovat visio arkkitehtuurista, jossa k‰ytt‰j‰ll‰ on mahdollisuus automaattisesti yhdist‰‰ tarvittavia palveluita toteuttaakseen jokin tietty teht‰v‰ tai teht‰v‰kokonaisuus. Olkoon k‰ytt‰j‰ "Simo". Simo haluaa lˆyt‰‰ halvan lennon m‰‰r‰np‰‰h‰ns‰ josta haluaa jatkaa hotellille joka tyydytt‰‰ Simon tarpeet hinnaltaan ja sijainniltaan. Semanttisten web palveluiden visiona on yhdell‰ pyynnˆll‰ yhdistell‰ palveluita, jotka antavat Simolle vastauksen haluttuun ongelmaan. Simo voisi hyvinkin olla myˆs muu e-Business palvelu, joka yhdistelee palveluita saadakseen ratkaisuja ongelmiinsa.
 
-WSDL, SOAP ja UDDI standardit k‰rsiv‰t semanttisen esityksen puutteesta, joten toive alan standardeilla koostettujen palveluiden automaattisesta integroimisesta j‰‰ t‰yttym‰tt‰. Jotta palveluista saataisiin kehitetty‰ semanttisia, on haasteita joihin t‰ytyy lˆyt‰‰ ratkaisu. Ensinn‰kin kun palveluiden m‰‰r‰ lis‰‰ntyy merkitt‰v‰sti, ja oikeiden palveluiden lˆyt‰minen on t‰rke‰‰, palvelunhaun tehokkuus ja tarkkuus tulee olla merkitt‰v‰sti parempi kuin nyt. Toisekseen, kun palvelu saadaan tehokkaasti lˆydetty‰, pit‰isi pysty‰ automaattisesti linkitt‰m‰‰n se kyseist‰ palvelua kutsuvaan palveluun. Molemmat n‰ist‰ haasteista ovat riippuvaisia palveluntarjoajan kyvyst‰ kuvata tarjoamansa palveluiden toiminnot sek‰ palveluita kutsuvien osapuolten kyvyst‰ m‰‰ritell‰ yksik‰sitteisesti ja koneluettavasti tarpeensa palvelulta.
+WSDL, SOAP ja UDDI -standardit k‰rsiv‰t semanttisen esityksen puutteesta, joten toive alan standardeilla koostettujen palveluiden automaattisesta integroimisesta j‰‰ t‰yttym‰tt‰. Jotta palveluista saataisiin kehitetty‰ semanttisia, on haasteita joihin t‰ytyy lˆyt‰‰ ratkaisuja. Ensinn‰kin kun palveluiden m‰‰r‰ lis‰‰ntyy merkitt‰v‰sti, ja oikeiden palveluiden lˆyt‰minen on t‰rke‰‰, palvelunhaun tehokkuus ja tarkkuus tulee olla merkitt‰v‰sti parempi kuin nyt. Toisekseen, kun palvelu saadaan tehokkaasti lˆydetty‰, pit‰isi pysty‰ automaattisesti linkitt‰m‰‰n se kyseist‰ palvelua kutsuvaan palveluun. Molemmat n‰ist‰ haasteista ovat riippuvaisia palveluntarjoajan kyvyst‰ kuvata tarjoamansa palveluiden toiminnot sek‰ palveluita kutsuvien osapuolten kyvyst‰ m‰‰ritell‰ yksik‰sitteisesti ja koneluettavasti tarpeensa palvelulta.
 
-Er‰s tapa l‰hesty‰ n‰it‰ haasteita, eli perinteisen mallin semanttisuuden lis‰‰mist‰ on lis‰t‰ UDDI:in laajennus %viite A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI 
+Er‰s tapa l‰hesty‰ n‰it‰ haasteita, eli perinteisen mallin semanttisuuden lis‰‰mist‰ on lis‰t‰ laajennus UDDI rekisteriin\cite{uddiExtension}.
 
 
-%viite Semantic Web Services Discovery Regarded as a Constraint Satisfaction Problem
-%Salima Benbernou, Etienne Canaud, Simone Pimont
 
 \section{Yhteenveto}
-
-
 
 %
 % Sitten alkaa l‰hdeluettelo
 %
 
-
+\nocite{*}
 \bibliographystyle{tktl}
-%\bibliography{lahteet.bib}
+\bibliography{lahteet}
 
 \lastpage
 

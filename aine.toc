@@ -5,9 +5,11 @@
 \contentsline {section}{\numberline {4}Palveluorientoituneiden arkkitehtuurien haittapuolet}{4}
 \contentsline {section}{\numberline {5}Palveluiden haku}{4}
 \contentsline {subsection}{\numberline {5.1}Yleisesti}{4}
-\contentsline {subsection}{\numberline {5.2}Erilaisia rekistereit\"a}{5}
-\contentsline {subsection}{\numberline {5.3}Palveluiden haun ongelmat}{6}
-\contentsline {subsection}{\numberline {5.4}Semanttinen palveluiden haku}{7}
-\contentsline {section}{\numberline {6}Yhteenveto}{7}
+\contentsline {subsection}{\numberline {5.2}WSDL}{5}
+\contentsline {subsection}{\numberline {5.3}UDDI}{7}
+\contentsline {subsection}{\numberline {5.4}Palveluiden haun haasteet}{7}
+\contentsline {subsection}{\numberline {5.5}Semanttinen palveluiden haku}{10}
+\contentsline {section}{\numberline {6}Yhteenveto}{11}
+\contentsline {section}{L\"ahteet}{11}
 \contentsline {section}{Liitteet}{}
  \contentsline {section}{\hspace {0.5cm}1 Malli ABC}{}

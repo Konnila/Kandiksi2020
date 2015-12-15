@@ -1,0 +1,140 @@
+@INPROCEEDINGS{SoC,
+BIBITEMLABEL = "1",
+author={Papazoglou, M.P.},
+booktitle={Web Information Systems Engineering, 2003. WISE 2003. Proceedings of the Fourth International Conference on},
+title={Service-oriented computing: concepts, characteristics and directions},
+year={2003},
+pages={3-12},
+keywords={Internet;distributed processing;object-oriented programming;software architecture;application development;computing paradigm;grid services;interacting services;open marketplace;service architecture;service coordination;service management;service orchestration;service oriented architecture;service security;service transaction coordination;service transaction management;service-oriented computing;software applications;software infrastructure;solutions development;Application software;Distributed computing;Grid computing;Handheld computers;Management information systems;Personal digital assistants;Protocols;Service oriented architecture;Standards organizations;Web and internet services},
+doi={10.1109/WISE.2003.1254461},
+month={Dec},}
+
+@inproceedings{uddiExtension,
+  BIBITEMLABEL = "2",
+  title={A Method for Semantically Enhancing the Service Discovery Capabilities of UDDI.},
+  author={Akkiraju, Rama and Goodwin, Richard and Doshi, Prashant and Roeder, Sascha},
+  booktitle={IIWeb},
+  pages={87--92},
+  year={2003}
+}
+
+@inproceedings{brogi2005composition,
+  BIBITEMLABEL = "3",
+  title={Composition-oriented service discovery},
+  author={Brogi, Antonio and Corfini, Sara and Popescu, Razvan},
+  booktitle={Software Composition},
+  pages={15--30},
+  year={2005},
+  organization={Springer}
+}
+
+@book{kuropka2008semantic,
+  BIBITEMLABEL = "4",
+  title={Semantic service provisioning},
+  author={Kuropka, Dominik and Tr{\"o}ger, Peter and Staab, Steffen and Weske, Mathias},
+  year={2008},
+  publisher={Springer Science \& Business Media}
+}
+
+@inproceedings{garofalakis2004web,
+  BIBITEMLABEL = "5",
+  title={Web service discovery mechanisms: Looking for a needle in a haystack},
+  author={Garofalakis, John and Panagis, Yannis and Sakkopoulos, Evangelos and Tsakalidis, Athanasios},
+  booktitle={International Workshop on Web Engineering},
+  volume={38},
+  year={2004}
+}
+
+@inproceedings{li2009web,
+  BIBITEMLABEL = "6",
+  title={Web services provision: Solutions, challenges and opportunities},
+  author={Li, Qing and Liu, An and Liu, Hai and Lin, Baoping and Huang, Liusheng and Gu, Naijie},
+  booktitle={Proceedings of the 3rd International Conference on Ubiquitous Information Management and Communication},
+  pages={80--87},
+  year={2009},
+  organization={ACM}
+}
+
+@article{Rodriguez20101001,
+title = "Improving Web Service descriptions for effective service discovery ",
+BIBITEMLABEL = "7",
+journal = "Science of Computer Programming ",
+volume = "75",
+number = "11",
+pages = "1001 - 1021",
+year = "2010",
+note = "Special Section on the Programming Languages Track at the 23rd \{ACM\} Symposium on Applied ComputingACM \{SAC\} 08 ",
+issn = "0167-6423",
+doi = "http://dx.doi.org/10.1016/j.scico.2010.01.002",
+url = "http://www.sciencedirect.com/science/article/pii/S0167642310000134",
+author = "Juan Manuel Rodriguez and Marco Crasso and Alejandro Zunino and Marcelo Campo",
+keywords = "Web Services",
+keywords = "Web Service publication",
+keywords = "Web Service discovery",
+keywords = "Web Service discoverability anti-patterns "
+}
+
+@inproceedings{AbuJarour,
+ BIBITEMLABEL = "8",
+ author = {AbuJarour, Mohammed and Naumann, Felix},
+ title = {Dynamic Tags for Dynamic Data Web Services},
+ booktitle = {Proceedings of the 5th International Workshop on Enhanced Web Service Technologies},
+ series = {WEWST '10},
+ year = {2010},
+ isbn = {978-1-4503-0238-8},
+ location = {Ayia Napa, Cyprus},
+ pages = {3--9},
+ numpages = {7},
+ url = {http://doi.acm.org/10.1145/1883133.1883135},
+ doi = {10.1145/1883133.1883135},
+ acmid = {1883135},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {invocation analysis, service description, service discovery},
+} 
+
+@inproceedings{ma2007probabilistic,
+  BIBITEMLABEL = "9",
+  title={A probabilistic semantic approach for discovering web services},
+  author={Ma, Jiangang and Cao, Jinli and Zhang, Yanchun},
+  booktitle={Proceedings of the 16th international conference on World Wide Web},
+  pages={1221--1222},
+  year={2007},
+  organization={ACM}
+}
+
+@book{tsang2014foundations,
+  BIBITEMLABEL = "10",
+  title={Foundations of Constraint Satisfaction: The Classic Text},
+  author={Tsang, Edward},
+  year={2014},
+  publisher={BoD--Books on Demand}
+}
+
+@incollection{rao2005survey,
+  BIBITEMLABEL = "11",
+  title={A survey of automated web service composition methods},
+  author={Rao, Jinghai and Su, Xiaomeng},
+  booktitle={Semantic Web Services and Web Process Composition},
+  pages={43--54},
+  year={2005},
+  publisher={Springer}
+}
+
+@article{bringingSemantics,
+BIBITEMLABEL = "12",
+year={2007},
+issn={1386-145X},
+journal={World Wide Web},
+volume={10},
+number={3},
+doi={10.1007/s11280-007-0033-x},
+title={Bringing Semantics to Web Services with OWL-S},
+url={http://dx.doi.org/10.1007/s11280-007-0033-x},
+publisher={Springer US},
+keywords={Web Services; Semantic Web; Semantic Web Services; OWL; OWL-S; service discovery; service composition},
+author={Martin, David and Burstein, Mark and McDermott, Drew and McIlraith, Sheila and Paolucci, Massimo and Sycara, Katia and McGuinness, DeborahL. and Sirin, Evren and Srinivasan, Naveen},
+pages={243-277},
+language={English}
+}
+
