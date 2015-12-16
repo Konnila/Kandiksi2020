@@ -24,6 +24,19 @@ Brogi, A., Corfini, S. \bbland{} Popescu, R., Composition-oriented service
   discovery.
 \newblock  {\em Software Composition}. Springer, 2005, \bblpages{} 15--30.
 
+\bibitem[Cha14]{chaturvedi}
+Chaturvedi, A., Subset wsdl to access subset service for analysis.
+\newblock  {\em Cloud Computing Technology and Science (CloudCom), 2014 IEEE
+  6th International Conference on}, Dec 2014, \bblpages{} 688--691.
+
+\bibitem[CZC08]{Crasso2008144}
+Crasso, M., Zunino, A. \bbland{} Campo, M., Easy web service discovery: A
+  query-by-example approach.
+\newblock {\em Science of Computer Programming}, 71,2(2008), \bblpages{} 144 --
+  164.
+\newblock
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0167642308000282}.
+
 \bibitem[GPST04]{garofalakis2004web}
 Garofalakis, J., Panagis, Y., Sakkopoulos, E. \bbland{} Tsakalidis, A., Web
   service discovery mechanisms: Looking for a needle in a haystack.
@@ -54,6 +67,11 @@ Ma, J., Cao, J. \bbland{} Zhang, Y., A probabilistic semantic approach for
 \newblock  {\em Proceedings of the 16th international conference on World Wide
   Web}. ACM, 2007, \bblpages{} 1221--1222.
 
+\bibitem[Net12]{EUREKA}
+Netflix, {Netflix and EUREKA service discovery},
+  \url{http://techblog.netflix.com/2012/09/eureka.html}, 2012.
+\newblock [Online].
+
 \bibitem[Pap03]{SoC}
 Papazoglou, M., Service-oriented computing: concepts, characteristics and
   directions.
@@ -80,5 +98,14 @@ Rao, J. \bbland{} Su, X., A survey of automated web service composition
 \bibitem[Tsa14]{tsang2014foundations}
 Tsang, E., {\em Foundations of Constraint Satisfaction: The Classic Text}.
 \newblock BoD--Books on Demand, 2014.
+
+\bibitem[W3C07a]{SOAP}
+W3C, {SOAP Version 1.2}, \url{http://www.w3.org/TR/soap12/}, 2007.
+\newblock [Online].
+
+\bibitem[W3C07b]{wsdlprimer}
+W3C, {Web Services Description Language (WSDL) Version 2.0},
+  \url{http://www.w3.org/TR/wsdl20-primer/}, 2007.
+\newblock [Online].
 
 \end{thebibliography}
