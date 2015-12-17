@@ -37,11 +37,22 @@ Crasso, M., Zunino, A. \bbland{} Campo, M., Easy web service discovery: A
 \newblock
   \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0167642308000282}.
 
+\bibitem[DHM{\etalchar{+}}04]{dong2004similarity}
+Dong, X., Halevy, A., Madhavan, J., Nemes, E. \bbland{} Zhang, J., Similarity
+  search for web services.
+\newblock  {\em Proceedings of the Thirtieth international conference on Very
+  large data bases-Volume 30}. VLDB Endowment, 2004, \bblpages{} 372--383.
+
 \bibitem[GPST04]{garofalakis2004web}
 Garofalakis, J., Panagis, Y., Sakkopoulos, E. \bbland{} Tsakalidis, A., Web
   service discovery mechanisms: Looking for a needle in a haystack.
 \newblock  {\em International Workshop on Web Engineering}, \bblvolume{}~38,
   2004.
+
+\bibitem[KNB06]{taming}
+Kahan, D., Nowlan, M. \bbland{} Blake, M., Taming web services in the wild.
+\newblock  {\em Web Services, 2006. ICWS '06. International Conference on},
+  Sept 2006, \bblpages{} 957--958.
 
 \bibitem[KTSW08]{kuropka2008semantic}
 Kuropka, D., Tr{\"o}ger, P., Staab, S. \bbland{} Weske, M., {\em Semantic
@@ -70,6 +81,12 @@ Ma, J., Cao, J. \bbland{} Zhang, Y., A probabilistic semantic approach for
 \bibitem[Net12]{EUREKA}
 Netflix, {Netflix and EUREKA service discovery},
   \url{http://techblog.netflix.com/2012/09/eureka.html}, 2012.
+\newblock [Online].
+
+\bibitem[OAS07]{UDDIend}
+OASIS, {Closure of OASIS UDDI Specification},
+  \url{https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html},
+  2007.
 \newblock [Online].
 
 \bibitem[Pap03]{SoC}
@@ -106,6 +123,11 @@ W3C, {SOAP Version 1.2}, \url{http://www.w3.org/TR/soap12/}, 2007.
 \bibitem[W3C07b]{wsdlprimer}
 W3C, {Web Services Description Language (WSDL) Version 2.0},
   \url{http://www.w3.org/TR/wsdl20-primer/}, 2007.
+\newblock [Online].
+
+\bibitem[Wik07]{gPommi}
+Wikipedia, {Google Pommi}, \url{https://fi.wikipedia.org/wiki/Google-pommi},
+  2007.
 \newblock [Online].
 
 \end{thebibliography}

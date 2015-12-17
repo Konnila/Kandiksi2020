@@ -159,3 +159,60 @@ month={Dec},}
   year = {2012}, 
   note = "[Online]"
 }
+
+@article{Crasso2008144,
+title = "Easy web service discovery: A query-by-example approach ",
+journal = "Science of Computer Programming ",
+volume = "71",
+number = "2",
+pages = "144 - 164",
+year = "2008",
+note = "",
+issn = "0167-6423",
+doi = "http://dx.doi.org/10.1016/j.scico.2008.02.002",
+url = "http://www.sciencedirect.com/science/article/pii/S0167642308000282",
+author = "Marco Crasso and Alejandro Zunino and Marcelo Campo",
+keywords = "Web services",
+keywords = "Web service discovery",
+keywords = "Distributed systems",
+keywords = "Information filtering",
+keywords = "Query-by-example",
+keywords = "Information retrieval "
+}
+
+@misc{gPommi,
+  author = {Wikipedia},
+  title = {{Google Pommi}},
+  howpublished = "\url{https://fi.wikipedia.org/wiki/Google-pommi}",
+  year = {2007}, 
+  note = "[Online]"
+}
+
+@inproceedings{dong2004similarity,
+  title={Similarity search for web services},
+  author={Dong, Xin and Halevy, Alon and Madhavan, Jayant and Nemes, Ema and Zhang, Jun},
+  booktitle={Proceedings of the Thirtieth international conference on Very large data bases-Volume 30},
+  pages={372--383},
+  year={2004},
+  organization={VLDB Endowment}
+}
+
+@INPROCEEDINGS{taming,
+author={Kahan, D.R. and Nowlan, M.F. and Blake, M.B.},
+booktitle={Web Services, 2006. ICWS '06. International Conference on},
+title={Taming Web Services in the Wild},
+year={2006},
+pages={957-958},
+keywords={Web services;Internet;Web service messages;message definitions;service-oriented computing;syntactical methods;Aggregates;Cities and towns;Computer science;Electric breakdown;Fault diagnosis;Microstrip;Statistics;Technological innovation;Web and internet services;Web services},
+doi={10.1109/ICWS.2006.126},
+month={Sept}
+}
+
+@misc{UDDIend,
+  author = {Wikipedia},
+  title = {{Google Pommi}},
+  howpublished = "\url{https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html}",
+  year = {2007}, 
+  note = "[Online]"
+}
+

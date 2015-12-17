@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.21)  16 DEC 2015 17:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.25)  17 DEC 2015 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -150,21 +150,79 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks18
+\ex@=\dimen116
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen117
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count98
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count99
+\leftroot@=\count100
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count101
+\DOTSCASE@=\count102
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen118
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count103
+\c@MaxMatrixCols=\count104
+\dotsspace@=\muskip11
+\c@parentequation=\count105
+\dspbrk@lvl=\count106
+\tag@help=\toks19
+\row@=\count107
+\column@=\count108
+\maxfields@=\count109
+\andhelp@=\toks20
+\eqnshift@=\dimen119
+\alignsep@=\dimen120
+\tagshift@=\dimen121
+\tagwidth@=\dimen122
+\totwidth@=\dimen123
+\lineht@=\dimen124
+\@envbody=\toks21
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 ) (./aine.aux)
 \openout1 = `aine.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -202,17 +260,17 @@ LaTeX Font Info:    ... okay on input line 5.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen116
-\scratchbox=\box27
-\nofMPsegments=\count99
-\nofMParguments=\count100
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen117
-\MPnumerator=\count102
-\makeMPintoPDFobject=\count103
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count110
+\scratchdimen=\dimen125
+\scratchbox=\box29
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen126
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks24
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -260,7 +318,7 @@ e
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 1939) in paragraph at lines 24--25
+Underfull \hbox (badness 1939) in paragraph at lines 25--27
 []\T1/cmr/m/n/10 Service-oriented com-pu-ting (SOC) on aja-tus-mal-li, jos-sa y
 h-den mo-no-liit-ti-sen oh-jel-man si-
  []
@@ -275,12 +333,6 @@ Overfull \vbox (190.58662pt too high) has occurred while \output is active []
 
 
 [1] (./aine.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 5.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 5.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -309,12 +361,7 @@ File: SOAP-viestinta.png Graphic file (type png)
 <use SOAP-viestinta.png>
 Package pdftex.def Info: SOAP-viestinta.png used on input line 97.
 (pdftex.def)             Requested size: 213.39568pt x 136.21771pt.
- [4 <./SOA.png> <./SOAP-viestinta.png>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 112.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 112.
- [5] [6]
+ [4 <./SOA.png> <./SOAP-viestinta.png>] [5] [6]
 <WSDL-XML.jpg, id=47, 682.55pt x 481.8pt>
 File: WSDL-XML.jpg Graphic file (type jpg)
  <use WSDL-XML.jpg>
@@ -327,7 +374,7 @@ stan-dar-doi-tu-jen tak-so-no-mioi-den mu-kaan.[]
  []
 
 
-Overfull \hbox (19.0593pt too wide) in paragraph at lines 164--166
+Overfull \hbox (19.0671pt too wide) in paragraph at lines 164--166
 \T1/cmr/m/n/12 gel-mia. Pal-ve-lua m‰‰-ri-tel-les-s‰‰n jul-kai-si-jat sor-tu-va
 t hel-pos-ti XSD se-k‰ WSDL-pohjaisiin
  []
@@ -338,65 +385,100 @@ File: antipattern1.png Graphic file (type png)
 Package pdftex.def Info: antipattern1.png used on input line 171.
 (pdftex.def)             Requested size: 384.10161pt x 196.32625pt.
 
-[9 <./antipattern1.png>] <antipattern2.png, id=60, 1077.02374pt x 602.25pt>
-File: antipattern2.png Graphic file (type png)
+[9 <./antipattern1.png>]
+Overfull \hbox (13.72661pt too wide) in paragraph at lines 181--183
+\T1/cmr/m/n/12 kryp-ti-si‰ ni-mi‰ esiin-tyy port-ti-tyyp-pi, ope-raa-tio tai vi
+es-tie-le-men-teis-s‰. WSDL-elementin
+ []
 
-<use antipattern2.png>
-Package pdftex.def Info: antipattern2.png used on input line 181.
+<antipattern2.png, id=60, 1077.02374pt x 602.25pt>
+File: antipattern2.png Graphic file (type png)
+ <use antipattern2.png>
+Package pdftex.def Info: antipattern2.png used on input line 186.
 (pdftex.def)             Requested size: 469.47308pt x 262.51881pt.
 
-Overfull \hbox (42.68173pt too wide) in paragraph at lines 181--184
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 186--189
  [][] 
  []
 
-
-Overfull \hbox (45.95685pt too wide) in paragraph at lines 204--206
+[10]
+Overfull \hbox (45.95685pt too wide) in paragraph at lines 219--221
 []\T1/cmr/m/n/12 Tarve pa-ran-nel-tui-hin pal-ve-lu-m‰‰-ri-tyk-siin on huo-mat-
 tu muu-al-la tiedeyhteisˆss‰kin[[]].
  []
 
-[10 <./antipattern2.png>] [11] (./aine.bbl (./babelbst.tex (./finnbst.tex))
+[11 <./antipattern2.png>] [12] (./aine.bbl (./babelbst.tex (./finnbst.tex))
+[13]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 20.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [12]
-Underfull \hbox (badness 1708) in paragraph at lines 83--91
+) [14]
+Underfull \hbox (badness 2012) in paragraph at lines 87--91
+[]\T1/cmr/m/n/12 OASIS, Clo-su-re of OA-SIS UD-DI Speci-fica-tion, $\T1/cmtt/m/
+n/12 https : / / lists .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--91
+\T1/cmtt/m/n/12 oasis-[]open . org / archives / uddi-[]spec / 200807 / msg00000
+ . html$\T1/cmr/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 100--108
 []\T1/cmr/m/n/12 Rodriguez, J. M., Cras-so, M., Zu-ni-no, A. ja Cam-po, M., Im-
 
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 83--91
+Underfull \hbox (badness 5203) in paragraph at lines 100--108
 \T1/cmr/m/n/12 pro-ving web ser-vice desc-rip-tions for ef-fec-ti-ve ser-vice d
 isco-ve-
  []
 
-[13]) [14] [1] (./aine.aux) ) 
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 129--132
+[]\T1/cmr/m/n/12 Wikipedia, Google Pom-mi, $\T1/cmtt/m/n/12 https : / / fi . wi
+kipedia . org / wiki /
+ []
+
+) [16] <antipatterns.png, id=88, 1164.35pt x 762.85pt>
+File: antipatterns.png Graphic file (type png)
+ <use antipatterns.png>
+Package pdftex.def Info: antipatterns.png used on input line 271.
+(pdftex.def)             Requested size: 469.47308pt x 307.57903pt.
+
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 271--274
+ [][] 
+ []
+
+[1 <./antipatterns.png>] (./aine.aux) ) 
 Here is how much of TeX's memory you used:
- 3151 strings out of 493304
- 43104 string characters out of 6139871
- 113364 words of memory out of 5000000
- 6526 multiletter control sequences out of 15000+600000
- 17205 words of font info for 43 fonts, out of 8000000 for 9000
+ 3766 strings out of 493304
+ 50095 string characters out of 6139871
+ 124766 words of memory out of 5000000
+ 7122 multiletter control sequences out of 15000+600000
+ 18333 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,8n,25p,1130b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-supe
-r-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfbx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-ftt1200.pfb>
-Output written on aine.pdf (18 pages, 659682 bytes).
+ 38i,8n,25p,1129b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-sup
+er/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
+2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+bx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
+1200.pfb>
+Output written on aine.pdf (20 pages, 774361 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

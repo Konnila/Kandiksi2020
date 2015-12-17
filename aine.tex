@@ -2,6 +2,7 @@
 \usepackage[pdftex]{graphicx}
 \usepackage{subfigure}
 \usepackage{url}
+\usepackage{amsmath}
 \begin{document}
 %\doublespacing
 %\singlespacing
@@ -22,8 +23,7 @@ I.7.m [Document and text processing]}}
 
 \begin{abstract}
 Service-oriented computing (SOC) on ajatusmalli, jossa yhden monoliittisen ohjelman sijaan painotetaan kesken‰‰n kommunikoiviin palveluihin. SOC nojaakin hyvin vahvasti SOA-arkkitehtuurimalliin, joka ajaa t‰t‰ samaa ideaa. SOA ei kuitenkaan tarjoa itsess‰‰n vastauksia siihen miten turvallisuus, palveluiden koordinointi ja ohjelman keskin‰inen arkkitehtuuri on rakennettu.
-
-T‰ss‰ aineessa keskityt‰‰nkin palveluorientoituneiden arkkitehtuureille tyypillisiin palveluiden hakemiseen (\textit{service discovery}), ja siihen liittyen, palveluiden piilottamiseen (\textit{location transparency}) k‰ytt‰j‰lt‰. 
+T‰ss‰ aineessa keskityt‰‰n palveluorientoituneen arkkitehtuuriin kuuluvaan palvelun hakuun (\textit{service discovery}).
 
 \end{abstract}
 
@@ -114,7 +114,7 @@ WSDL on kieli jonka avulla kehitt‰j‰t kuvaavat kaksi t‰rkeint‰ osaa palvelusta: 
 WSDL dokumentti m‰‰rittelee palvelun toiminnallisuuden joukkona porttityyppej‰ (\textit{port-types}), jotka asettava eri operaatiot joiden kutsuminen perustuu viestien vaihtoon. Viestit t‰ss‰ yhteydess‰ tarkoittavat operaatioiden syˆttˆ- ja ulostuloparametreja niit‰ sen enemp‰‰ erottelematta. WSDL myˆs tarjoaa palvelun tarjoajalle mahdollisuuden m‰‰ritell‰ virheviestej‰ (\textit{faults}), joita palautetaan palvelun kutsujalle. WSDL elementtien, kuten porttityyppien, virheviestim‰‰ritelmien ja operaatioiden pit‰‰ olla yksik‰sitteisesti nimetty.
 Vapaaehtoista on, lis‰t‰‰nkˆ elementeille dokumentaatiota kommentteina. Dokumentaation lis‰‰minen WSDL-dokumenttiin on kuitenkin suositeltua. Viestit muodostuvat osista, jotka kuljettavat tietoa palvelun tarjoajan ja palvelujen k‰ytt‰jien v‰lill‰ sek‰ toisin p‰in. Tyypillisesti jokainen viesti on hierarkkiselta sis‰llˆlt‰‰n m‰‰riteltyjen datatyyppien mukainen. N‰m‰ datatyypit on m‰‰ritelty erikseen skeemassa. XSD-kieli (\textit{XML Schema Definition}) on kehitetty kuvaamaan viestin osien hierarkiaa. XSD tarjoaa konstruktorit m‰‰ritt‰m‰‰n yksinkertaiset tyypit (\textit{simple types}) esimerkiksi integer, string ja totuusarvo. XSD tarjoaa myˆs tyˆkalut rajoitusten m‰‰ritt‰miseen, kapseloimiseen sek‰ lis‰osa mekanismien kehitt‰miseen monimutkaisempia elementtej‰ varten. Kuvassa 1 on esitelty tarvittava XML-muotoinen esitys monimutkaisen tyypin (\textit{complex type}) - t‰ss‰ "CountryCodes" - toteutukseen.
 
-Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun haun kannalta oleellista, ett‰ WSDL-dokumentin elementit on nimetty ja kommentoitu kuvaavasti. Syntaktiset rekisterit esik‰sittelev‰t WSDL-dokumentit tyypillisesti siten, ett‰ rekisterit ker‰‰v‰t joukon termej‰. Termit valitaan  porttityyppi-elementtien, sis‰- ja ulostuloviestien sek‰ operaatioiden nimist‰ ja kommenteista. Kun termit on ker‰tty dokumentista, syntaktiset rekisterit erottelevat nimiyhdistelm‰t: "CountryCodes" erotetaan ja j‰‰ "Country" ja "Codes". Edelleen poistetaan ei-relevantit termit kuten "the", "for" ja vastaavat. Mahdollisesti poistetaan myˆs, ylim‰‰r‰iset p‰‰tteet jotta saadaan termin juuri. T‰t‰ on kutsuttu juuristamiseksi (\textit{stemming})\cite{Crasso2008144}. Vastaavasti pyynnˆt esik‰sitell‰‰n edell‰mainitulla tavalla, jonka j‰lkeen termej‰ vertaillaan tarjolla olevien palvelujen termej‰ vastaan. Jos julkaisija ei osaa m‰‰ritell‰ WSDL-dokumenttiaan k‰ytt‰en j‰rkevi‰ paradigmoja, kuten selkeit‰ nime‰misk‰yt‰ntˆj‰, on vertailu tarjolla oleviin palveluihin hyvin vaikea teht‰v‰.
+Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun haun kannalta oleellista, ett‰ WSDL-dokumentin elementit on nimetty ja kommentoitu kuvaavasti. Syntaktiset rekisterit esik‰sittelev‰t WSDL-dokumentit tyypillisesti siten, ett‰ rekisterit ker‰‰v‰t joukon termej‰. Termit valitaan  porttityyppi-elementtien, sis‰- ja ulostuloviestien sek‰ operaatioiden nimist‰ ja kommenteista. Kun termit on ker‰tty dokumentista, syntaktiset rekisterit erottelevat nimiyhdistelm‰t: "CountryCodes" erotetaan ja j‰‰ "Country" ja "Codes". Edelleen poistetaan ei-relevantit termit kuten "the", "for" ja vastaavat. Mahdollisesti poistetaan myˆs ylim‰‰r‰iset p‰‰tteet jotta saadaan termin juuri. T‰t‰ on kutsuttu juuristamiseksi (\textit{stemming})\cite{Crasso2008144}. Vastaavasti pyynnˆt esik‰sitell‰‰n edell‰mainitulla tavalla, jonka j‰lkeen termej‰ vertaillaan tarjolla olevien palvelujen termej‰ vastaan. Jos julkaisija ei osaa m‰‰ritell‰ WSDL-dokumenttiaan k‰ytt‰en j‰rkevi‰ paradigmoja, kuten selkeit‰ nime‰misk‰yt‰ntˆj‰, on vertailu tarjolla oleviin palveluihin hyvin vaikea teht‰v‰.
 
 %W. Jian, W. Zhaohui, Similarity-based Web Service matchmaking, in: IEEE %International Conference on Services Computing, vol. 1, IEEE Computer
 %Society, Orlando, Florida, USA, 2005, pp. 287?294
@@ -129,7 +129,7 @@ Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun
 
 \subsection{UDDI}
 
-Perinteisen Web service mallin palvelut nojaavat yleens‰ erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 silt‰ ideapohjalta, ett‰ palvelua k‰ytt‰v‰t tahot linkitett‰isiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. T‰llaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnˆn palvelurekisteri‰ vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. T‰llaisessa maailmassa julkisesti yll‰pidett‰v‰ UDDI-rekisteri olisi kriittisen t‰rke‰ kaikille. UDDI ei kuitenkaan p‰‰tynyt niin yleiseen k‰yttˆˆn kuin sen julkaisivat olisivat toivoneet ja sen kehitt‰minen loppui vuonna 2007 [https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html]. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja t‰rke‰ osa perinteist‰ Web Service palvelunhakumallia.
+Perinteisen Web Service mallin palvelut nojaavat yleens‰ erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 silt‰ ideapohjalta, ett‰ palvelua k‰ytt‰v‰t tahot linkitett‰isiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. T‰llaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnˆn palvelurekisteri‰ vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. T‰llaisessa maailmassa julkisesti yll‰pidett‰v‰ UDDI-rekisteri olisi kriittisen t‰rke‰ kaikille. UDDI ei kuitenkaan p‰‰tynyt niin yleiseen k‰yttˆˆn kuin sen julkaisivat olisivat toivoneet ja sen kehitt‰minen loppui vuonna 2007\cite{UDDIend}. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja t‰rke‰ osa perinteist‰ Web Service palvelunhakumallia.
 
 UDDI-rekisteri koostuu kolmesta osasta:
 
@@ -174,24 +174,39 @@ Kuvassa 4 on esitelty puute dokumentoinnissa ja sen vieress‰ ehdotettu korjaus. 
 \caption{Puuttuvat tai virheelliset kommentit -puute ja esitetty korjaus, otettu l‰hteest‰ [RCZC10]}
 \end{figure}
 \newpage
-\textbf{Monitulkintaiset XML-elementtien nimet}:
+
+\textbf{Ylim‰‰r‰iset port-type m‰‰ritykset}: Yleinen huono tapa on toistaa port-type m‰‰rityksi‰. Turha port-type m‰‰ritys on sellainen, joka sis‰lt‰‰ saman joukon operaatioita kuin jokin toinen saman palvelun port-type m‰‰ritys. Yleens‰ l‰htˆkohtana kehitt‰j‰ll‰ t‰m‰n tyyppisess‰ toteutuksessa on m‰‰ritell‰ eri port-typet operaatioille jotka tarjoavat toimintaansa eri protokollan yli, esimerkiksi HTTP ja SOAP. T‰m‰ ei ole kuitenkaan tarpeellista, sill‰ operaatiot voidaan abstrahoida, niinkuin on tehty kuvassa 5. Toisaalta, useammat (turhat) port-type m‰‰ritykset voivat nostaa palvelua suotuisammaksi rekisterin valitessa asiakkaan kyselyn perusteella termej‰. Jos termi sattuu osumaan palvelusta esik‰siteltyyn termiin, saa se korkeamman arvosanan. Jos sama termi esiintyy useampaan kertaan esimerkiksi port-type m‰‰rityksen toiston takia, saa se edelleen korkeamman arvosanan. T‰llainen tilanne voidaan n‰hd‰ samanlaisena kuin Google pommi\cite{gPommi}.
+
+
+\textbf{Monitulkintaiset XML-elementtien nimet}: Ilmenee kun monitulkintaisia tai kryptisi‰ nimi‰ esiintyy porttityyppi, operaatio tai viestielementeiss‰. WSDL-elementin tulee ilment‰‰ hyvin teht‰v‰‰ns‰, sill‰ nimi on uniikin tunnisteen lis‰ksi myˆs kuvauselementti, koska syntaktiset rekisterit esik‰sittelev‰t myˆs nimielementit. Kuvaavat nimet eiv‰t siis sis‰ll‰ argumentteja kuten "arg0"\hspace{1pt}tai "foo". Lis‰ksi syntaktiset rekisterit luottavat usein suosittuihin niment‰konventioihin pilkkoessaan pitki‰ nimi‰\cite{dong2004similarity}. 
+Esimerkiksi nimi \text{$"xmlelementinnimi"$} tulee kirjoittaa muodossa  \text{$"xmlElementinNimi"$}. N‰m‰ ovat myˆs helpommin luettavissa. Myˆs nimen pituus kannattaa ottaa huomioon. Nimen ei kannata olla liian lyhyt, eik‰ liian pitk‰. Suosituspituus olisi kolmen ja viidentoista merkin v‰lill‰\cite{taming}.
 
 \begin{figure}
 \centering
 \includegraphics[width=1.1\textwidth]{antipattern2.png}
 \label{fig:antipattern2}
 \vspace{-30pt}
-\caption{Monitulkintaiset elementtien nimet -puute ja esitetty korjaus, otettu l‰hteest‰ [RCZC10]}
+\caption{Ylim‰‰r‰iset port-type m‰‰ritykset -puute ja esitetty korjaus, otettu l‰hteest‰ [RCZC10]}
 \end{figure}
+%from the perspective of syntactic approaches
+%to service discovery,WSDL documentswith highly-cohesive port-types convey terms that are representative of the domain
+%of their container services mostly. Then, when asking a syntactic registry %using queries comprising terms related to the
+%domainoftheservices,theseserviceswillhavehigherprobabilitiesofbeingdiscovered.
 
+\textbf{Pienen koheesion omaavat operaatiot samassa port-typess‰}: Yleinen huonoa paradigmaa noudattava m‰‰rittelyvirhe on asettaa pienen koheesion omaavia operaatioita samaan porttim‰‰rittelyyn. Koheesiolla tarkoitetaan t‰ss‰ sit‰, kuinka voimakkaasti operaatio on liitoksissa muihin saman porttityypin alla sijaitseviin operaatioihin. WSDL-dokumentit, joiden porttim‰‰rittelyt noudattavat korkeaa koheesiota ilmaisevat termeill‰‰n l‰hinn‰ kyseess‰ olevan palvelun domainiin liittyvi‰ toimintoja. Kun rekisteriin tehd‰‰n syntaktinen kysely, on n‰ill‰ korkean koheesion omaavilla palveluilla suurempi todenn‰kˆisyys tulla lˆydetyksi. Jos palvelu omaa matalaa koheesiota, on  tarpeen eritell‰ palvelun toiminnan kannalta v‰hemm‰n oleelliset operaatiot omiin porttityyppeihins‰, tai kokonaan erillisiksi web palveluiksi koheesion nostamiseksi.
 
-\textbf{Ylim‰‰r‰iset port-type m‰‰ritykset}:
+\textbf{Suljettu datamalli}: Dataa esitt‰vien suljettujen mallien m‰‰rittely erikseen jokaisessa palvelun kuvauksessa, jotka tarvitsevat niit‰, on myˆs huonoa suunnittelutyyli‰. Suljettu datamalli on datamalli joka sijaitsee WSDL-dokumentissa ja sit‰ voidaan k‰ytt‰‰ vain operaatioissa, jotka on kuvattu kyseisess‰ WSDL-dokumentissa. Tuotu datamalli taas on malli, joka on eristyksiss‰ palvelukuvauksesta omassa XSD-dokumentissa. WSDL-dokumentista voidaan viitata t‰h‰n XSD-dokumenttiin tarvittaessa. N‰in tehtyn‰ tulee palvelum‰‰rittelyst‰kin helpommin yll‰pidett‰v‰, koska elementtien uudelleenk‰ytett‰vyys paranee ja toiston m‰‰r‰ pienenee.
 
-\textbf{Pienen koheesion omaavat operaatiot samassa port-typess‰}:
+%t‰h‰n voi tarinoida lis‰‰ tarvittaessa
 
-\textbf{Suljettu datamalli}:
+%The Redundant datamodels anti-pattern is a problem often caused by a bad %representation of the required data-types.
+%The refactoring strategy to correct this anti-pattern consists in replacing %redundant data-types with a single data-type,
+%and changing references to the old data-types in message parts for references %to the refactored one. In consequence, the
+%refactored version of the service description is free from redundant XSD %code.Then, the service definition maybe conciser
+%and easier to be understood by third-party discoverers than its original %version.Optionally,the refactored datamodel should
+%be defined in a separate XSD document to prevent occurrences of the Enclosed %data model anti-pattern
 
-\textbf{Ylim‰‰r‰iset datamallit}:
+\textbf{Ylim‰‰r‰iset datamallit}: Saman datatyypin m‰‰rittely useaan kertaan on myˆs yleinen huonoa suunnittelutyyli‰ sis‰lt‰v‰ tapa. Ylim‰‰r‰isi‰ datamalleja esiintyy, jos WSDL dokumentissa v‰hint‰‰n kaksi datatyyppim‰‰rittely‰ ovat samaan k‰yttˆtarkoitukseen luotuja. Syntaktiselle rekisterille tarpeettomat datamallit voivat aiheuttaa samanlaisia vaikutuksia kuin tarpeettomat porttityypit. Samoin kuin ylim‰‰r‰iset porttityyppim‰‰ritykset, t‰m‰ suunnitteluvirhe aiheuttaa tarpeettoman suuria ja vaikeaselkoisia WSDL-dokumentteja asiakkaan, eli palvelua kutsuvan osapuolen, kannalta.
 
 \textbf{Turhan laaja tyyppikonteksti datatyypille}:
 
@@ -248,15 +263,15 @@ Er‰s tapa l‰hesty‰ n‰it‰ haasteita, eli perinteisen mallin semanttisuuden lis‰‰m
 
 \pagestyle{empty}
 
-\internalappendix{1}{Malli ABC}
+\internalappendix{1}{Yleiset WSDL-m‰‰rittelypuutteet}
+Yleisimm‰t WSDL-m‰‰rittelypuutteet. Otettu l‰hteest‰ [RCZC10].
 
-Liitteet ovat t‰ss‰ vain sis‰llysluettelon ja esitystavan mallina.
-Jokainen liite aloitetaan yleens‰ uudelta sivulta, jonka alkuun tulee
-liitteen numero ja nimi. Kunkin liitteen sivut numeroidaan erikseen.
-
-Liite on paitsi dokumenttia t‰ydent‰v‰ osuus myˆs itsen‰inen
-kokonaisuus. Liite ei siten voi olla pelk‰st‰‰n kuva tai ohjelmanp‰tk‰,
-vaan liitteess‰ on ilmaistava sen sis‰llˆn laatu ja tarkoitus.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=1.1\textwidth]{antipatterns.png}
+\vspace{-20pt}
+%\caption{Yleisimm‰t WSDL-m‰‰rittelypuutteet. Otettu l‰hteest‰ [RCZC10].}
+\end{figure}
 
 
 \end{document}
