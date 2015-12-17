@@ -194,19 +194,12 @@ Esimerkiksi nimi \text{$"xmlelementinnimi"$} tulee kirjoittaa muodossa  \text{$"
 %domainoftheservices,theseserviceswillhavehigherprobabilitiesofbeingdiscovered.
 
 \textbf{Pienen koheesion omaavat operaatiot samassa port-typess‰}: Yleinen huonoa paradigmaa noudattava m‰‰rittelyvirhe on asettaa pienen koheesion omaavia operaatioita samaan porttim‰‰rittelyyn. Koheesiolla tarkoitetaan t‰ss‰ sit‰, kuinka voimakkaasti operaatio on liitoksissa muihin saman porttityypin alla sijaitseviin operaatioihin. WSDL-dokumentit, joiden porttim‰‰rittelyt noudattavat korkeaa koheesiota ilmaisevat termeill‰‰n l‰hinn‰ kyseess‰ olevan palvelun domainiin liittyvi‰ toimintoja. Kun rekisteriin tehd‰‰n syntaktinen kysely, on n‰ill‰ korkean koheesion omaavilla palveluilla suurempi todenn‰kˆisyys tulla lˆydetyksi. Jos palvelu omaa matalaa koheesiota, on  tarpeen eritell‰ palvelun toiminnan kannalta v‰hemm‰n oleelliset operaatiot omiin porttityyppeihins‰, tai kokonaan erillisiksi web palveluiksi koheesion nostamiseksi.
-
+\newpage
 \textbf{Suljettu datamalli}: Dataa esitt‰vien suljettujen mallien m‰‰rittely erikseen jokaisessa palvelun kuvauksessa, jotka tarvitsevat niit‰, on myˆs huonoa suunnittelutyyli‰. Suljettu datamalli on datamalli joka sijaitsee WSDL-dokumentissa ja sit‰ voidaan k‰ytt‰‰ vain operaatioissa, jotka on kuvattu kyseisess‰ WSDL-dokumentissa. Tuotu datamalli taas on malli, joka on eristyksiss‰ palvelukuvauksesta omassa XSD-dokumentissa. WSDL-dokumentista voidaan viitata t‰h‰n XSD-dokumenttiin tarvittaessa. N‰in tehtyn‰ tulee palvelum‰‰rittelyst‰kin helpommin yll‰pidett‰v‰, koska elementtien uudelleenk‰ytett‰vyys paranee ja toiston m‰‰r‰ pienenee.
 
 %t‰h‰n voi tarinoida lis‰‰ tarvittaessa
 
-%The Redundant datamodels anti-pattern is a problem often caused by a bad %representation of the required data-types.
-%The refactoring strategy to correct this anti-pattern consists in replacing %redundant data-types with a single data-type,
-%and changing references to the old data-types in message parts for references %to the refactored one. In consequence, the
-%refactored version of the service description is free from redundant XSD %code.Then, the service definition maybe conciser
-%and easier to be understood by third-party discoverers than its original %version.Optionally,the refactored datamodel should
-%be defined in a separate XSD document to prevent occurrences of the Enclosed %data model anti-pattern
-
-\textbf{Ylim‰‰r‰iset datamallit}: Saman datatyypin m‰‰rittely useaan kertaan on myˆs yleinen huonoa suunnittelutyyli‰ sis‰lt‰v‰ tapa. Ylim‰‰r‰isi‰ datamalleja esiintyy, jos WSDL dokumentissa v‰hint‰‰n kaksi datatyyppim‰‰rittely‰ ovat samaan k‰yttˆtarkoitukseen luotuja. Syntaktiselle rekisterille tarpeettomat datamallit voivat aiheuttaa samanlaisia vaikutuksia kuin tarpeettomat porttityypit. Samoin kuin ylim‰‰r‰iset porttityyppim‰‰ritykset, t‰m‰ suunnitteluvirhe aiheuttaa tarpeettoman suuria ja vaikeaselkoisia WSDL-dokumentteja asiakkaan, eli palvelua kutsuvan osapuolen, kannalta.
+\textbf{Ylim‰‰r‰iset datamallit}: Saman datatyypin m‰‰rittely useaan kertaan on myˆs yleinen huonoa suunnittelutyyli‰ sis‰lt‰v‰ tapa. Ylim‰‰r‰isi‰ datamalleja esiintyy, jos WSDL dokumentissa v‰hint‰‰n kaksi datatyyppim‰‰rittely‰ ovat samaan k‰yttˆtarkoitukseen luotuja. Syntaktiselle rekisterille tarpeettomat datamallit voivat aiheuttaa samanlaisia vaikutuksia kuin tarpeettomat porttityypit. Samoin kuin ylim‰‰r‰iset porttityyppim‰‰ritykset, t‰m‰ suunnitteluvirhe aiheuttaa tarpeettoman suuria ja vaikeaselkoisia WSDL-dokumentteja asiakkaan, eli palvelua kutsuvan osapuolen, kannalta. Ylim‰‰r‰iset datamallit -suunnitteluvirhe muodostuu usein vaadittujen datatyyppien huonosta esitysmuodosta. T‰m‰n korjaamiseksi on suotavaa korvata turhat ja ylim‰‰r‰iset datatyypit yksitt‰iselle datatyypill‰ ja tehd‰ korjaukset niihin osiin jotka kutsuivat n‰it‰ datatyyppej‰ osoittamaan uuteen datatyyppiin. Korjatun version ei tulisi sis‰lt‰‰ ylim‰‰r‰ist‰ XSD-koodia, jolloin palvelun kuvaus on ytimekk‰‰mpi ja helpommin ymm‰rrett‰viss‰ myˆs kolmannen osapuolen palvelunhaulle. Huomioitavaa on myˆs, ett‰ korjattu datamalli kannattaa m‰‰ritell‰ omassa XSD-dokumentissaan, jotta  v‰ltett‰isiin sortumista aiemmin mainittuun suljettuun datamallityyliin.
 
 \textbf{Turhan laaja tyyppikonteksti datatyypille}:
 
