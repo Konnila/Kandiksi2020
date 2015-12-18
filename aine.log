@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.25)  17 DEC 2015 19:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.25)  18 DEC 2015 19:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -208,21 +208,56 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
-) (./aine.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count110
+\lst@gtempboxa=\box29
+\lst@token=\toks23
+\lst@length=\count111
+\lst@currlwidth=\dimen125
+\lst@column=\count112
+\lst@pos=\count113
+\lst@lostspace=\dimen126
+\lst@width=\dimen127
+\lst@newlines=\count114
+\lst@lineno=\count115
+\lst@maxwidth=\dimen128
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+\c@lstnumber=\count116
+\lst@skipnumbers=\count117
+\lst@framebox=\box30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2013/08/26 1.5b listings configuration
+))
+Package: listings 2013/08/26 1.5b (Carsten Heinz)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+Package color Info: Redefining color cyan on input line 11.
+ (./aine.aux)
 \openout1 = `aine.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -260,17 +295,17 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
-\scratchdimen=\dimen125
-\scratchbox=\box29
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count113
-\MPscratchDim=\dimen126
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count118
+\scratchdimen=\dimen129
+\scratchbox=\box31
+\nofMPsegments=\count119
+\nofMParguments=\count120
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen130
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -315,16 +350,18 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+\c@lstlisting=\count124
+
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 1939) in paragraph at lines 25--27
+Underfull \hbox (badness 1939) in paragraph at lines 49--51
 []\T1/cmr/m/n/10 Service-oriented com-pu-ting (SOC) on aja-tus-mal-li, jos-sa y
 h-den mo-no-liit-ti-sen oh-jel-man si-
  []
 
 
-Overfull \hbox (153.20865pt too wide) in paragraph at lines 28--28
+Overfull \hbox (153.20865pt too wide) in paragraph at lines 52--52
 [][] 
  []
 
@@ -342,39 +379,39 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 40.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 64.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 64.
  [1] [2] [3]
 <SOA.png, id=30, 555.07375pt x 324.21124pt>
 File: SOA.png Graphic file (type png)
  <use SOA.png>
-Package pdftex.def Info: SOA.png used on input line 90.
+Package pdftex.def Info: SOA.png used on input line 114.
 (pdftex.def)             Requested size: 213.39568pt x 124.64114pt.
 
 <SOAP-viestinta.png, id=32, 555.07375pt x 354.32375pt>
 File: SOAP-viestinta.png Graphic file (type png)
 
 <use SOAP-viestinta.png>
-Package pdftex.def Info: SOAP-viestinta.png used on input line 97.
+Package pdftex.def Info: SOAP-viestinta.png used on input line 121.
 (pdftex.def)             Requested size: 213.39568pt x 136.21771pt.
  [4 <./SOA.png> <./SOAP-viestinta.png>] [5] [6]
 <WSDL-XML.jpg, id=47, 682.55pt x 481.8pt>
 File: WSDL-XML.jpg Graphic file (type jpg)
  <use WSDL-XML.jpg>
-Package pdftex.def Info: WSDL-XML.jpg used on input line 124.
+Package pdftex.def Info: WSDL-XML.jpg used on input line 148.
 (pdftex.def)             Requested size: 341.43437pt x 241.01703pt.
  [7 <./WSDL-XML.jpg>]
-Overfull \hbox (2.3496pt too wide) in paragraph at lines 140--141
+Overfull \hbox (2.3496pt too wide) in paragraph at lines 164--165
 []\T1/cmr/m/it/12 Keltaiset si-vut \T1/cmr/m/n/12 luo-kit-te-le-vat pal-ve-lut 
 stan-dar-doi-tu-jen tak-so-no-mioi-den mu-kaan.[]
  []
 
 
-Overfull \hbox (19.0671pt too wide) in paragraph at lines 164--166
+Overfull \hbox (19.0671pt too wide) in paragraph at lines 190--192
 \T1/cmr/m/n/12 gel-mia. Pal-ve-lua m‰‰-ri-tel-les-s‰‰n jul-kai-si-jat sor-tu-va
 t hel-pos-ti XSD se-k‰ WSDL-pohjaisiin
  []
@@ -382,11 +419,11 @@ t hel-pos-ti XSD se-k‰ WSDL-pohjaisiin
 [8] <antipattern1.png, id=55, 1505.625pt x 702.625pt>
 File: antipattern1.png Graphic file (type png)
  <use antipattern1.png>
-Package pdftex.def Info: antipattern1.png used on input line 171.
+Package pdftex.def Info: antipattern1.png used on input line 197.
 (pdftex.def)             Requested size: 384.10161pt x 196.32625pt.
 
 [9 <./antipattern1.png>]
-Overfull \hbox (13.72661pt too wide) in paragraph at lines 181--183
+Overfull \hbox (13.72661pt too wide) in paragraph at lines 207--209
 \T1/cmr/m/n/12 kryp-ti-si‰ ni-mi‰ esiin-tyy port-ti-tyyp-pi, ope-raa-tio tai vi
 es-tie-le-men-teis-s‰. WSDL-elementin
  []
@@ -394,25 +431,38 @@ es-tie-le-men-teis-s‰. WSDL-elementin
 <antipattern2.png, id=60, 1077.02374pt x 602.25pt>
 File: antipattern2.png Graphic file (type png)
  <use antipattern2.png>
-Package pdftex.def Info: antipattern2.png used on input line 186.
+Package pdftex.def Info: antipattern2.png used on input line 212.
 (pdftex.def)             Requested size: 469.47308pt x 262.51881pt.
 
-Overfull \hbox (42.68173pt too wide) in paragraph at lines 186--189
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 212--215
  [][] 
  []
 
 [10] [11 <./antipattern2.png>]
-Overfull \hbox (45.95685pt too wide) in paragraph at lines 212--214
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 233.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+Overfull \hbox (31.54109pt too wide) in paragraph at lines 244--247
+\T1/cmr/m/n/12 Sen si-jaan, ote-taan toi-nen ope-raa-tio, jon-ka sig-nee-raus o
+n "ge-ne-ra-te:SatunnainenNumero"ja
+ []
+
+[12]
+Overfull \hbox (13.03943pt too wide) in paragraph at lines 274--277
+[]\T1/cmr/m/n/12 onkoVirheita-osa ker-too ta-pah-tui-ko vir-het-t‰. Jos vir-he 
+ta-pah-tui, niin viheenAiheuttaja-
+ []
+
+[13]
+Overfull \hbox (45.95685pt too wide) in paragraph at lines 299--301
 []\T1/cmr/m/n/12 Tarve pa-ran-nel-tui-hin pal-ve-lu-m‰‰-ri-tyk-siin on huo-mat-
 tu muu-al-la tiedeyhteisˆss‰kin[[]].
  []
 
-[12] [13] (./aine.bbl (./babelbst.tex (./finnbst.tex))
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 20.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [14]
+[14] [15] [16] (./aine.bbl (./babelbst.tex (./finnbst.tex)) [17]
 Underfull \hbox (badness 2012) in paragraph at lines 87--91
 []\T1/cmr/m/n/12 OASIS, Clo-su-re of OA-SIS UD-DI Speci-fica-tion, $\T1/cmtt/m/
 n/12 https : / / lists .
@@ -436,31 +486,31 @@ Underfull \hbox (badness 5203) in paragraph at lines 100--108
 isco-ve-
  []
 
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 129--132
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
 []\T1/cmr/m/n/12 Wikipedia, Google Pom-mi, $\T1/cmtt/m/n/12 https : / / fi . wi
 kipedia . org / wiki /
  []
 
-) [16] <antipatterns.png, id=88, 1164.35pt x 762.85pt>
+) [19] <antipatterns.png, id=97, 1164.35pt x 762.85pt>
 File: antipatterns.png Graphic file (type png)
  <use antipatterns.png>
-Package pdftex.def Info: antipatterns.png used on input line 264.
+Package pdftex.def Info: antipatterns.png used on input line 356.
 (pdftex.def)             Requested size: 469.47308pt x 307.57903pt.
 
-Overfull \hbox (42.68173pt too wide) in paragraph at lines 264--267
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 356--359
  [][] 
  []
 
 [1 <./antipatterns.png>] (./aine.aux) ) 
 Here is how much of TeX's memory you used:
- 3766 strings out of 493304
- 50095 string characters out of 6139871
- 123766 words of memory out of 5000000
- 7122 multiletter control sequences out of 15000+600000
+ 5456 strings out of 493304
+ 72299 string characters out of 6139871
+ 150728 words of memory out of 5000000
+ 8796 multiletter control sequences out of 15000+600000
  18333 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,8n,25p,1267b,318s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,40p,1267b,1589s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-sup
 er/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
@@ -475,10 +525,10 @@ m1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/shar
 e/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
 1200.pfb>
-Output written on aine.pdf (20 pages, 774875 bytes).
+Output written on aine.pdf (23 pages, 786363 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
+ 151 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

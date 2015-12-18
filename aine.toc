@@ -6,8 +6,8 @@
 \contentsline {subsection}{\numberline {3.2}WSDL}{5}
 \contentsline {subsection}{\numberline {3.3}UDDI}{7}
 \contentsline {subsection}{\numberline {3.4}Palveluiden haun haasteet}{8}
-\contentsline {subsection}{\numberline {3.5}Semanttinen palveluiden haku}{13}
-\contentsline {section}{\numberline {4}Yhteenveto}{14}
-\contentsline {section}{L\"ahteet}{14}
+\contentsline {subsection}{\numberline {3.5}Semanttinen palveluiden haku}{16}
+\contentsline {section}{\numberline {4}Yhteenveto}{16}
+\contentsline {section}{L\"ahteet}{17}
 \contentsline {section}{Liitteet}{}
  \contentsline {section}{\hspace {0.5cm}1 Yleiset WSDL-m\"a\"arittelypuutteet}{}

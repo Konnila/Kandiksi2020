@@ -209,10 +209,19 @@ month={Sept}
 }
 
 @misc{UDDIend,
-  author = {Wikipedia},
-  title = {{Google Pommi}},
+  author = {OASIS},
+  title = {{Closure of OASIS UDDI Specification}},
   howpublished = "\url{https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html}",
   year = {2007}, 
   note = "[Online]"
 }
+
+@article{OWL-S2UDDI,
+  title={Adding OWL-S to UDDI, implementation and throughput},
+  author={Srinivasan, Naveen and Paolucci, Massimo and Sycara, Katia},
+  journal={Proceedings of Semantic Web Service and Web Process Composition},
+  volume={25},
+  year={2004}
+}
+
 

@@ -112,6 +112,12 @@ Rao, J. \bbland{} Su, X., A survey of automated web service composition
 \newblock \capitalize\bblin{} {\em Semantic Web Services and Web Process
   Composition}, Springer, 2005, \bblpages{} 43--54.
 
+\bibitem[SPS04]{OWL-S2UDDI}
+Srinivasan, N., Paolucci, M. \bbland{} Sycara, K., Adding owl-s to uddi,
+  implementation and throughput.
+\newblock {\em Proceedings of Semantic Web Service and Web Process
+  Composition}, 25.
+
 \bibitem[Tsa14]{tsang2014foundations}
 Tsang, E., {\em Foundations of Constraint Satisfaction: The Classic Text}.
 \newblock BoD--Books on Demand, 2014.
@@ -129,5 +135,10 @@ W3C, {Web Services Description Language (WSDL) Version 2.0},
 Wikipedia, {Google Pommi}, \url{https://fi.wikipedia.org/wiki/Google-pommi},
   2007.
 \newblock [Online].
+
+\bibitem[YC79]{yourdon1979structured}
+Yourdon, E. \bbland{} Constantine, L.~L., {\em Structured design: Fundamentals
+  of a discipline of computer program and systems design}.
+\newblock Prentice-Hall, Inc., 1979.
 
 \end{thebibliography}
