@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {2}Palveluorientoitunut arkkitehtuuri}{2}
 \contentsline {section}{\numberline {3}Palveluiden haku}{3}
 \contentsline {subsection}{\numberline {3.1}Yleisesti}{3}
-\contentsline {subsection}{\numberline {3.2}WSDL}{5}
-\contentsline {subsection}{\numberline {3.3}UDDI}{7}
+\contentsline {subsection}{\numberline {3.2}WSDL (Web Service Description Language)}{5}
+\contentsline {subsection}{\numberline {3.3}UDDI (Universal Description Discovery and Integration)}{7}
 \contentsline {subsection}{\numberline {3.4}Palveluiden haun haasteet}{8}
 \contentsline {subsection}{\numberline {3.5}Semanttinen palveluiden haku}{16}
 \contentsline {section}{\numberline {4}Yhteenveto}{16}

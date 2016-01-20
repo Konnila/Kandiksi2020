@@ -10,7 +10,8 @@
 \bibitem[AGDR03]{uddiExtension}
 Akkiraju, R., Goodwin, R., Doshi, P. \bbland{} Roeder, S., A method for
   semantically enhancing the service discovery capabilities of uddi.
-\newblock  {\em IIWeb}, 2003, \bblpages{} 87--92.
+\newblock  {\em In proceedings of IJCAI 2003 on Information Integration on the
+  Web}, 2003, \bblpages{} 87--92.
 
 \bibitem[AN10]{AbuJarour}
 AbuJarour, M. \bbland{} Naumann, F., Dynamic tags for dynamic data web
@@ -23,6 +24,12 @@ AbuJarour, M. \bbland{} Naumann, F., Dynamic tags for dynamic data web
 Brogi, A., Corfini, S. \bbland{} Popescu, R., Composition-oriented service
   discovery.
 \newblock  {\em Software Composition}. Springer, 2005, \bblpages{} 15--30.
+
+\bibitem[Blo07]{gPommi}
+Blog, G. W.~C., {A quick word about Googlebombs},
+  \url{http://googlewebmastercentral.blogspot.com/2007/01/quick-word-about-googlebombs.html},
+  2007.
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[Cha14]{chaturvedi}
 Chaturvedi, A., Subset wsdl to access subset service for analysis.
@@ -42,6 +49,11 @@ Dong, X., Halevy, A., Madhavan, J., Nemes, E. \bbland{} Zhang, J., Similarity
   search for web services.
 \newblock  {\em Proceedings of the Thirtieth international conference on Very
   large data bases-Volume 30}. VLDB Endowment, 2004, \bblpages{} 372--383.
+
+\bibitem[Fow14]{microservices}
+Fowler, M., Microservices,
+  \url{http://martinfowler.com/articles/microservices.html}, 2014.
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[GPST04]{garofalakis2004web}
 Garofalakis, J., Panagis, Y., Sakkopoulos, E. \bbland{} Tsakalidis, A., Web
@@ -81,13 +93,18 @@ Ma, J., Cao, J. \bbland{} Zhang, Y., A probabilistic semantic approach for
 \bibitem[Net12]{EUREKA}
 Netflix, {Netflix and EUREKA service discovery},
   \url{http://techblog.netflix.com/2012/09/eureka.html}, 2012.
-\newblock [Online].
+\newblock [Viimeksi katsottu 20/1/2016].
+
+\bibitem[OAS05]{uddi}
+OASIS, Uddi specification,
+  \url{http://www.oasis-open.org/committees/uddi-spec}, 2005.
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[OAS07]{UDDIend}
 OASIS, {Closure of OASIS UDDI Specification},
   \url{https://lists.oasis-open.org/archives/uddi-spec/200807/msg00000.html},
   2007.
-\newblock [Online].
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[Pap03]{SoC}
 Papazoglou, M., Service-oriented computing: concepts, characteristics and
@@ -124,17 +141,12 @@ Tsang, E., {\em Foundations of Constraint Satisfaction: The Classic Text}.
 
 \bibitem[W3C07a]{SOAP}
 W3C, {SOAP Version 1.2}, \url{http://www.w3.org/TR/soap12/}, 2007.
-\newblock [Online].
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[W3C07b]{wsdlprimer}
 W3C, {Web Services Description Language (WSDL) Version 2.0},
   \url{http://www.w3.org/TR/wsdl20-primer/}, 2007.
-\newblock [Online].
-
-\bibitem[Wik07]{gPommi}
-Wikipedia, {Google Pommi}, \url{https://fi.wikipedia.org/wiki/Google-pommi},
-  2007.
-\newblock [Online].
+\newblock [Viimeksi katsottu 20/1/2016].
 
 \bibitem[YC79]{yourdon1979structured}
 Yourdon, E. \bbland{} Constantine, L.~L., {\em Structured design: Fundamentals

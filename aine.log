@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.25)  18 DEC 2015 19:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.7.10)  20 JAN 2016 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -420,7 +420,11 @@ t hel-pos-ti XSD se-kä WSDL-pohjaisiin
 File: antipattern1.png Graphic file (type png)
  <use antipattern1.png>
 Package pdftex.def Info: antipattern1.png used on input line 197.
-(pdftex.def)             Requested size: 384.10161pt x 196.32625pt.
+(pdftex.def)             Requested size: 469.47284pt x 261.76833pt.
+
+Overfull \hbox (42.68149pt too wide) in paragraph at lines 197--200
+[][]
+ []
 
 [9 <./antipattern1.png>]
 Overfull \hbox (13.72661pt too wide) in paragraph at lines 207--209
@@ -456,40 +460,69 @@ Overfull \hbox (13.03943pt too wide) in paragraph at lines 274--277
 ta-pah-tui, niin viheenAiheuttaja-
  []
 
-[13]
-Overfull \hbox (45.95685pt too wide) in paragraph at lines 299--301
-[]\T1/cmr/m/n/12 Tarve pa-ran-nel-tui-hin pal-ve-lu-mää-ri-tyk-siin on huo-mat-
-tu muu-al-la tiedeyhteisössäkin[[]].
+[13] [14] [15] [16] (./aine.bbl (./babelbst.tex (./finnbst.tex))
+Underfull \hbox (badness 10000) in paragraph at lines 29--33
+[]\T1/cmr/m/n/12 Blog, G. W. C., A quick word about Google-bombs,
  []
 
-[14] [15] [16] (./aine.bbl (./babelbst.tex (./finnbst.tex)) [17]
-Underfull \hbox (badness 2012) in paragraph at lines 87--91
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--33
+\T1/cmtt/m/n/12 http : / / googlewebmastercentral . blogspot . com / 2007 / 01 
+/
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 29--33
+\T1/cmtt/m/n/12 quick-[]word-[]about-[]googlebombs . html$\T1/cmr/m/n/12 , 2007
+.  [Vii-mek-si kat-sot-tu
+ []
+
+
+Underfull \hbox (badness 4217) in paragraph at lines 54--57
+[]\T1/cmr/m/n/12 Fowler, M., Mic-ro-ser-vices, $\T1/cmtt/m/n/12 http : / / mart
+infowler . com / articles /
+ []
+
+[17]
+Underfull \hbox (badness 5847) in paragraph at lines 94--97
+\T1/cmtt/m/n/12 netflix . com / 2012 / 09 / eureka . html$\T1/cmr/m/n/12 , 2012
+.  [Vii-mek-si kat-sot-tu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--102
+[]\T1/cmr/m/n/12 OASIS, Ud-di speci-fica-tion, $\T1/cmtt/m/n/12 http : / / www 
+. oasis-[]open . org /
+ []
+
+
+Underfull \hbox (badness 2012) in paragraph at lines 104--108
 []\T1/cmr/m/n/12 OASIS, Clo-su-re of OA-SIS UD-DI Speci-fica-tion, $\T1/cmtt/m/
 n/12 https : / / lists .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 104--108
 \T1/cmtt/m/n/12 oasis-[]open . org / archives / uddi-[]spec / 200807 / msg00000
  . html$\T1/cmr/m/n/12 ,
  []
 
-
-Underfull \hbox (badness 1701) in paragraph at lines 100--108
+[18]
+Underfull \hbox (badness 1701) in paragraph at lines 117--125
 []\T1/cmr/m/n/12 Rodriguez, J. M., Cras-so, M., Zu-ni-no, A. ja Cam-po, M., Im-
 
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 100--108
+Underfull \hbox (badness 5203) in paragraph at lines 117--125
 \T1/cmr/m/n/12 pro-ving web ser-vice desc-rip-tions for ef-fec-ti-ve ser-vice d
 isco-ve-
  []
 
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
-[]\T1/cmr/m/n/12 Wikipedia, Google Pom-mi, $\T1/cmtt/m/n/12 https : / / fi . wi
-kipedia . org / wiki /
+
+Underfull \hbox (badness 1448) in paragraph at lines 147--150
+[]\T1/cmr/m/n/12 W3C, Web Ser-vices Desc-rip-tion Lan-gua-ge (WSDL) Ver-sion 2.
+0,
  []
 
 ) [19] <antipatterns.png, id=97, 1164.35pt x 762.85pt>
@@ -505,8 +538,8 @@ Overfull \hbox (42.68173pt too wide) in paragraph at lines 356--359
 [1 <./antipatterns.png>] (./aine.aux) ) 
 Here is how much of TeX's memory you used:
  5456 strings out of 493304
- 72299 string characters out of 6139871
- 150728 words of memory out of 5000000
+ 72290 string characters out of 6139871
+ 151744 words of memory out of 5000000
  8796 multiletter control sequences out of 15000+600000
  18333 words of font info for 48 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -525,7 +558,7 @@ m1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/shar
 e/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
 1200.pfb>
-Output written on aine.pdf (23 pages, 786363 bytes).
+Output written on aine.pdf (23 pages, 787870 bytes).
 PDF statistics:
  151 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream

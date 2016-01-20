@@ -4,44 +4,44 @@ The top-level auxiliary file: aine.aux
 The style file: tktl.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: lahteet.bib
-You've used 23 entries,
+You've used 25 entries,
             3861 wiz_defined-function locations,
-            879 strings with 10086 characters,
-and the built_in function-call counts, 10837 in all, are:
-= -- 1082
-> -- 485
-< -- 22
-+ -- 180
-- -- 176
-* -- 719
-:= -- 1643
-add.period$ -- 54
-call.type$ -- 23
-change.case$ -- 154
-chr.to.int$ -- 22
-cite$ -- 23
-duplicate$ -- 490
-empty$ -- 830
-format.name$ -- 219
-if$ -- 2336
+            886 strings with 10418 characters,
+and the built_in function-call counts, 11383 in all, are:
+= -- 1136
+> -- 501
+< -- 24
++ -- 184
+- -- 180
+* -- 745
+:= -- 1729
+add.period$ -- 58
+call.type$ -- 25
+change.case$ -- 164
+chr.to.int$ -- 24
+cite$ -- 25
+duplicate$ -- 514
+empty$ -- 880
+format.name$ -- 227
+if$ -- 2452
 int.to.chr$ -- 2
 int.to.str$ -- 0
 missing$ -- 21
-newline$ -- 106
-num.names$ -- 69
-pop$ -- 225
+newline$ -- 114
+num.names$ -- 75
+pop$ -- 243
 preamble$ -- 1
-purify$ -- 180
+purify$ -- 192
 quote$ -- 0
-skip$ -- 443
+skip$ -- 468
 stack$ -- 0
-substring$ -- 527
+substring$ -- 541
 swap$ -- 138
-text.length$ -- 22
-text.prefix$ -- 8
+text.length$ -- 24
+text.prefix$ -- 10
 top$ -- 0
-type$ -- 218
+type$ -- 238
 warning$ -- 0
-while$ -- 94
-width$ -- 27
-write$ -- 298
+while$ -- 98
+width$ -- 28
+write$ -- 322

@@ -47,7 +47,7 @@ I.7.m [Document and text processing]}}
 
 \begin{abstract}
 Service-oriented computing (SOC) on ajatusmalli, jossa yhden monoliittisen ohjelman sijaan painotetaan kesken‰‰n kommunikoiviin palveluihin. SOC nojaakin hyvin vahvasti SOA-arkkitehtuurimalliin, joka ajaa t‰t‰ samaa ideaa. SOA ei kuitenkaan tarjoa itsess‰‰n vastauksia siihen miten turvallisuus, palveluiden koordinointi ja ohjelman keskin‰inen arkkitehtuuri on rakennettu.
-T‰ss‰ aineessa keskityt‰‰n palveluorientoituneen arkkitehtuuriin kuuluvaan palvelun hakuun (\textit{service discovery}).
+T‰ss‰ tutkielmassa keskityt‰‰n palveluorientoituneen arkkitehtuuriin kuuluvaan palvelun hakuun (\textit{service discovery}).
 
 \end{abstract}
 
@@ -55,13 +55,13 @@ T‰ss‰ aineessa keskityt‰‰n palveluorientoituneen arkkitehtuuriin kuuluvaan palve
 
 \section{Johdanto}
 
-SOC on ajatusmalli, joka painottaa eri palveluiden k‰yttˆ‰ palvelun koostamiseksi. Yleens‰ lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsess‰‰n alustariippumattomia ja v‰lj‰sti yhteydess‰ toisiinsa (\textit{loosely coupled)}. Business-taustaisena ideana SOA:ssa (\textit{Service-oriented architectures}) on tuottaa hyvin kesken‰‰n toimivia, mahdollisimman atomisia palveluita, jotka ovat uudelleenk‰ytett‰vi‰, helposti korvattavissa ja yll‰pidett‰viss‰ tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyell‰ kehitys-julkaisuikkunalla (\textit{time-to-market}).
+Service oriented computing (SOC) on ajatusmalli, joka painottaa eri palveluiden k‰yttˆ‰ palvelun koostamiseksi \cite{SoC}. Yleens‰ lopputuloksena on siis palvelu, jonka ideana on kommunikoida muiden palveluiden kanssa, jotka ovat itsess‰‰n alustariippumattomia ja v‰lj‰sti linkitettyin‰ toisiinsa \cite{SoC}. Business-taustaisena ideana palveluorientoituneissa arkkitehtuureissa (\textit{Service-oriented architectures}) on tuottaa hyvin kesken‰‰n toimivia, mahdollisimman atomisia palveluita, jotka ovat uudelleenk‰ytett‰vi‰, helposti korvattavissa ja yll‰pidett‰viss‰ tuottaen nopeasti kustannustehokkaita hajautettuja palveluja lyhyell‰ kehitys-julkaisuikkunalla (\textit{time-to-market}).
 
-Yksitt‰isen palvelun teht‰v‰ voi olla yksitt‰inen pyyntˆ, tai monimutkaisempi businessprosessi, ja t‰llaisten palveluiden tarjoajat (olivatpa ne sitten organisaatioita tai yksityishenkilˆit‰) mahdollistavat ohjelmallisen p‰‰syn palveluihinsa ja dataansa internetin yli k‰ytt‰en standardoituja v‰litystapoja, k‰ytt‰en yleens‰ XML-perustaisia tai REST-mallin mukaisia HTTP-protokollaan perustuvia rajapintoja k‰ytt‰en. N‰iden palveluiden tarjoajien (\textit{service providers}) vastuulla on antaa palvelukuvaus ja yll‰pit‰‰ palvelua, ja antaa palveluun liittyv‰‰ teknist‰ sek‰ muuta tukea. Palvelua kutsuvat tahot voivat olla muita ohjelmia, tai yksitt‰isi‰ tahoja, esimerkiksi kotipalvelin joka pyyt‰‰ resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli. T‰st‰ seuraa, ett‰ n‰ill‰ n‰ill‰ palveluilla on tiettyj‰ vaatimuksia ja edellytyksi‰.
+Yksitt‰isen palvelun teht‰v‰ voi olla yksitt‰inen pyyntˆ, tai monimutkaisempi liiketoimintaprosessi, ja t‰llaisten palveluiden tarjoajat (olivatpa ne sitten organisaatioita tai yksityishenkilˆit‰) mahdollistavat ohjelmallisen p‰‰syn palveluihinsa ja dataansa internetin yli k‰ytt‰en standardoituja v‰litystapoja, k‰ytt‰en yleens‰ XML-perustaisia tai REST-mallin mukaisia HTTP-protokollaan perustuvia rajapintoja k‰ytt‰en. N‰iden palveluiden tarjoajien (\textit{service providers}) vastuulla on antaa palvelukuvaus ja yll‰pit‰‰ palvelua, ja antaa palveluun liittyv‰‰ teknist‰ sek‰ muuta tukea. Palvelua kutsuvat tahot voivat olla muita ohjelmia, tai yksitt‰isi‰ tahoja, esimerkiksi kotipalvelin joka pyyt‰‰ resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli. T‰st‰ seuraa, ett‰ n‰ill‰ n‰ill‰ palveluilla on tiettyj‰ vaatimuksia ja edellytyksi‰.
 
 \begin{itemize}
 
-\item \textit{Teknologiariippumattomuus}: Palvelun ei kuulu olla liian teknologiariippuvainen, vaan sit‰ pit‰‰ pysty‰ kutsumaan alalla vallitsevilla tyˆkaluilla ja alan standardien mukaisesti.
+\item \textit{Teknologiariippumattomuus}: Palvelun ei kuulu olla liian teknologiariippuvainen, vaan sit‰ pit‰‰ pysty‰ kutsumaan alalla k‰ytˆss‰ olevilla tyˆkaluilla ja alan standardien mukaisesti.
 
 \item \textit{heikko linkittyneisyys (loosely coupled)}: palvelun tulee olla irti mahdollisesta kontekstista, ja toimia itsen‰isesti (ainakin ulosp‰in) ilman tietoa muista palveluista tai komponenteista.
 
@@ -72,14 +72,14 @@ Yksitt‰isen palvelun teht‰v‰ voi olla yksitt‰inen pyyntˆ, tai monimutkaisempi bu
 
 \end{itemize}
 
-T‰ss‰ aineessa keskityt‰‰n palveluiden hakuun, haettavuuteen ja siihen miten se voidaan toteuttaa palveluorientoituneessa arkkitehtuurimallissa.
+T‰ss‰ tutkielmassa keskityt‰‰n palveluiden hakuun, haettavuuteen ja siihen miten se voidaan toteuttaa palveluorientoituneessa arkkitehtuurimallissa.
 
 
 \section{Palveluorientoitunut arkkitehtuuri}
 
-Perinteisesti SOC palvelumalli johon nojataan, on ollut SOA. SOA pyrkii k‰ytt‰m‰‰n erillisi‰ palveluja koostaakseen monimutkaisiakin ohjelmistoja. N‰iden erillisten palvelujen on tarkoitus olla uudelleenk‰ytett‰vi‰ ja joustavia, ja siten nopeuttaa sek‰ halventaa ohjelmistokehityst‰.
+Perinteisesti SOC palvelumalli johon nojataan, on ollut palveluorientoitunut arkkitehtuuri (SOA). SOA pyrkii k‰ytt‰m‰‰n erillisi‰ palveluja koostaakseen monimutkaisiakin ohjelmistoja. N‰iden erillisten palvelujen on tarkoitus olla uudelleenk‰ytett‰vi‰ ja joustavia, ja siten nopeuttaa sek‰ halventaa ohjelmistokehityst‰.
 
-Erillinen yksitt‰inen palvelu eroaa ajatusmaailmaltaan monoliittisen arkkitehtuuripuolen mallista tietyiss‰ osa-alueissa. Se on itsen‰inen, v‰lj‰sti linkitetty, uudelleenk‰ytett‰v‰, itsens‰ kuvaava ja helposti siirrett‰v‰ toiselle alustalle. Monoliittisessa arkkitehtuurissa palvelut ovat yleens‰ tiukasti sidottu sovittuihin teknologioihin, ja edelleen sidottuina k‰ytett‰v‰n teknologian vaatimuksiin ja rajotteisiin. Ohjelmat ovat tiiviisti linkattuina muihin kirjastoihin, ja yksitt‰isten luokkien ja palveluiden korvaaminen p‰‰tyy lopulta useiden moduulien muokkaamiseen t‰t‰ uutta korvaavaa moduulia tukevaksi.
+Erillinen yksitt‰inen palvelu eroaa ajatusmaailmaltaan monoliittisen arkkitehtuuripuolen mallista tietyiss‰ osa-alueissa. Se on itsen‰inen, v‰lj‰sti linkitetty, uudelleenk‰ytett‰v‰, itsens‰ kuvaava ja helposti siirrett‰viss‰ toiselle alustalle. Monoliittisessa arkkitehtuurissa palvelut ovat yleens‰ tiukasti sidottu sovittuihin teknologioihin, ja edelleen sidottuina k‰ytett‰v‰n teknologian vaatimuksiin ja rajotteisiin. Ohjelmat ovat tiiviisti linkitettyin‰ muihin kirjastoihin, ja yksitt‰isten luokkien ja palveluiden korvaaminen p‰‰tyy lopulta useiden moduulien muokkaamiseen t‰t‰ uutta korvaavaa moduulia tukevaksi.
 
 Myˆs business-mieless‰ monoliittinen arkkitehtuuri kasvaa usein turhauttavaksi: yh‰ kasvavan ohjelman monimutkaisuus ja sis‰inen linkittyneisyys muodostuu hidasteeksi uusille projektiin liittyville tyˆntekijˆille ja vaatii enemm‰n ja enemm‰n aikaa ohjelman kokonaisuuden ymm‰rt‰miseksi. Ohjelman luokkien ja palveluiden linkittyneisyys muodostaa myˆs kokonaisuuden, jota on vaikeampi muokata, jolloin uudelta tyˆntekij‰lt‰ saattaa j‰‰d‰ kooditasolla huomiotta tehd‰ muutokset kaikkiin paikkoihin joihin muutokseen liittyv‰ moduuli on kytkˆksiss‰. T‰m‰ ongelma on usein itse‰‰n ruokkiva, ja ongelmat kasaantuvat entisest‰‰n, jos koodin laadusta ei pidet‰ tasaisesti huolta.
 T‰t‰ palveluorientoituneisuus sen sijaan yritt‰‰ helpottaa rajaamalla palvelut selkeiksi itsen‰isiksi kokonaisuuksiksi.
@@ -92,13 +92,13 @@ SOA on looginen tapa suunnitella ohjelmistoja joko yksitt‰isten k‰ytt‰jien tarpe
 
 \textbf{Palvelua kutsuvat tahot} voivat olla muita ohjelmia, tai yksitt‰isi‰ tahoja, esimerkiksi kotipalvelin joka pyyt‰‰ resurssia REST-rajapinnan toteuttavalta palvelulta internetin yli.
 
-SOA:lle tyypillisess‰ skenaariossa palveluntarjoaja rakentaa toteutuksen palvelusta ja antaa sille palvelukuvauksen. T‰m‰n j‰lkeen julkaisee sen palveluhakutaholle tai rekisterille, jota kautta palvelu on lˆydett‰viss‰. Palvelua hakeva osapuoli p‰‰see k‰siksi palveluun t‰llaisen tahon/rekisterin kautta (kuten esimerkiksi UDDI) ja linkittyy palvelukuvauksen avulla palveluntarjoajaan, jonka j‰lkeen kutsuva osapuoli p‰‰see kutsumaan palvelutoteutusta. 
+SOA:lle tyypillisess‰ skenaariossa palveluntarjoaja rakentaa toteutuksen palvelusta ja antaa sille palvelukuvauksen. T‰m‰n j‰lkeen julkaisee sen palveluhakutaholle tai rekisterille, jota kautta palvelu on lˆydett‰viss‰. Palvelua hakeva osapuoli p‰‰see k‰siksi palveluun t‰llaisen tahon/rekisterin kautta (kuten esimerkiksi Universal Description Discovery and Integration eli UDDI \cite{uddi}) ja linkittyy palvelukuvauksen avulla palveluntarjoajaan, jonka j‰lkeen kutsuva osapuoli p‰‰see kutsumaan palvelutoteutusta. 
 
 
 %lopuksi sitten se extended soa
 
 Palveluorientoituneet arkkitehtuurit toteuttavat SOC:in ideaa,
-mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon\cite{SoC}.
+mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai koordinaatioon \cite{SoC}.
 
 \section{Palveluiden haku}
 
@@ -106,7 +106,7 @@ mutteivat ota kantaa esimerkiksi turvallisuuteen, transaktioiden hallintaan tai 
 Palveluntarjoajilla on hallussaan toteutus palvelusta, jota he yll‰pit‰v‰t ja he myˆs m‰‰ritt‰v‰t palvelukuvauksen tarjoamalleen palvelulle. Palvelukuvausten tarkoituksena on ilmoittaa palvelun tarkoituksesta, k‰ytt‰ytymisest‰, laadusta ja sen tulee muodostaa alusta lˆydett‰vyydelle, linkittymiselle ja palvelukompositiolle. Palvelut voivat tarvittaessa olla yhteydess‰ toisiinsa monimutkaisemmissa prosesseissa, kuten vaikkapa luottokortin tarkistuksessa tai tuotteen tilauksessa. Koska n‰m‰ palvelut ovat luonteeltaan alustariippumattomia, luo se puitteet kompositiopalveluiden tuottamiselle liitt‰m‰ll‰ yhteen toiminnaltaan yksinkertaisia tai monimutkaisempia palveluita. 
 
 \newpage
-Web service -malli koostuu kolmesta komponentista: asiakkaasta, palveluntarjoajasta sek‰ rekisterist‰. Palveluiden haun kannalta n‰m‰ kaikki ovat oleellisia. Ilman rekisteri‰ kutsujaa ja tarjoajaa ei voida linkitt‰‰, koska yleens‰ asiakas ei tied‰ miss‰ palvelu sijaitsee. Palveluntarjoaja julkaisee palvelun rekisteriss‰ luomalla WSDL (Web Service Description Language) m‰‰rityksen, joka on XML-pohjainen rajapintakuvaus\cite{chaturvedi}, joka kertoo kutsuvalle taholle miten pyydetty‰ palvelua voidaan kutsua, millaisia parametreja se odottaa, miss‰ muodossa vastaus tulee ja millaisissa tietorakenteissa vastauksen sis‰ltˆ on\cite{wsdlprimer}. Perinteisesti n‰m‰ tahot ovat keskustelleet kesken‰‰n SOAP:n avulla.
+Web service -malli koostuu kolmesta komponentista: asiakkaasta, palveluntarjoajasta sek‰ rekisterist‰. Palveluiden haun kannalta n‰m‰ kaikki ovat oleellisia. Ilman rekisteri‰ kutsujaa ja tarjoajaa ei voida linkitt‰‰, koska yleens‰ asiakas ei tied‰ miss‰ palvelu sijaitsee. Palveluntarjoaja julkaisee palvelun rekisteriss‰ luomalla Web Service Description Language -m‰‰rityksen (WSDL), joka on XML-pohjainen rajapintakuvaus \cite{chaturvedi}, joka kertoo kutsuvalle taholle miten pyydetty‰ palvelua voidaan kutsua, millaisia parametreja se odottaa, miss‰ muodossa vastaus tulee ja millaisissa tietorakenteissa vastauksen sis‰ltˆ on \cite{wsdlprimer}. Perinteisesti n‰m‰ tahot ovat keskustelleet kesken‰‰n SOAP:n avulla.
 SOAP on protokolla, joka alkujaan oli akronyymi sanoista Simple Object Access Protocol. Myˆhemmiss‰ versioissa p‰‰tettiin ettei SOAP ole akronyymi ollenkaan.
 
 \begin{figure}
@@ -122,23 +122,23 @@ SOAP on protokolla, joka alkujaan oli akronyymi sanoista Simple Object Access Pr
 \caption{SOAP viestint‰}
 \end{figure}
 
-SOAP luotiin toimimaan HTTP-protokollan yli, koska sit‰ tuetaan kaikissa internet selaimissa ja tarjoaa muodon, jolla XML viestit k‰‰rit‰‰n\cite{SOAP}.
+SOAP luotiin toimimaan HTTP-protokollan yli, koska sit‰ tuetaan kaikissa internet selaimissa ja tarjoaa muodon, jolla XML viestit k‰‰rit‰‰n \cite{SOAP}.
 N‰in kaikki palvelut, jotka
- tukevat SOAP:ia voivat keskustella kesken‰‰n, eik‰ ole v‰li‰ miten palvelut ovat teknisesti toteutettu. Rekisteriss‰ on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnˆn rekisteriin, jonka j‰lkeen rekisteri vastaa kutsujalle l‰hett‰m‰ll‰ palan WSDL-m‰‰rittelyst‰. T‰m‰n j‰lkeen, mik‰li palautettiin oikeanlaista tietoa, asiakkaalla on kaikki
-  tarpeellinen tieto linkitty‰kseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnˆn palveluntarjoajalle, joka antaa edelleen WSDL-m‰‰ritellyss‰ muodossa vastauksen asiakkaalle. Kaikki n‰m‰ pyynnˆt palveluntarjoajan, rekisterin ja asiakkaan v‰lill‰ ovat perinteisess‰ mallissa SOAP-muotoisia. Havainnollistus kuvassa 2.
+ tukevat SOAP:ia voivat keskustella kesken‰‰n, eik‰ ole v‰li‰ miten palvelut ovat teknisesti toteutettu. (Kuva 2) Rekisteriss‰ on siis WSDL-kuvaus palvelusta. Web service -mallissa asiakastaho tekee pyynnˆn rekisteriin, jonka j‰lkeen rekisteri vastaa kutsujalle l‰hett‰m‰ll‰ palan WSDL-m‰‰rittelyst‰. T‰m‰n j‰lkeen, mik‰li palautettiin oikeanlaista tietoa, asiakkaalla on kaikki
+  tarpeellinen tieto linkitty‰kseen palveluun. Saamansa WSDL:n avulla asiakas tekee pyynnˆn palveluntarjoajalle, joka antaa edelleen WSDL-m‰‰ritellyss‰ muodossa vastauksen asiakkaalle. Kaikki n‰m‰ pyynnˆt palveluntarjoajan, rekisterin ja asiakkaan v‰lill‰ ovat perinteisess‰ mallissa SOAP-muotoisia. 
 
-T‰llainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myˆs muita tapoja keskustella palvelun ja asiakkaan v‰lill‰. Nyky‰‰n yh‰ useammat web-palvelut toteutetaan REST-tyyppisesti. Ongelmaksi palvelun haun kannalta muodostuu se, ettei REST:‰ ole standardoitu, eik‰ siis ole olemassa standardoitua tapaa miten palveluiden haku REST-tyyppisille rajapinnoilla toteutetaan. Normaalisti REST-tyyppisen palvelun haku perustuu sen URI:n. Esimerkiksi osoitteessa http://yhtio.com/api/kayttajat/ voisi listata kyseisen palvelun k‰ytt‰j‰t. On t‰ysin palveluntarjoajan vastuulla, ett‰ asiakkaat lˆyt‰v‰t kyseiset resurssit. Hyv‰ss‰ tapauksessa resurssien metadatasta lˆytyy tietoa siit‰ mit‰ voidaan tehd‰ seuraavaksi tai mit‰ muita resursseja voidaan hakea. REST ei siis varsinaisesti ota kantaa miten palvelun haku on toteutettu.
+T‰llainen malli on hyvin perinteinen, oleellisina osina ovat WSDL, rekisterit ja SOAP viestit. On kehitetty myˆs muita tapoja keskustella palvelun ja asiakkaan v‰lill‰. Nyky‰‰n yh‰ useammat web-palvelut toteutetaan REST-tyyppisesti. Ongelmaksi palvelun haun kannalta muodostuu se, ettei REST:‰ ole standardoitu, eik‰ siis ole olemassa standardoitua tapaa miten palveluiden haku REST-tyyppisille rajapinnoilla toteutetaan. Normaalisti REST-tyyppisen palvelun haku perustuu sen URI:n. Esimerkiksi osoitteessa \textit{http://yhtio.com/api/kayttajat/} voisi listata kyseisen palvelun k‰ytt‰j‰t. On t‰ysin palveluntarjoajan vastuulla, ett‰ asiakkaat lˆyt‰v‰t kyseiset resurssit. Hyv‰ss‰ tapauksessa resurssien metadatasta lˆytyy tietoa siit‰ mit‰ voidaan tehd‰ seuraavaksi tai mit‰ muita resursseja voidaan hakea. REST ei siis varsinaisesti ota kantaa miten palvelun haku on toteutettu.
 
-Erin‰isi‰ l‰hestymistapoja yhdist‰‰ REST:i‰ traditionaaliseen malliin kuitenkin lˆytyy. Er‰s ohjelmointi- ja palvelunkoostamistapa, jossa kaikki yksitt‰iset palvelut ovat t‰ysin hajautettuja ja jotka keskustelevat kesken‰‰n RESTm‰isesti, ilman keskin‰isi‰ palvelum‰‰rityksi‰ ja sopimuksia, on mikropalveluarkkitehtuuri. Mikropalveluarkkitehtuuri on nimitys, jonka puolestapuhuja esimerkiksi Martin Fowler on. K‰yt‰nnˆss‰ mikropalvelut ovat SOA arkkitehtuurin mukaisia, mutta er‰‰t kokivat SOA:n termin‰ liian laveaksi ja monimerkitykselliseksi. Mikropalveluihin ei oletuksena kuulu rekisteri‰, joten n‰m‰ tarvitsevat oman tapansa linkitt‰‰ palvelun kutsuja sek‰ palvelun tarjoaja. T‰llaisia ratkaisuja voivat olla vaikkapa selaimen tai palvelinpuolen palveluiden haku. Joka tapauksessa n‰m‰kin ratkaisut p‰‰tyv‰t usein rekisterin k‰yttˆˆn\cite{EUREKA}. Ratkaisut loppuviimein ovat hyvin samanlaisia, erona on ettei REST-palvelunhakua ole standardoitu viel‰ samalla tavalla kuin Web Service maailmassa.
+Erin‰isi‰ l‰hestymistapoja yhdist‰‰ REST:i‰ traditionaaliseen malliin kuitenkin lˆytyy. Er‰s ohjelmointi- ja palvelunkoostamistapa, jossa kaikki yksitt‰iset palvelut ovat t‰ysin hajautettuja ja jotka keskustelevat kesken‰‰n RESTm‰isesti, ilman keskin‰isi‰ palvelum‰‰rityksi‰ ja sopimuksia, on mikropalveluarkkitehtuuri. Mikropalveluarkkitehtuuri on nimitys, jonka puolestapuhuja esimerkiksi Martin Fowler on \cite{microservices}. K‰yt‰nnˆss‰ mikropalvelut ovat SOA arkkitehtuurin mukaisia, mutta er‰‰t kokivat SOA:n termin‰ liian laveaksi ja monimerkitykselliseksi. Mikropalveluihin ei oletuksena kuulu rekisteri‰, joten n‰m‰ tarvitsevat oman tapansa linkitt‰‰ palvelun kutsuja sek‰ palvelun tarjoaja. T‰llaisia ratkaisuja voivat olla vaikkapa selaimen tai palvelinpuolen palveluiden haku. Joka tapauksessa n‰m‰kin ratkaisut p‰‰tyv‰t usein rekisterin k‰yttˆˆn \cite{EUREKA}. Ratkaisut loppuviimein ovat hyvin samanlaisia, erona on ettei REST-palvelunhakua ole standardoitu viel‰ samalla tavalla kuin Web Service maailmassa.
 
-\subsection{WSDL}
+\subsection{WSDL (Web Service Description Language)}
 
 WSDL on kieli jonka avulla kehitt‰j‰t kuvaavat kaksi t‰rkeint‰ osaa palvelusta: palvelun toiminnallisuuden ja miten sit‰ kutsutaan, eli miten siihen p‰‰see k‰siksi. WSDL 1.1 m‰‰rittelyn \footnote{WSDL 1.1 www.w3.org/TR/wsdl} mukaan toiminnallinen kuvaus paljastaa palvelurajapinnan, joka tarjotaan palvelun kutsujalle. Myˆhempi osa m‰‰ritt‰‰ teknologiaan liittyv‰t osa-alueet, kuten viestint‰protokollan sek‰ verkko-osoitteen. Palvelua hakevat osapuolet tarvitsevat toiminnallisen m‰‰rityksen lˆyt‰‰kseen kolmannen osapuolen palvelun joka sopii k‰ytt‰j‰n tarpeisiin ja k‰ytt‰j‰ hyˆdynt‰‰ teknologiallista m‰‰rityst‰ viesti‰kseen palvelun kanssa.
 
 WSDL dokumentti m‰‰rittelee palvelun toiminnallisuuden joukkona porttityyppej‰ (\textit{port-types}), jotka asettava eri operaatiot joiden kutsuminen perustuu viestien vaihtoon. Viestit t‰ss‰ yhteydess‰ tarkoittavat operaatioiden syˆttˆ- ja ulostuloparametreja niit‰ sen enemp‰‰ erottelematta. WSDL myˆs tarjoaa palvelun tarjoajalle mahdollisuuden m‰‰ritell‰ virheviestej‰ (\textit{faults}), joita palautetaan palvelun kutsujalle. WSDL elementtien, kuten porttityyppien, virheviestim‰‰ritelmien ja operaatioiden pit‰‰ olla yksik‰sitteisesti nimetty.
-Vapaaehtoista on, lis‰t‰‰nkˆ elementeille dokumentaatiota kommentteina. Dokumentaation lis‰‰minen WSDL-dokumenttiin on kuitenkin suositeltua. Viestit muodostuvat osista, jotka kuljettavat tietoa palvelun tarjoajan ja palvelujen k‰ytt‰jien v‰lill‰ sek‰ toisin p‰in. Tyypillisesti jokainen viesti on hierarkkiselta sis‰llˆlt‰‰n m‰‰riteltyjen datatyyppien mukainen. N‰m‰ datatyypit on m‰‰ritelty erikseen skeemassa. XSD-kieli (\textit{XML Schema Definition}) on kehitetty kuvaamaan viestin osien hierarkiaa. XSD tarjoaa konstruktorit m‰‰ritt‰m‰‰n yksinkertaiset tyypit (\textit{simple types}) esimerkiksi integer, string ja totuusarvo. XSD tarjoaa myˆs tyˆkalut rajoitusten m‰‰ritt‰miseen, kapseloimiseen sek‰ lis‰osa mekanismien kehitt‰miseen monimutkaisempia elementtej‰ varten. Kuvassa 1 on esitelty tarvittava XML-muotoinen esitys monimutkaisen tyypin (\textit{complex type}) - t‰ss‰ "CountryCodes" - toteutukseen.
+Vapaaehtoista on, lis‰t‰‰nkˆ elementeille dokumentaatiota kommentteina. Dokumentaation lis‰‰minen WSDL-dokumenttiin on kuitenkin suositeltua. Viestit muodostuvat osista, jotka kuljettavat tietoa palvelun tarjoajan ja palvelujen k‰ytt‰jien v‰lill‰ sek‰ toisin p‰in. Tyypillisesti jokainen viesti on hierarkkiselta sis‰llˆlt‰‰n m‰‰riteltyjen datatyyppien mukainen. N‰m‰ datatyypit on m‰‰ritelty erikseen skeemassa. XML Schema Definition (\textit{XSD-kieli}) on kehitetty kuvaamaan viestin osien hierarkiaa. XSD tarjoaa konstruktorit m‰‰ritt‰m‰‰n yksinkertaiset tyypit (\textit{simple types}) esimerkiksi integer, string ja totuusarvo. XSD tarjoaa myˆs tyˆkalut rajoitusten m‰‰ritt‰miseen, kapseloimiseen sek‰ lis‰osa mekanismien kehitt‰miseen monimutkaisempia elementtej‰ varten. Kuvassa 3 on esitelty tarvittava XML-muotoinen esitys monimutkaisen tyypin (\textit{complex type}), t‰ss‰ CountryCodes, toteutukseen.
 
-Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun haun kannalta oleellista, ett‰ WSDL-dokumentin elementit on nimetty ja kommentoitu kuvaavasti. Syntaktiset rekisterit esik‰sittelev‰t WSDL-dokumentit tyypillisesti siten, ett‰ rekisterit ker‰‰v‰t joukon termej‰. Termit valitaan  porttityyppi-elementtien, sis‰- ja ulostuloviestien sek‰ operaatioiden nimist‰ ja kommenteista. Kun termit on ker‰tty dokumentista, syntaktiset rekisterit erottelevat nimiyhdistelm‰t: "CountryCodes" erotetaan ja j‰‰ "Country" ja "Codes". Edelleen poistetaan ei-relevantit termit kuten "the", "for" ja vastaavat. Mahdollisesti poistetaan myˆs ylim‰‰r‰iset p‰‰tteet jotta saadaan termin juuri. T‰t‰ on kutsuttu juuristamiseksi (\textit{stemming})\cite{Crasso2008144}. Vastaavasti pyynnˆt esik‰sitell‰‰n edell‰mainitulla tavalla, jonka j‰lkeen termej‰ vertaillaan tarjolla olevien palvelujen termej‰ vastaan. Jos julkaisija ei osaa m‰‰ritell‰ WSDL-dokumenttiaan k‰ytt‰en j‰rkevi‰ paradigmoja, kuten selkeit‰ nime‰misk‰yt‰ntˆj‰, on vertailu tarjolla oleviin palveluihin hyvin vaikea teht‰v‰.
+Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun haun kannalta oleellista, ett‰ WSDL-dokumentin elementit on nimetty ja kommentoitu kuvaavasti. Syntaktiset rekisterit esik‰sittelev‰t WSDL-dokumentit tyypillisesti siten, ett‰ rekisterit ker‰‰v‰t joukon termej‰. Termit valitaan  porttityyppi-elementtien, sis‰- ja ulostuloviestien sek‰ operaatioiden nimist‰ ja kommenteista. Kun termit on ker‰tty dokumentista, syntaktiset rekisterit erottelevat nimiyhdistelm‰t: \textit{CountryCodes} erotetaan ja j‰‰ \textit{Country} ja \textit{Codes}. Edelleen poistetaan ei-relevantit termit kuten \textit{the}, \textit{for} ja vastaavat. Mahdollisesti poistetaan myˆs ylim‰‰r‰iset p‰‰tteet jotta saadaan termin juuri. T‰t‰ on kutsuttu juuristamiseksi (\textit{stemming}) \cite{Crasso2008144}. Vastaavasti pyynnˆt esik‰sitell‰‰n edell‰mainitulla tavalla, jonka j‰lkeen termej‰ vertaillaan tarjolla olevien palvelujen termej‰ vastaan. Jos julkaisija ei osaa m‰‰ritell‰ WSDL-dokumenttiaan k‰ytt‰en j‰rkevi‰ paradigmoja, kuten selkeit‰ nime‰misk‰yt‰ntˆj‰, on vertailu tarjolla oleviin palveluihin hyvin vaikea teht‰v‰.
 
 %W. Jian, W. Zhaohui, Similarity-based Web Service matchmaking, in: IEEE %International Conference on Services Computing, vol. 1, IEEE Computer
 %Society, Orlando, Florida, USA, 2005, pp. 287?294
@@ -151,9 +151,9 @@ Useimmat rekisterit ovat luonteeltaan syntaktisia, joten on onnistuneen palvelun
 
 
 
-\subsection{UDDI}
+\subsection{UDDI (Universal Description Discovery and Integration)}
 
-Perinteisen Web Service mallin palvelut nojaavat yleens‰ erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 silt‰ ideapohjalta, ett‰ palvelua k‰ytt‰v‰t tahot linkitett‰isiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. T‰llaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnˆn palvelurekisteri‰ vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. T‰llaisessa maailmassa julkisesti yll‰pidett‰v‰ UDDI-rekisteri olisi kriittisen t‰rke‰ kaikille. UDDI ei kuitenkaan p‰‰tynyt niin yleiseen k‰yttˆˆn kuin sen julkaisivat olisivat toivoneet ja sen kehitt‰minen loppui vuonna 2007\cite{UDDIend}. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja t‰rke‰ osa perinteist‰ Web Service palvelunhakumallia.
+Perinteisen Web Service mallin palvelut nojaavat yleens‰ erilaisiin rekistereihin. OASIS kehitti UDDI:n vuonna 2000 silt‰ ideapohjalta, ett‰ palvelua k‰ytt‰v‰t tahot linkitett‰isiin palvelun tarjoajiin julkisen tai yksityisen rekisterin avulla. T‰llaisessa visiossa kuka tahansa esimerkiksi luottokorttitunnistusta tarvitseva asiakas tekisi pyynnˆn palvelurekisteri‰ vastaan ja valitsisi oikean SOAP:ia tukevan palvelun. T‰llaisessa maailmassa julkisesti yll‰pidett‰v‰ UDDI-rekisteri olisi kriittisen t‰rke‰ kaikille. UDDI ei kuitenkaan p‰‰tynyt niin yleiseen k‰yttˆˆn kuin sen julkaisivat olisivat toivoneet ja sen kehitt‰minen loppui vuonna 2007 \cite{UDDIend}. Se on kuitenkin edelleen osa Web Services Interoperability standardia ja t‰rke‰ osa perinteist‰ Web Service palvelunhakumallia.
 
 UDDI-rekisteri koostuu kolmesta osasta:
 
@@ -171,7 +171,7 @@ UDDI on luonteeltaan syntaktinen rekisteri, eli se esik‰sittelee termit ja suori
 
 \subsection{Palveluiden haun haasteet}
 
-Web service -palveluhaun suurimpia ongelmia on, ett‰ se on kuin etsisi neulaa hein‰suovasta\cite{garofalakis2004web}, varsinkin kun palveluiden m‰‰r‰ kasvaa. Oikean palvelun lˆyt‰minen k‰ytt‰j‰n antamien hakuehtojen mukaan on viel‰kin perustavanlaatuinen tutkimusongelma SOC-maailmassa\cite{li2009web}. 
+Web service -palveluhaun suurimpia ongelmia on, ett‰ se on kuin etsisi neulaa hein‰suovasta \cite{garofalakis2004web}, varsinkin kun palveluiden m‰‰r‰ kasvaa. Oikean palvelun lˆyt‰minen k‰ytt‰j‰n antamien hakuehtojen mukaan on viel‰kin perustavanlaatuinen tutkimusongelma SOC-maailmassa \cite{li2009web}. 
 
 Useat tekij‰t haastavat palvelun haun ongelmaa entisest‰‰n:
 
@@ -191,21 +191,21 @@ Perinteisen mallin syntaktisuuteen perustuva palvelun haku aiheuttaa helposti on
 Palvelua m‰‰ritelless‰‰n julkaisijat sortuvat helposti XSD sek‰ WSDL-pohjaisiin puutteisiin m‰‰rittelyss‰, jotka heikent‰v‰t palvelun haun tehokkuutta. L‰hteess‰ \cite{Rodriguez20101001} mainitaan kahdeksan puutteellista m‰‰rittelytyyli‰ ja ratkaisuja niihin:
 
 \textbf{Puuttuvat tai virheelliset kommentit}: Puute esiintyy dokumentaatiossa. Ongelma esiintyy silloin, kun WSDL-dokumentti ei sis‰ll‰ kommentteja, tai ne ovat muodoltaan tai esitykselt‰‰n huonoja. Kommenttien tulisi olla itsens‰selitt‰vi‰ ja sijaita oikeassa kohtaa WSDL-dokumenttia.
-Kuvassa 4 on esitelty puute dokumentoinnissa ja sen vieress‰ ehdotettu korjaus. Kun tarvittava dokumentaatio on lis‰tty dokumenttiin, sen lis‰ksi ett‰ dokumentti on ilmaisultaan j‰rkev‰mpi, kasvaa sen lˆytˆvoima samalla,  sill‰ korjaus lis‰‰ dokumentista eroteltavien termien m‰‰r‰‰. Esimerkiksi nyt saadaan juuret "translat", "term", "english" ja "german", joita syntaktiset rekisterit k‰ytt‰v‰t.
+Kuvassa 4 on esitelty puute dokumentoinnissa ja sen vieress‰ ehdotettu korjaus. Kun tarvittava dokumentaatio on lis‰tty dokumenttiin, sen lis‰ksi ett‰ dokumentti on ilmaisultaan j‰rkev‰mpi, kasvaa sen lˆytˆvoima samalla,  sill‰ korjaus lis‰‰ dokumentista eroteltavien termien m‰‰r‰‰. Esimerkiksi nyt saadaan juuret \textit{translat}, \textit{term}, \textit{english} ja \textit{german}, joita syntaktiset rekisterit k‰ytt‰v‰t.
 
 \begin{figure}
-\includegraphics[width=0.9\textwidth,height=0.3\textheight]{antipattern1.png}
+\includegraphics[width=1.1\textwidth,height=0.4\textheight]{antipattern1.png}
 \label{fig:antipattern1}
 \vspace{-20pt}
 \caption{Puuttuvat tai virheelliset kommentit -puute ja esitetty korjaus, otettu l‰hteest‰ [RCZC10]}
 \end{figure}
 \newpage
 
-\textbf{Ylim‰‰r‰iset port-type m‰‰ritykset}: Yleinen huono tapa on toistaa port-type m‰‰rityksi‰. Turha port-type m‰‰ritys on sellainen, joka sis‰lt‰‰ saman joukon operaatioita kuin jokin toinen saman palvelun port-type m‰‰ritys. Yleens‰ l‰htˆkohtana kehitt‰j‰ll‰ t‰m‰n tyyppisess‰ toteutuksessa on m‰‰ritell‰ eri port-typet operaatioille jotka tarjoavat toimintaansa eri protokollan yli, esimerkiksi HTTP ja SOAP. T‰m‰ ei ole kuitenkaan tarpeellista, sill‰ operaatiot voidaan abstrahoida, niinkuin on tehty kuvassa 5. Toisaalta, useammat (turhat) port-type m‰‰ritykset voivat nostaa palvelua suotuisammaksi rekisterin valitessa asiakkaan kyselyn perusteella termej‰. Jos termi sattuu osumaan palvelusta esik‰siteltyyn termiin, saa se korkeamman arvosanan. Jos sama termi esiintyy useampaan kertaan esimerkiksi port-type m‰‰rityksen toiston takia, saa se edelleen korkeamman arvosanan. T‰llainen tilanne voidaan n‰hd‰ samanlaisena kuin Google pommi\cite{gPommi}.
+\textbf{Ylim‰‰r‰iset port-type m‰‰ritykset}: Yleinen huono tapa on toistaa port-type m‰‰rityksi‰. Turha port-type m‰‰ritys on sellainen, joka sis‰lt‰‰ saman joukon operaatioita kuin jokin toinen saman palvelun port-type m‰‰ritys. Yleens‰ l‰htˆkohtana kehitt‰j‰ll‰ t‰m‰n tyyppisess‰ toteutuksessa on m‰‰ritell‰ eri port-typet operaatioille jotka tarjoavat toimintaansa eri protokollan yli, esimerkiksi HTTP ja SOAP. T‰m‰ ei ole kuitenkaan tarpeellista, sill‰ operaatiot voidaan abstrahoida, niinkuin on tehty kuvassa 5. Toisaalta, useammat (ylim‰‰r‰iset) port-type m‰‰ritykset voivat nostaa palvelua suotuisammaksi rekisterin valitessa asiakkaan kyselyn perusteella termej‰. Jos termi sattuu osumaan palvelusta esik‰siteltyyn termiin, saa se korkeamman arvosanan. Jos sama termi esiintyy useampaan kertaan esimerkiksi port-type m‰‰rityksen toiston takia, saa se edelleen korkeamman arvosanan. T‰llainen tilanne voidaan n‰hd‰ samanlaisena kuin Google pommi \cite{gPommi}.
 
 
-\textbf{Monitulkintaiset XML-elementtien nimet}: Ilmenee kun monitulkintaisia tai kryptisi‰ nimi‰ esiintyy porttityyppi, operaatio tai viestielementeiss‰. WSDL-elementin tulee ilment‰‰ hyvin teht‰v‰‰ns‰, sill‰ nimi on uniikin tunnisteen lis‰ksi myˆs kuvauselementti, koska syntaktiset rekisterit esik‰sittelev‰t myˆs nimielementit. Kuvaavat nimet eiv‰t siis sis‰ll‰ argumentteja kuten "arg0"\hspace{1pt}tai "foo". Lis‰ksi syntaktiset rekisterit luottavat usein suosittuihin niment‰konventioihin pilkkoessaan pitki‰ nimi‰\cite{dong2004similarity}. 
-Esimerkiksi nimi \text{$"xmlelementinnimi"$} tulee kirjoittaa muodossa  \text{$"xmlElementinNimi"$}. N‰m‰ ovat myˆs helpommin luettavissa. Myˆs nimen pituus kannattaa ottaa huomioon. Nimen ei kannata olla liian lyhyt, eik‰ liian pitk‰. Suosituspituus olisi kolmen ja viidentoista merkin v‰lill‰\cite{taming}.
+\textbf{Monitulkintaiset XML-elementtien nimet}: Ilmenee kun monitulkintaisia tai kryptisi‰ nimi‰ esiintyy porttityyppi, operaatio tai viestielementeiss‰. WSDL-elementin tulee ilment‰‰ hyvin teht‰v‰‰ns‰, sill‰ nimi on uniikin tunnisteen lis‰ksi myˆs kuvauselementti, koska syntaktiset rekisterit esik‰sittelev‰t myˆs nimielementit. Kuvaavat nimet eiv‰t siis sis‰ll‰ argumentteja kuten "arg0"\hspace{1pt}tai "foo". Lis‰ksi syntaktiset rekisterit luottavat usein suosittuihin niment‰konventioihin pilkkoessaan pitki‰ nimi‰ \cite{dong2004similarity}. 
+Esimerkiksi nimi \text{$"xmlelementinnimi"$} tulee kirjoittaa muodossa  \text{$"xmlElementinNimi"$}. N‰m‰ ovat myˆs helpommin luettavissa. Myˆs nimen pituus kannattaa ottaa huomioon. Nimen ei kannata olla liian lyhyt, eik‰ liian pitk‰. Suosituspituus olisi kolmen ja viidentoista merkin v‰lill‰ \cite{taming}.
 
 \begin{figure}
 \centering
@@ -259,7 +259,7 @@ T‰m‰n operaation signeerauksesta voidaan p‰‰tell‰, ett‰ operaatio palauttaa yhde
 
 \textbf{Piilev‰t virheviestit standardiviesteiss‰}: 
 
-Ajonaikana ilmenneist‰ virheist‰ ilmoittaminen ulostuloviestiss‰ on myˆs huonoa suunnittelutyyli‰. T‰llaisessa tyyliss‰ m‰‰ritell‰‰n ulostuloviesti jonka teht‰v‰n‰ on siirt‰‰ tieto virheviestist‰ kun operaatio ep‰onnistuu, tai esimerkiksi statuskoodi kun operaatio on p‰‰ttynyt. T‰llaisen ulostuloviestin m‰‰rittely vaatii joustavan datatyypin. T‰llainen sek‰ aiheuttaa helposti liian laajaa tyyppim‰‰rittely‰ (mainittu aikaisemmin) ett‰ monimutkaistaa operaation toimintalogiikkaa. Virheviestien l‰hett‰minen ulostuloviesteiss‰ voi vaikuttaa negatiivisesti syntaktisiin rekistereihin, jotka hyˆdynt‰v‰t XML-elementtien nimi‰ ja/tai viestiosien XML-rakennetta\cite{Crasso2008144}.
+Ajonaikana ilmenneist‰ virheist‰ ilmoittaminen vastauksena annettavassa viestiss‰  (\textit{output}) on myˆs huonoa suunnittelutyyli‰. T‰llaisessa tyyliss‰ m‰‰ritell‰‰n output-viesti jonka teht‰v‰n‰ on siirt‰‰ tieto virheviestist‰ kun operaatio ep‰onnistuu, tai esimerkiksi statuskoodi kun operaatio on p‰‰ttynyt. T‰llaisen ulostuloviestin m‰‰rittely vaatii joustavan datatyypin. T‰llainen sek‰ aiheuttaa helposti liian laajaa tyyppim‰‰rittely‰ (mainittu aikaisemmin) ett‰ monimutkaistaa operaation toimintalogiikkaa. Virheviestien l‰hett‰minen ulostuloviesteiss‰ voi vaikuttaa negatiivisesti syntaktisiin rekistereihin, jotka hyˆdynt‰v‰t XML-elementtien nimi‰ ja/tai viestiosien XML-rakennetta  \cite{Crasso2008144}.
 T‰m‰ kehno suunnittelutyyli esiintyy usein liian laaja datatyyppi -suunnittelutyylin kanssa. Toinen yleinen esiintymismuoto t‰lle tyylille vaatii viestim‰‰rittelyn joka koostuu kolmesta osasta: ensimm‰inen osa kertoo tapahtuiko virhett‰, toinen osa kertoo mik‰ aiheutti virheen ja tietoja siit‰ ja kolmas kertoo operaation lopputuloksen. Seuraamalla t‰t‰ kolmen osan l‰hestymistapaa, viestim‰‰rittely operaatiolle joka laskee parametrina annetun ep‰negatiivisen luvun kertoman (mukailtu l‰hteest‰ \cite{Rodriguez20101001}) voisi olla seuraavanlainen:
 
 \lstset{language=XML}
@@ -272,7 +272,7 @@ T‰m‰ kehno suunnittelutyyli esiintyy usein liian laaja datatyyppi -suunnitteluty
 \end{lstlisting}
 
 onkoVirheita-osa kertoo tapahtuiko virhett‰. Jos virhe tapahtui, niin viheenAiheuttaja-osa kuvaa virheen aiheuttajan. Jos virhett‰ ei tapahtunut niin virheenAiheuttaja-osa on tyhj‰. Toisaalta, jos virhe tapahtuu, niin kertoma-osa on tyhj‰. Sen lis‰ksi, ett‰ ulostuloviesti l‰hett‰‰ pyydetty‰ tietoa, se myˆs yritt‰‰ kertoa vastaanottavalle taholle mit‰ pit‰isi tehd‰.
-T‰m‰ voidaan n‰hd‰ erikoistapauksena kontrollikytkenn‰st‰, jota tulisi v‰ltt‰‰ strukturoidussa suunnittelutyyliss‰\cite{yourdon1979structured}. Palvelun haun kannalta edell‰m‰‰ritelty viesti on ongelmallinen, sill‰ se antaa syntaktisen rekisterin esik‰sittelyn j‰lkeen ohjelman p‰‰toiminnan kannalta ep‰oleellisia termej‰ kuten 'onko', 'virheita', 'virheen' ja 'aiheuttaja'. Ainoastaan 'kertoma' on haluttu termi kuvatessa ohjelman p‰‰toimintoa, eli kertoman laskemista.
+T‰m‰ voidaan n‰hd‰ erikoistapauksena kontrollikytkenn‰st‰, jota tulisi v‰ltt‰‰ strukturoidussa suunnittelutyyliss‰ \cite{yourdon1979structured}. Palvelun haun kannalta edell‰m‰‰ritelty viesti on ongelmallinen, sill‰ se antaa syntaktisen rekisterin esik‰sittelyn j‰lkeen ohjelman p‰‰toiminnan kannalta ep‰oleellisia termej‰ kuten 'onko', 'virheita', 'virheen' ja 'aiheuttaja'. Ainoastaan 'kertoma' on haluttu termi kuvatessa ohjelman p‰‰toimintoa, eli kertoman laskemista.
 Ratkaisuna t‰h‰n huonoon suunnittelumalliin on k‰ytt‰‰ WSDL:n omaa tapaa k‰sitell‰ virheelliset tilanteet: virheviestit pit‰isi siirt‰‰ omissa 'fault'-viesteiss‰‰n. Yll‰m‰‰ritelty huonoa suunnittelutyyli‰ noudattava esimerkki voisi n‰ytt‰‰ korjausten j‰lkeen seuraavanlaiselta:
 
 \lstset{language=XML}
@@ -296,23 +296,23 @@ Nyt sis‰‰ntulo- ja ulostuloviestit ainoastaan siirt‰v‰t asiakkaan ja palvelimen 
 
 Koostettu kuva suunnitteluvirheist‰ t‰m‰n tutkielman liitteen‰.
 
-Tarve paranneltuihin palvelum‰‰rityksiin on huomattu muualla tiedeyhteisˆss‰kin\cite{kuropka2008semantic}. Todella paljon tutkimusta on tehty SOC:in palvelun haun ongelmien vastaamiseksi.
-Ne voidaan jakaa nelj‰‰n eri luokkaan\cite{AbuJarour}.
+Tarve paranneltuihin palvelum‰‰rityksiin on huomattu muualla tiedeyhteisˆss‰kin \cite{kuropka2008semantic}. Todella paljon tutkimusta on tehty SOC:in palvelun haun ongelmien vastaamiseksi.
+Ne voidaan jakaa nelj‰‰n eri luokkaan \cite{AbuJarour}.
 
 \begin{enumerate}
 \item \textbf{Semanttiset tavat}: Semanttisen palveluhaun mallissa kyse on yksinkertaisuudessaan palvelujen vertailusta. Semanttiset l‰hestymistavat pyrkiv‰tkin lis‰‰m‰‰n vertailun tehoa, yleens‰ rikastuttamalla palvelukuvauksia jollakin ontologialla, esimerkiksi OWL-S. Ontologialla rikastetut kuvaukset tuovat lis‰‰ ilmaisua ja parantavat vertailua k‰ytt‰j‰n tarpeen ja tarjolla olevien palvelujen v‰lill‰.
 
-\item \textbf{Informaation haku tavat}: N‰m‰ l‰hestymistavat tutkivat semanttista suhdetta palvelua kutsuvan osapuolen pyyntˆjen v‰lill‰ sek‰ palvelun tarjoajan m‰‰ritt‰mien termien v‰lill‰\cite{ma2007probabilistic}.
+\item \textbf{Informaation haku tavat}: N‰m‰ l‰hestymistavat tutkivat semanttista suhdetta palvelua kutsuvan osapuolen pyyntˆjen v‰lill‰ sek‰ palvelun tarjoajan m‰‰ritt‰mien termien v‰lill‰ \cite{ma2007probabilistic}.
 
-\item \textbf{Data mining tavat}: N‰m‰ l‰hestymistavat esitt‰v‰t palvelun haun ongelman nk. Constraint Satisfaction -ongelmana\cite{tsang2014foundations} (\textit{CSP}). Tehty pyyntˆ verrataan joukkoon saatavilla olevia palveluita ja reitinhakualgoritmeilla sek‰ klusterointimetodeilla pyrit‰‰n ratkaisemaan CSP. Palveluiden suhdetta palveluiden v‰lill‰ k‰ytet‰‰n siis parantamaan k‰ytt‰j‰lle tarjottujen palveluiden tarkkuutta.
+\item \textbf{Data mining tavat}: N‰m‰ l‰hestymistavat esitt‰v‰t palvelun haun ongelman nk. Constraint Satisfaction -ongelmana \cite{tsang2014foundations} (\textit{CSP}). Tehty pyyntˆ verrataan joukkoon saatavilla olevia palveluita ja reitinhakualgoritmeilla sek‰ klusterointimetodeilla pyrit‰‰n ratkaisemaan CSP. Palveluiden suhdetta palveluiden v‰lill‰ k‰ytet‰‰n siis parantamaan k‰ytt‰j‰lle tarjottujen palveluiden tarkkuutta.
 
-\item \textbf{Linkitt‰miseen liittyv‰t tavat}: Linkitt‰miseen liittyville l‰hestymistavoille tyypillist‰ on, ett‰ niiss‰ pyrit‰‰n yhdist‰m‰‰n asiakkaan tarpeet tyydytt‰v‰ palvelu yhdeksi kokonaisuudeksi useista eri palveluista\cite{rao2005survey}.
+\item \textbf{Linkitt‰miseen liittyv‰t tavat}: Linkitt‰miseen liittyville l‰hestymistavoille tyypillist‰ on, ett‰ niiss‰ pyrit‰‰n yhdist‰m‰‰n asiakkaan tarpeet tyydytt‰v‰ palvelu yhdeksi kokonaisuudeksi useista eri palveluista \cite{rao2005survey}.
 
 \end{enumerate}
 
-Haasteeksi perinteisess‰ WSDL:n, rekisteriin ja SOAP:aan keskittyv‰ss‰ mallissa on tullut semanttisuuden puute\cite{bringingSemantics}, sill‰ WSDL kertoo kyll‰ miten palvelua k‰ytet‰‰n, mutta ei tarjoa ratkaisuja siihen mit‰ tapahtuu kun palvelua k‰ytet‰‰n. Palvelua k‰ytt‰v‰ ihminen lukee sen luonnollisella kielell‰ palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa j‰tt‰‰ ihminen v‰list‰. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mit‰ kaikkea palvelu pystyy tekem‰‰n. Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsess‰‰n ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mit‰ ne pystyv‰t tekem‰‰n.
+Haasteeksi perinteisess‰ WSDL:n, rekisteriin ja SOAP:aan keskittyv‰ss‰ mallissa on tullut semanttisuuden puute \cite{bringingSemantics}, sill‰ WSDL kertoo kyll‰ miten palvelua k‰ytet‰‰n, mutta ei tarjoa ratkaisuja siihen mit‰ tapahtuu kun palvelua k‰ytet‰‰n. Palvelua k‰ytt‰v‰ ihminen lukee sen luonnollisella kielell‰ palvelukuvauksesta. Jos halutaan automatisoituja palveluja, jotka osaavat luotettavasti ratkaista ongelmia, tarvitaan tapa j‰tt‰‰ ihminen v‰list‰. Tarvitaan siis jokin ratkaisu tuottamaan semanttisia palvelukuvauksia. Palveluiden haku on luonteeltaan semanttista, mutta perinteinen UDDI,SOAP,WSDL perustuvan mallin rajoitteena on kertoa mit‰ kaikkea palvelu pystyy tekem‰‰n. Malli on luonteeltaan syntaksipohjainen, joka ei pysty itsess‰‰n ilmaisemaan koko kontekstia, jossa palvelut toimivat ja mit‰ ne pystyv‰t tekem‰‰n.
 
-UDDI:n avulla kyselyt palauttavat usein v‰‰ri‰ palveluita\cite{brogi2005composition}, varsinkin kun palveluiden m‰‰r‰ rekisteriss‰ kasvaa.
+UDDI:n avulla kyselyt palauttavat usein v‰‰ri‰ palveluita \cite{brogi2005composition}, varsinkin kun palveluiden m‰‰r‰ rekisteriss‰ kasvaa.
 
 
 Erilaisia l‰hestymistapoja asian korjaamiseksi on esitetty, josta lis‰‰ kohdassa "Semanttinen palveluiden haku".
@@ -323,12 +323,12 @@ Palveluiden haku myˆs semanttisen webin saralla on perustavanlaatuinen tutkimuso
 
 WSDL, SOAP ja UDDI -standardit k‰rsiv‰t semanttisen esityksen puutteesta, joten toive alan standardeilla koostettujen palveluiden automaattisesta integroimisesta j‰‰ t‰yttym‰tt‰. Jotta palveluista saataisiin kehitetty‰ semanttisia, on haasteita joihin t‰ytyy lˆyt‰‰ ratkaisuja. Ensinn‰kin kun palveluiden m‰‰r‰ lis‰‰ntyy merkitt‰v‰sti, ja oikeiden palveluiden lˆyt‰minen on t‰rke‰‰, palvelunhaun tehokkuus ja tarkkuus tulee olla merkitt‰v‰sti parempi kuin nyt. Toisekseen, kun palvelu saadaan tehokkaasti lˆydetty‰, pit‰isi pysty‰ automaattisesti linkitt‰m‰‰n se kyseist‰ palvelua kutsuvaan palveluun. Molemmat n‰ist‰ haasteista ovat riippuvaisia palveluntarjoajan kyvyst‰ kuvata tarjoamansa palveluiden toiminnot, sek‰ palveluita kutsuvien osapuolten kyvyst‰ m‰‰ritell‰ yksik‰sitteisesti ja koneluettavasti tarpeensa palvelulta.
 
-Er‰s tapa l‰hesty‰ n‰it‰ haasteita, eli perinteisen mallin semanttisuuden lis‰‰mist‰ on lis‰t‰ laajennus UDDI rekisteriin\cite{uddiExtension,OWL-S2UDDI}    lis‰‰m‰ll‰ siihen OWL-S ontologia.
+Er‰s tapa l‰hesty‰ n‰it‰ haasteita, eli perinteisen mallin semanttisuuden lis‰‰mist‰ on lis‰t‰ laajennus UDDI rekisteriin \cite{uddiExtension,OWL-S2UDDI}    lis‰‰m‰ll‰ siihen OWL-S ontologia.
 
 
 
 \section{Yhteenveto}
-T‰ss‰ tutkielmassa ollaan keskitytty palveluiden haun toteutukseen palveluorientoituneissa arkkitehtuureissa. Tutkielmassa ollaan tutustuttu miten palveluiden haku on perinteisesti toteutettu k‰ytt‰en WSDL,SOAP,UDDI -teknologioita ja miten palveluiden haun tarkkuutta voidaan parantaa, ja millaisiin sudenkuoppiin voidaan palvelum‰‰rityksiss‰ astua. Sen lis‰ksi tutkielmassa mainitaan mit‰ aiheesta on tutkittu ja millaisia p‰‰telmi‰ niist‰ voidaan tehd‰.
+T‰ss‰ tutkielmassa ollaan keskitytty palveluiden haun toteutukseen palveluorientoituneissa arkkitehtuureissa. Tutkielmassa ollaan tutustuttu miten palveluiden haku on perinteisesti toteutettu k‰ytt‰en WSDL, SOAP, UDDI -teknologioita ja miten palveluiden haun tarkkuutta voidaan parantaa, ja millaisiin sudenkuoppiin voidaan palvelum‰‰rityksiss‰ astua. Sen lis‰ksi tutkielmassa mainitaan mit‰ aiheesta on tutkittu ja millaisia p‰‰telmi‰ niist‰ voidaan tehd‰.
 
 Voidaan todeta, ett‰ yksinkertaisenkin palvelun m‰‰rittely voi vaikeuttaa perinteisten syntaktisten rekistereiden lˆyt‰mist‰, jos palvelu on WSDL-m‰‰ritelty huonosti. Syntaktisten rekistereiden toiminta on t‰rke‰ olla tiedossa suunnitellessa helposti lˆydett‰vi‰ web-palveluita.
 
